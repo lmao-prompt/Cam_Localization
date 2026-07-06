@@ -1,0 +1,44 @@
+[0.023s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[0.103s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.643s] -- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.697s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.712s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.732s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.754s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.875s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.878s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.030s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.161s] -- Found sensor_msgs: 5.3.8 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.289s] -- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)
+[1.299s] -- Found tf2: 0.36.21 (/opt/ros/jazzy/share/tf2/cmake)
+[1.517s] -- Configuring done (1.4s)
+[1.584s] -- Generating done (0.0s)
+[1.595s] -- Build files have been written to: /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo
+[1.682s] [ 12%] [32mBuilding CXX object CMakeFiles/waypoint.dir/src/waypoint.cpp.o[0m
+[1.706s] [ 62%] Built target obstacle_avoidance
+[1.706s] [ 62%] Built target cam
+[1.719s] [ 87%] Built target cam_localization
+[12.889s] [100%] [32m[1mLinking CXX executable waypoint[0m
+[13.161s] [100%] Built target waypoint
+[13.173s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[13.185s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo
+[13.195s] -- Install configuration: ""
+[13.195s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/cam
+[13.195s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/cam_localization
+[13.196s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/obstacle_avoidance
+[13.196s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/package_run_dependencies/nexus_gazebo
+[13.196s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/parent_prefix_path/nexus_gazebo
+[13.196s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/ament_prefix_path.sh
+[13.196s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/ament_prefix_path.dsv
+[13.196s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/path.sh
+[13.196s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/path.dsv
+[13.196s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.bash
+[13.196s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.sh
+[13.196s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.zsh
+[13.197s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.dsv
+[13.197s] -- Installing: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/package.dsv
+[13.197s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/packages/nexus_gazebo
+[13.197s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/cmake/nexus_gazeboConfig.cmake
+[13.197s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/cmake/nexus_gazeboConfig-version.cmake
+[13.197s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/package.xml
+[13.198s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo

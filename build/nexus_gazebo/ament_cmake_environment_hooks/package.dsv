@@ -1,0 +1,4 @@
+source;share/nexus_gazebo/local_setup.bash
+source;share/nexus_gazebo/local_setup.dsv
+source;share/nexus_gazebo/local_setup.sh
+source;share/nexus_gazebo/local_setup.zsh

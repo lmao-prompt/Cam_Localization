@@ -1,0 +1,199 @@
+[0.000000] (-) TimerEvent: {}
+[0.000247] (nexus_gazebo) JobQueued: {'identifier': 'nexus_gazebo', 'dependencies': OrderedDict()}
+[0.000437] (nexus_gazebo) JobStarted: {'identifier': 'nexus_gazebo'}
+[0.028338] (nexus_gazebo) JobProgress: {'identifier': 'nexus_gazebo', 'progress': 'cmake'}
+[0.030360] (nexus_gazebo) JobProgress: {'identifier': 'nexus_gazebo', 'progress': 'build'}
+[0.031585] (nexus_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', '--', '-j16', '-l16'], 'cwd': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib:', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'OFFLINE_ENV': '/opt/offline', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'prhayogo', 'LC_TIME': 'id_ID.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/offline/lib:', 'HOME': '/home/prhayogo', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/prhayogo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'id_ID.UTF-8', 'SYSTEMD_EXEC_PID': '3087', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/prhayogo/miniconda3', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'prhayogo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'prhayogo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'WINDOWPATH': '2', 'PATH': '/home/prhayogo/.local/bin:/home/prhayogo/.opencode/bin:/home/prhayogo/miniconda3/condabin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/prhayogo/.local/bin:/home/prhayogo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:@/tmp/.ICE-unix/3043,unix/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:/tmp/.ICE-unix/3043', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'id_ID.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/6d14465e_92e0_4cf4_a413_f89f4ee129f1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'id_ID.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.126', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/prhayogo/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'id_ID.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'id_ID.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', '_CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'id_ID.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'id_ID.UTF-8', 'LC_PAPER': 'id_ID.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.098949] (-) TimerEvent: {}
+[0.117847] (nexus_gazebo) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.199049] (-) TimerEvent: {}
+[0.299381] (-) TimerEvent: {}
+[0.399783] (-) TimerEvent: {}
+[0.500201] (-) TimerEvent: {}
+[0.600612] (-) TimerEvent: {}
+[0.645324] (nexus_gazebo) StdoutLine: {'line': b'-- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.700753] (-) TimerEvent: {}
+[0.724312] (nexus_gazebo) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.739756] (nexus_gazebo) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.760463] (nexus_gazebo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.784131] (nexus_gazebo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.800883] (-) TimerEvent: {}
+[0.901204] (-) TimerEvent: {}
+[0.908008] (nexus_gazebo) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.910912] (nexus_gazebo) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.001367] (-) TimerEvent: {}
+[1.061975] (nexus_gazebo) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.101477] (-) TimerEvent: {}
+[1.201852] (-) TimerEvent: {}
+[1.202564] (nexus_gazebo) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.8 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[1.301999] (-) TimerEvent: {}
+[1.327164] (nexus_gazebo) StdoutLine: {'line': b'-- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)\n'}
+[1.351262] (nexus_gazebo) StdoutLine: {'line': b'-- Found tf2: 0.36.21 (/opt/ros/jazzy/share/tf2/cmake)\n'}
+[1.402171] (-) TimerEvent: {}
+[1.502570] (-) TimerEvent: {}
+[1.582744] (nexus_gazebo) StdoutLine: {'line': b'-- Configuring done (1.5s)\n'}
+[1.602722] (-) TimerEvent: {}
+[1.623298] (nexus_gazebo) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[1.633343] (nexus_gazebo) StdoutLine: {'line': b'-- Build files have been written to: /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo\n'}
+[1.702901] (-) TimerEvent: {}
+[1.730703] (nexus_gazebo) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/cam_localization.dir/src/cam_localization.cpp.o\x1b[0m\n'}
+[1.760750] (nexus_gazebo) StdoutLine: {'line': b'[ 66%] Built target cam\n'}
+[1.761138] (nexus_gazebo) StdoutLine: {'line': b'[ 83%] Built target obstacle_avoidance\n'}
+[1.803029] (-) TimerEvent: {}
+[1.903397] (-) TimerEvent: {}
+[2.003811] (-) TimerEvent: {}
+[2.104206] (-) TimerEvent: {}
+[2.204596] (-) TimerEvent: {}
+[2.305015] (-) TimerEvent: {}
+[2.405413] (-) TimerEvent: {}
+[2.505845] (-) TimerEvent: {}
+[2.606256] (-) TimerEvent: {}
+[2.706663] (-) TimerEvent: {}
+[2.807101] (-) TimerEvent: {}
+[2.907609] (-) TimerEvent: {}
+[3.008132] (-) TimerEvent: {}
+[3.108526] (-) TimerEvent: {}
+[3.208905] (-) TimerEvent: {}
+[3.309281] (-) TimerEvent: {}
+[3.409680] (-) TimerEvent: {}
+[3.510138] (-) TimerEvent: {}
+[3.610625] (-) TimerEvent: {}
+[3.711411] (-) TimerEvent: {}
+[3.811842] (-) TimerEvent: {}
+[3.912224] (-) TimerEvent: {}
+[4.012587] (-) TimerEvent: {}
+[4.113015] (-) TimerEvent: {}
+[4.213416] (-) TimerEvent: {}
+[4.313797] (-) TimerEvent: {}
+[4.414137] (-) TimerEvent: {}
+[4.514542] (-) TimerEvent: {}
+[4.614969] (-) TimerEvent: {}
+[4.715374] (-) TimerEvent: {}
+[4.815814] (-) TimerEvent: {}
+[4.916229] (-) TimerEvent: {}
+[5.016641] (-) TimerEvent: {}
+[5.117082] (-) TimerEvent: {}
+[5.217491] (-) TimerEvent: {}
+[5.317901] (-) TimerEvent: {}
+[5.418310] (-) TimerEvent: {}
+[5.518736] (-) TimerEvent: {}
+[5.619174] (-) TimerEvent: {}
+[5.719960] (-) TimerEvent: {}
+[5.820380] (-) TimerEvent: {}
+[5.920824] (-) TimerEvent: {}
+[6.021235] (-) TimerEvent: {}
+[6.121650] (-) TimerEvent: {}
+[6.222100] (-) TimerEvent: {}
+[6.322733] (-) TimerEvent: {}
+[6.423199] (-) TimerEvent: {}
+[6.523617] (-) TimerEvent: {}
+[6.624420] (-) TimerEvent: {}
+[6.724855] (-) TimerEvent: {}
+[6.825268] (-) TimerEvent: {}
+[6.925677] (-) TimerEvent: {}
+[7.026106] (-) TimerEvent: {}
+[7.126482] (-) TimerEvent: {}
+[7.226895] (-) TimerEvent: {}
+[7.327288] (-) TimerEvent: {}
+[7.427695] (-) TimerEvent: {}
+[7.528137] (-) TimerEvent: {}
+[7.628528] (-) TimerEvent: {}
+[7.728918] (-) TimerEvent: {}
+[7.829370] (-) TimerEvent: {}
+[7.929815] (-) TimerEvent: {}
+[8.030250] (-) TimerEvent: {}
+[8.130671] (-) TimerEvent: {}
+[8.231118] (-) TimerEvent: {}
+[8.331537] (-) TimerEvent: {}
+[8.431954] (-) TimerEvent: {}
+[8.532358] (-) TimerEvent: {}
+[8.632815] (-) TimerEvent: {}
+[8.733334] (-) TimerEvent: {}
+[8.833820] (-) TimerEvent: {}
+[8.934211] (-) TimerEvent: {}
+[9.034618] (-) TimerEvent: {}
+[9.135066] (-) TimerEvent: {}
+[9.235478] (-) TimerEvent: {}
+[9.335888] (-) TimerEvent: {}
+[9.436303] (-) TimerEvent: {}
+[9.536715] (-) TimerEvent: {}
+[9.637162] (-) TimerEvent: {}
+[9.737594] (-) TimerEvent: {}
+[9.838014] (-) TimerEvent: {}
+[9.938398] (-) TimerEvent: {}
+[10.038841] (-) TimerEvent: {}
+[10.139235] (-) TimerEvent: {}
+[10.239625] (-) TimerEvent: {}
+[10.340038] (-) TimerEvent: {}
+[10.440426] (-) TimerEvent: {}
+[10.540859] (-) TimerEvent: {}
+[10.641260] (-) TimerEvent: {}
+[10.741633] (-) TimerEvent: {}
+[10.842018] (-) TimerEvent: {}
+[10.942392] (-) TimerEvent: {}
+[11.042696] (-) TimerEvent: {}
+[11.143057] (-) TimerEvent: {}
+[11.243360] (-) TimerEvent: {}
+[11.343626] (-) TimerEvent: {}
+[11.443950] (-) TimerEvent: {}
+[11.544223] (-) TimerEvent: {}
+[11.644486] (-) TimerEvent: {}
+[11.744744] (-) TimerEvent: {}
+[11.845343] (-) TimerEvent: {}
+[11.945617] (-) TimerEvent: {}
+[12.045912] (-) TimerEvent: {}
+[12.146185] (-) TimerEvent: {}
+[12.246463] (-) TimerEvent: {}
+[12.346730] (-) TimerEvent: {}
+[12.447045] (-) TimerEvent: {}
+[12.547346] (-) TimerEvent: {}
+[12.647647] (-) TimerEvent: {}
+[12.747959] (-) TimerEvent: {}
+[12.848256] (-) TimerEvent: {}
+[12.948568] (-) TimerEvent: {}
+[13.048866] (-) TimerEvent: {}
+[13.149165] (-) TimerEvent: {}
+[13.249463] (-) TimerEvent: {}
+[13.349758] (-) TimerEvent: {}
+[13.450071] (-) TimerEvent: {}
+[13.550376] (-) TimerEvent: {}
+[13.650678] (-) TimerEvent: {}
+[13.750999] (-) TimerEvent: {}
+[13.851320] (-) TimerEvent: {}
+[13.951636] (-) TimerEvent: {}
+[14.051974] (-) TimerEvent: {}
+[14.152302] (-) TimerEvent: {}
+[14.252631] (-) TimerEvent: {}
+[14.352981] (-) TimerEvent: {}
+[14.368856] (nexus_gazebo) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable cam_localization\x1b[0m\n'}
+[14.453119] (-) TimerEvent: {}
+[14.553471] (-) TimerEvent: {}
+[14.653825] (-) TimerEvent: {}
+[14.738448] (nexus_gazebo) StdoutLine: {'line': b'[100%] Built target cam_localization\n'}
+[14.752771] (nexus_gazebo) CommandEnded: {'returncode': 0}
+[14.753465] (nexus_gazebo) JobProgress: {'identifier': 'nexus_gazebo', 'progress': 'install'}
+[14.753912] (-) TimerEvent: {}
+[14.765464] (nexus_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo'], 'cwd': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib:', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'OFFLINE_ENV': '/opt/offline', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'prhayogo', 'LC_TIME': 'id_ID.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/offline/lib:', 'HOME': '/home/prhayogo', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/prhayogo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'id_ID.UTF-8', 'SYSTEMD_EXEC_PID': '3087', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/prhayogo/miniconda3', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'prhayogo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'prhayogo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'WINDOWPATH': '2', 'PATH': '/home/prhayogo/.local/bin:/home/prhayogo/.opencode/bin:/home/prhayogo/miniconda3/condabin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/prhayogo/.local/bin:/home/prhayogo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:@/tmp/.ICE-unix/3043,unix/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:/tmp/.ICE-unix/3043', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'id_ID.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/6d14465e_92e0_4cf4_a413_f89f4ee129f1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'id_ID.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.126', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/prhayogo/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'id_ID.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'id_ID.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', '_CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'id_ID.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'id_ID.UTF-8', 'LC_PAPER': 'id_ID.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[14.774461] (nexus_gazebo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[14.774873] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/cam\n'}
+[14.775302] (nexus_gazebo) StdoutLine: {'line': b'-- Installing: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/cam_localization\n'}
+[14.782826] (nexus_gazebo) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/cam_localization" to ""\n'}
+[14.783633] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/obstacle_avoidance\n'}
+[14.783780] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/package_run_dependencies/nexus_gazebo\n'}
+[14.783895] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/parent_prefix_path/nexus_gazebo\n'}
+[14.783969] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/ament_prefix_path.sh\n'}
+[14.784042] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/ament_prefix_path.dsv\n'}
+[14.784121] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/path.sh\n'}
+[14.784180] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/path.dsv\n'}
+[14.784235] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.bash\n'}
+[14.784284] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.sh\n'}
+[14.784357] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.zsh\n'}
+[14.784433] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.dsv\n'}
+[14.784498] (nexus_gazebo) StdoutLine: {'line': b'-- Installing: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/package.dsv\n'}
+[14.784550] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/packages/nexus_gazebo\n'}
+[14.784599] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/cmake/nexus_gazeboConfig.cmake\n'}
+[14.784647] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/cmake/nexus_gazeboConfig-version.cmake\n'}
+[14.784695] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/package.xml\n'}
+[14.786412] (nexus_gazebo) CommandEnded: {'returncode': 0}
+[14.800811] (nexus_gazebo) JobEnded: {'identifier': 'nexus_gazebo', 'rc': 0}
+[14.801603] (-) EventReactorShutdown: {}

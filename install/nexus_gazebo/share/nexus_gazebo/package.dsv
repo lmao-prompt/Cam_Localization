@@ -1,0 +1,6 @@
+source;share/nexus_gazebo/hook/cmake_prefix_path.dsv
+source;share/nexus_gazebo/hook/cmake_prefix_path.sh
+source;share/nexus_gazebo/local_setup.bash
+source;share/nexus_gazebo/local_setup.dsv
+source;share/nexus_gazebo/local_setup.sh
+source;share/nexus_gazebo/local_setup.zsh

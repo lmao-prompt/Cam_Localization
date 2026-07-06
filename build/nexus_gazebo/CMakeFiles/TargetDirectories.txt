@@ -1,0 +1,14 @@
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/uninstall.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/nexus_gazebo_uninstall.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/waypoint.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/movement.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/cam_localization.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/cam.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/obstacle_avoidance.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/test.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/edit_cache.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/rebuild_cache.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/list_install_components.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/install.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/install/local.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/install/strip.dir
