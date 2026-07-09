@@ -1,0 +1,14 @@
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:175[m[K,
+                 from [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:1[m[K:
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:[m[K In constructor ‘[01m[KRobotLocalizer::[01;32m[KRobotLocalizer[m[K()[m[K’:
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:22:64:[m[K [01;31m[Kerror: [m[K‘[01m[Kids[m[K’ was not declared in this scope
+   22 |         RCLCPP_INFO(get_logger(), "detected=%zu rejected=%zu", [01;31m[Kids[m[K.size(), rejected.size());
+      |                                                                [01;31m[K^~~[m[K
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:22:76:[m[K [01;31m[Kerror: [m[K‘[01m[Krejected[m[K’ was not declared in this scope
+   22 |         RCLCPP_INFO(get_logger(), "detected=%zu rejected=%zu", ids.size(), [01;31m[Krejected[m[K.size());
+      |                                                                            [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/aruco.dir/build.make:76: CMakeFiles/aruco.dir/src/aruco.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:251: CMakeFiles/aruco.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

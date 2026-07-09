@@ -250,6 +250,19 @@ cam/fast:
 .PHONY : cam/fast
 
 #=============================================================================
+# Target rules for targets named aruco
+
+# Build rule for target.
+aruco: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 aruco
+.PHONY : aruco
+
+# fast build rule for target.
+aruco/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco.dir/build.make CMakeFiles/aruco.dir/build
+.PHONY : aruco/fast
+
+#=============================================================================
 # Target rules for targets named obstacle_avoidance
 
 # Build rule for target.
@@ -261,6 +274,30 @@ obstacle_avoidance: cmake_check_build_system
 obstacle_avoidance/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/obstacle_avoidance.dir/build.make CMakeFiles/obstacle_avoidance.dir/build
 .PHONY : obstacle_avoidance/fast
+
+src/aruco.o: src/aruco.cpp.o
+.PHONY : src/aruco.o
+
+# target to build an object file
+src/aruco.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco.dir/build.make CMakeFiles/aruco.dir/src/aruco.cpp.o
+.PHONY : src/aruco.cpp.o
+
+src/aruco.i: src/aruco.cpp.i
+.PHONY : src/aruco.i
+
+# target to preprocess a source file
+src/aruco.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco.dir/build.make CMakeFiles/aruco.dir/src/aruco.cpp.i
+.PHONY : src/aruco.cpp.i
+
+src/aruco.s: src/aruco.cpp.s
+.PHONY : src/aruco.s
+
+# target to generate assembly for a file
+src/aruco.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco.dir/build.make CMakeFiles/aruco.dir/src/aruco.cpp.s
+.PHONY : src/aruco.cpp.s
 
 src/cam.o: src/cam.cpp.o
 .PHONY : src/cam.o
@@ -397,11 +434,15 @@ help:
 	@echo "... test"
 	@echo "... nexus_gazebo_uninstall"
 	@echo "... uninstall"
+	@echo "... aruco"
 	@echo "... cam"
 	@echo "... cam_localization"
 	@echo "... movement"
 	@echo "... obstacle_avoidance"
 	@echo "... waypoint"
+	@echo "... src/aruco.o"
+	@echo "... src/aruco.i"
+	@echo "... src/aruco.s"
 	@echo "... src/cam.o"
 	@echo "... src/cam.i"
 	@echo "... src/cam.s"

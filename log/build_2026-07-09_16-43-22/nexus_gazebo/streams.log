@@ -1,0 +1,15 @@
+[0.021s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[0.148s] [ 33%] Built target cam_localization
+[0.148s] [ 33%] Built target cam
+[0.148s] [ 50%] Built target movement
+[0.149s] [ 75%] Built target waypoint
+[0.149s] [ 83%] Built target obstacle_avoidance
+[0.171s] [ 91%] [32mBuilding CXX object CMakeFiles/aruco.dir/src/aruco.cpp.o[0m
+[4.947s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:[m[K In member function ‘[01m[Kvoid RobotLocalizer::[01;32m[KimageCb[m[K(sensor_msgs::msg::Image_<std::allocator<void> >::SharedPtr)[m[K’:
+[4.947s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:27:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kframe[m[K’ was not declared in this scope
+[4.947s]    27 |         cv::imwrite("/tmp/debug_frame.png", [01;31m[Kframe[m[K);
+[4.947s]       |                                             [01;31m[K^~~~~[m[K
+[8.561s] gmake[2]: *** [CMakeFiles/aruco.dir/build.make:76: CMakeFiles/aruco.dir/src/aruco.cpp.o] Error 1
+[8.561s] gmake[1]: *** [CMakeFiles/Makefile2:251: CMakeFiles/aruco.dir/all] Error 2
+[8.561s] gmake: *** [Makefile:146: all] Error 2
+[8.568s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16

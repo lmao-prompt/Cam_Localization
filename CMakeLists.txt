@@ -25,6 +25,10 @@ add_executable(cam src/cam.cpp)
 ament_target_dependencies(cam
   rclcpp sensor_msgs geometry_msgs cv_bridge OpenCV)
 
+add_executable(aruco src/aruco.cpp)
+ament_target_dependencies(aruco
+  rclcpp sensor_msgs geometry_msgs cv_bridge OpenCV)
+
 add_executable(obstacle_avoidance src/obstacle_avoidance.cpp)
 ament_target_dependencies(obstacle_avoidance rclcpp sensor_msgs geometry_msgs)
 
@@ -33,5 +37,6 @@ install(TARGETS cam_localization DESTINATION lib/${PROJECT_NAME})
 install(TARGETS obstacle_avoidance DESTINATION lib/${PROJECT_NAME})
 install(TARGETS waypoint DESTINATION lib/${PROJECT_NAME})
 install(TARGETS movement DESTINATION lib/${PROJECT_NAME})
+install(TARGETS aruco DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

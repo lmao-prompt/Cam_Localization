@@ -1,0 +1,8 @@
+[0.017s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[0.069s] [31mCMake Error at CMakeLists.txt:32:
+[0.069s]   Parse error.  Expected a command name, got unquoted argument with text "'".
+[0.070s] 
+[0.070s] [0m
+[0.070s] -- Configuring incomplete, errors occurred!
+[0.073s] gmake: *** [Makefile:431: cmake_check_build_system] Error 1
+[0.077s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16

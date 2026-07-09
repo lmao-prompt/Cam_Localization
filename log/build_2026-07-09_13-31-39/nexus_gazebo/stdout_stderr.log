@@ -1,0 +1,20 @@
+[ 75%] Built target obstacle_avoidance
+[ 75%] Built target movement
+[ 75%] [32mBuilding CXX object CMakeFiles/aruco.dir/src/aruco.cpp.o[0m
+[ 75%] Built target waypoint
+[ 75%] Built target cam_localization
+[ 91%] Built target cam
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:84:16:[m[K [01;31m[Kerror: [m[K‘[01m[KArucoDetector[m[K’ in namespace ‘[01m[Kcv::aruco[m[K’ does not name a type
+   84 |     cv::aruco::[01;31m[KArucoDetector[m[K detector_;
+      |                [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:[m[K In constructor ‘[01m[KRobotLocalizer::[01;32m[KRobotLocalizer[m[K()[m[K’:
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:13:9:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KRobotLocalizer[m[K’ does not have any field named ‘[01m[Kdetector_[m[K’
+   13 |         [01;31m[Kdetector_[m[K(dictionary_, cv::aruco::DetectorParameters())
+      |         [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:[m[K In member function ‘[01m[Kvoid RobotLocalizer::[01;32m[KimageCb[m[K(sensor_msgs::msg::Image_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:37:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdetector_[m[K’ was not declared in this scope
+   37 |         [01;31m[Kdetector_[m[K.detectMarkers(frame, corners, ids, rejected);
+      |         [01;31m[K^~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/aruco.dir/build.make:76: CMakeFiles/aruco.dir/src/aruco.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:251: CMakeFiles/aruco.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,7 @@
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:[m[K In member function ‘[01m[Kvoid RobotLocalizer::[01;32m[KimageCb[m[K(sensor_msgs::msg::Image_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:27:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kframe[m[K’ was not declared in this scope
+   27 |         cv::imwrite("/tmp/debug_frame.png", [01;31m[Kframe[m[K);
+      |                                             [01;31m[K^~~~~[m[K
+gmake[2]: *** [CMakeFiles/aruco.dir/build.make:76: CMakeFiles/aruco.dir/src/aruco.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:251: CMakeFiles/aruco.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

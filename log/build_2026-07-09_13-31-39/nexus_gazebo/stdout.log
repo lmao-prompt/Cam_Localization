@@ -1,0 +1,6 @@
+[ 75%] Built target obstacle_avoidance
+[ 75%] Built target movement
+[ 75%] [32mBuilding CXX object CMakeFiles/aruco.dir/src/aruco.cpp.o[0m
+[ 75%] Built target waypoint
+[ 75%] Built target cam_localization
+[ 91%] Built target cam

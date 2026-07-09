@@ -715,5 +715,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/movement.dir/DependInfo.cmake"
   "CMakeFiles/cam_localization.dir/DependInfo.cmake"
   "CMakeFiles/cam.dir/DependInfo.cmake"
+  "CMakeFiles/aruco.dir/DependInfo.cmake"
   "CMakeFiles/obstacle_avoidance.dir/DependInfo.cmake"
   )

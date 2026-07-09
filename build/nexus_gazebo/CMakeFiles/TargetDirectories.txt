@@ -4,6 +4,7 @@
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/movement.dir
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/cam_localization.dir
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/cam.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/aruco.dir
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/obstacle_avoidance.dir
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/test.dir
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/edit_cache.dir

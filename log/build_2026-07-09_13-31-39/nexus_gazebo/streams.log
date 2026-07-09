@@ -1,0 +1,22 @@
+[0.022s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[0.270s] [ 75%] Built target obstacle_avoidance
+[0.271s] [ 75%] Built target movement
+[0.271s] [ 75%] [32mBuilding CXX object CMakeFiles/aruco.dir/src/aruco.cpp.o[0m
+[0.271s] [ 75%] Built target waypoint
+[0.271s] [ 75%] Built target cam_localization
+[0.271s] [ 91%] Built target cam
+[3.484s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:84:16:[m[K [01;31m[Kerror: [m[K‘[01m[KArucoDetector[m[K’ in namespace ‘[01m[Kcv::aruco[m[K’ does not name a type
+[3.484s]    84 |     cv::aruco::[01;31m[KArucoDetector[m[K detector_;
+[3.484s]       |                [01;31m[K^~~~~~~~~~~~~[m[K
+[3.485s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:[m[K In constructor ‘[01m[KRobotLocalizer::[01;32m[KRobotLocalizer[m[K()[m[K’:
+[3.485s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:13:9:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KRobotLocalizer[m[K’ does not have any field named ‘[01m[Kdetector_[m[K’
+[3.485s]    13 |         [01;31m[Kdetector_[m[K(dictionary_, cv::aruco::DetectorParameters())
+[3.485s]       |         [01;31m[K^~~~~~~~~[m[K
+[3.509s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:[m[K In member function ‘[01m[Kvoid RobotLocalizer::[01;32m[KimageCb[m[K(sensor_msgs::msg::Image_<std::allocator<void> >::SharedPtr)[m[K’:
+[3.510s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco.cpp:37:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdetector_[m[K’ was not declared in this scope
+[3.510s]    37 |         [01;31m[Kdetector_[m[K.detectMarkers(frame, corners, ids, rejected);
+[3.510s]       |         [01;31m[K^~~~~~~~~[m[K
+[6.045s] gmake[2]: *** [CMakeFiles/aruco.dir/build.make:76: CMakeFiles/aruco.dir/src/aruco.cpp.o] Error 1
+[6.046s] gmake[1]: *** [CMakeFiles/Makefile2:251: CMakeFiles/aruco.dir/all] Error 2
+[6.046s] gmake: *** [Makefile:146: all] Error 2
+[6.050s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
