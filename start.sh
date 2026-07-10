@@ -31,6 +31,7 @@ ros2 run ros_gz_bridge parameter_bridge \
   /imu@sensor_msgs/msg/Imu@gz.msgs.IMU
 ros2 run nexus_gazebo cam
 ros2 run nexus_gazebo cam_localization
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 # echo "Starting robot_state_publisher..."
 # ros2 run robot_state_publisher robot_state_publisher nexus.urdf &
 # sleep 1
