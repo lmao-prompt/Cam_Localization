@@ -3,6 +3,7 @@
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/waypoint.dir
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/movement.dir
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/cam_localization.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/aruco_localization.dir
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/cam.dir
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/aruco.dir
 /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles/obstacle_avoidance.dir

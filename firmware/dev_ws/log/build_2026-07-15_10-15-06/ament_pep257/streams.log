@@ -1,0 +1,40 @@
+[1.200s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/ament/ament_lint/ament_pep257': AMENT_PREFIX_PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8/bin:${PATH} PYTHONPATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ament_pep257 build --build-base /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/build install --record /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/install.log --single-version-externally-managed install_data
+[1.463s] running egg_info
+[1.463s] creating ../../../build/ament_pep257/ament_pep257.egg-info
+[1.477s] writing ../../../build/ament_pep257/ament_pep257.egg-info/PKG-INFO
+[1.477s] writing dependency_links to ../../../build/ament_pep257/ament_pep257.egg-info/dependency_links.txt
+[1.477s] writing entry points to ../../../build/ament_pep257/ament_pep257.egg-info/entry_points.txt
+[1.478s] writing requirements to ../../../build/ament_pep257/ament_pep257.egg-info/requires.txt
+[1.478s] writing top-level names to ../../../build/ament_pep257/ament_pep257.egg-info/top_level.txt
+[1.478s] writing manifest file '../../../build/ament_pep257/ament_pep257.egg-info/SOURCES.txt'
+[1.509s] reading manifest file '../../../build/ament_pep257/ament_pep257.egg-info/SOURCES.txt'
+[1.509s] writing manifest file '../../../build/ament_pep257/ament_pep257.egg-info/SOURCES.txt'
+[1.510s] running build
+[1.510s] running build_py
+[1.510s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/build
+[1.510s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/build/lib
+[1.510s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/build/lib/ament_pep257
+[1.510s] copying ament_pep257/pytest_marker.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/build/lib/ament_pep257
+[1.510s] copying ament_pep257/__init__.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/build/lib/ament_pep257
+[1.511s] copying ament_pep257/main.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/build/lib/ament_pep257
+[1.511s] running install
+[1.516s] running install_lib
+[1.533s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages/ament_pep257
+[1.533s] copying /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/build/lib/ament_pep257/pytest_marker.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages/ament_pep257
+[1.533s] copying /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/build/lib/ament_pep257/__init__.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages/ament_pep257
+[1.533s] copying /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/build/lib/ament_pep257/main.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages/ament_pep257
+[1.534s] byte-compiling /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages/ament_pep257/pytest_marker.py to pytest_marker.cpython-312.pyc
+[1.534s] byte-compiling /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages/ament_pep257/__init__.py to __init__.cpython-312.pyc
+[1.534s] byte-compiling /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages/ament_pep257/main.py to main.cpython-312.pyc
+[1.536s] running install_data
+[1.536s] copying package.xml -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/share/ament_pep257
+[1.536s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/share/ament_index
+[1.536s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/share/ament_index/resource_index
+[1.536s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/share/ament_index/resource_index/packages
+[1.537s] copying resource/ament_pep257 -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/share/ament_index/resource_index/packages
+[1.537s] running install_egg_info
+[1.552s] Copying ../../../build/ament_pep257/ament_pep257.egg-info to /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages/ament_pep257-0.17.5-py3.12.egg-info
+[1.553s] running install_scripts
+[1.683s] Installing ament_pep257 script to /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/bin
+[1.683s] writing list of installed files to '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/install.log'
+[1.747s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/ament/ament_lint/ament_pep257' returned '0': AMENT_PREFIX_PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8/bin:${PATH} PYTHONPATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ament_pep257 build --build-base /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/build install --record /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pep257/install.log --single-version-externally-managed install_data

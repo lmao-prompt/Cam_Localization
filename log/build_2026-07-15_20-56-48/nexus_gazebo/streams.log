@@ -1,0 +1,36 @@
+[0.015s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[0.092s] [ 50%] Built target waypoint
+[0.092s] [ 57%] Built target obstacle_avoidance
+[0.092s] [ 57%] Built target cam_localization
+[0.092s] [ 57%] Built target movement
+[0.092s] [ 71%] Built target cam
+[0.097s] [ 78%] [32mBuilding CXX object CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o[0m
+[0.099s] [ 92%] Built target aruco
+[10.762s] [100%] [32m[1mLinking CXX executable aruco_localization[0m
+[11.300s] [100%] Built target aruco_localization
+[11.315s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[11.328s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo
+[11.340s] -- Install configuration: ""
+[11.340s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/cam
+[11.341s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/cam_localization
+[11.341s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/obstacle_avoidance
+[11.341s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/waypoint
+[11.342s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/movement
+[11.342s] -- Installing: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/aruco
+[11.351s] -- Set non-toolchain portion of runtime path of "/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/aruco" to ""
+[11.351s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/package_run_dependencies/nexus_gazebo
+[11.351s] -- Installing: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/parent_prefix_path/nexus_gazebo
+[11.351s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/ament_prefix_path.sh
+[11.352s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/ament_prefix_path.dsv
+[11.352s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/path.sh
+[11.352s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/path.dsv
+[11.352s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.bash
+[11.352s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.sh
+[11.352s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.zsh
+[11.352s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.dsv
+[11.352s] -- Installing: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/package.dsv
+[11.352s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/packages/nexus_gazebo
+[11.352s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/cmake/nexus_gazeboConfig.cmake
+[11.352s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/cmake/nexus_gazeboConfig-version.cmake
+[11.352s] -- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/package.xml
+[11.355s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo

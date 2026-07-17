@@ -1,0 +1,16 @@
+[0.019s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[0.139s] [ 57%] Built target aruco
+[0.139s] [ 57%] Built target cam
+[0.139s] [ 57%] Built target movement
+[0.140s] [ 57%] Built target cam_localization
+[0.140s] [ 64%] [32mBuilding CXX object CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o[0m
+[0.143s] [ 78%] Built target waypoint
+[0.147s] [ 92%] Built target obstacle_avoidance
+[5.639s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:[m[K In constructor ‘[01m[KPoseFusion::[01;32m[KPoseFusion[m[K()[m[K’:
+[5.639s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:31:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksub_imu_[m[K’ was not declared in this scope
+[5.639s]    31 |         [01;31m[Ksub_imu_[m[K = create_subscription<sensor_msgs::msg::Imu>(
+[5.639s]       |         [01;31m[K^~~~~~~~[m[K
+[8.672s] gmake[2]: *** [CMakeFiles/aruco_localization.dir/build.make:76: CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o] Error 1
+[8.672s] gmake[1]: *** [CMakeFiles/Makefile2:227: CMakeFiles/aruco_localization.dir/all] Error 2
+[8.673s] gmake: *** [Makefile:146: all] Error 2
+[8.675s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16

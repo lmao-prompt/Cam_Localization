@@ -1,0 +1,16 @@
+[0.025s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[0.267s] [ 28%] [32mBuilding CXX object CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o[0m
+[0.267s] [ 35%] Built target waypoint
+[0.268s] [ 35%] Built target movement
+[0.270s] [ 64%] Built target aruco
+[0.270s] [ 64%] Built target cam
+[0.273s] [ 78%] Built target cam_localization
+[0.274s] [ 92%] Built target obstacle_avoidance
+[1.147s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:9:10:[m[K [01;31m[Kfatal error: [m[Ktf2_geometry_msgs/tf2_geometry_msgs.hpp: No such file or directory
+[1.147s]     9 | #include [01;31m[K<tf2_geometry_msgs/tf2_geometry_msgs.hpp>[m[K
+[1.147s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.148s] compilation terminated.
+[1.154s] gmake[2]: *** [CMakeFiles/aruco_localization.dir/build.make:76: CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o] Error 1
+[1.154s] gmake[1]: *** [CMakeFiles/Makefile2:227: CMakeFiles/aruco_localization.dir/all] Error 2
+[1.155s] gmake: *** [Makefile:146: all] Error 2
+[1.159s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16

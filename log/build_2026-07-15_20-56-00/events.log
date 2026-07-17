@@ -1,0 +1,169 @@
+[0.000000] (-) TimerEvent: {}
+[0.000214] (nexus_gazebo) JobQueued: {'identifier': 'nexus_gazebo', 'dependencies': OrderedDict()}
+[0.000265] (nexus_gazebo) JobStarted: {'identifier': 'nexus_gazebo'}
+[0.011277] (nexus_gazebo) JobProgress: {'identifier': 'nexus_gazebo', 'progress': 'cmake'}
+[0.012270] (nexus_gazebo) JobProgress: {'identifier': 'nexus_gazebo', 'progress': 'build'}
+[0.012330] (nexus_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', '--', '-j16', '-l16'], 'cwd': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib:', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'OFFLINE_ENV': '/opt/offline', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'prhayogo', 'LC_TIME': 'id_ID.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/prhayogo/Documents/maen_ws/install/micro_ros_agent/lib:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs/lib:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs/lib:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs/lib:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/offline/lib:', 'HOME': '/home/prhayogo', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/prhayogo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'id_ID.UTF-8', 'SYSTEMD_EXEC_PID': '3121', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/prhayogo/miniconda3', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install:/home/prhayogo/Documents/maen_ws/install:/home/prhayogo/Documents/robot_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'prhayogo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'prhayogo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'WINDOWPATH': '2', 'PATH': '/home/prhayogo/.opencode/bin:/home/prhayogo/miniconda3/condabin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/prhayogo/.local/bin:/home/prhayogo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:@/tmp/.ICE-unix/3078,unix/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:/tmp/.ICE-unix/3078', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'id_ID.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/1c444f9d_55cb_478b_8cb6_f28b95efc01e', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'id_ID.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.112', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_agent:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/ekf_localization:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/robot_pose:/home/prhayogo/Documents/robot_ws/install/robot_navigation:/home/prhayogo/Documents/robot_ws/install/robotRos_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs:/home/prhayogo/Documents/robot_ws/install/mehua_move:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/home/prhayogo/Documents/robot_ws/install/lbringup:/home/prhayogo/Documents/robot_ws/install/astar_pkg:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs:/home/prhayogo/Documents/robot_ws/install/AstarPlanner_pkg:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/prhayogo/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'id_ID.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'id_ID.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', '_CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'id_ID.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs/lib/python3.12/site-packages:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/mehua_forest/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/mehuaStar/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'id_ID.UTF-8', 'LC_PAPER': 'id_ID.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/home/prhayogo/Documents/maen_ws/install/micro_ros_agent:/home/prhayogo/Documents/maen_ws/install/ekf_localization:/home/prhayogo/Documents/robot_ws/install/robot_pose:/home/prhayogo/Documents/robot_ws/install/robot_navigation:/home/prhayogo/Documents/robot_ws/install/robotRos_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs:/home/prhayogo/Documents/robot_ws/install/mehua_move:/home/prhayogo/Documents/robot_ws/install/lbringup:/home/prhayogo/Documents/robot_ws/install/astar_pkg:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs:/home/prhayogo/Documents/robot_ws/install/AstarPlanner_pkg:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/opt/ros/jazzy'}), 'shell': False}
+[0.045776] (nexus_gazebo) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.099326] (-) TimerEvent: {}
+[0.199587] (-) TimerEvent: {}
+[0.252104] (nexus_gazebo) StdoutLine: {'line': b'-- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.278029] (nexus_gazebo) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.285082] (nexus_gazebo) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.295386] (nexus_gazebo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.299679] (-) TimerEvent: {}
+[0.306873] (nexus_gazebo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.357163] (nexus_gazebo) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.358856] (nexus_gazebo) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.399815] (-) TimerEvent: {}
+[0.421990] (nexus_gazebo) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.485060] (nexus_gazebo) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.8 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[0.499856] (-) TimerEvent: {}
+[0.541339] (nexus_gazebo) StdoutLine: {'line': b'-- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)\n'}
+[0.544067] (nexus_gazebo) StdoutLine: {'line': b'-- Found tf2: 0.36.21 (/opt/ros/jazzy/share/tf2/cmake)\n'}
+[0.599954] (-) TimerEvent: {}
+[0.646896] (nexus_gazebo) StdoutLine: {'line': b'-- Configuring done (0.6s)\n'}
+[0.697807] (nexus_gazebo) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.700054] (-) TimerEvent: {}
+[0.709143] (nexus_gazebo) StdoutLine: {'line': b'-- Build files have been written to: /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo\n'}
+[0.760780] (nexus_gazebo) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding CXX object CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o\x1b[0m\n'}
+[0.789624] (nexus_gazebo) StdoutLine: {'line': b'[ 50%] Built target movement\n'}
+[0.789894] (nexus_gazebo) StdoutLine: {'line': b'[ 50%] Built target cam_localization\n'}
+[0.790009] (nexus_gazebo) StdoutLine: {'line': b'[ 50%] Built target waypoint\n'}
+[0.790173] (nexus_gazebo) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding CXX object CMakeFiles/aruco.dir/src/aruco.cpp.o\x1b[0m\n'}
+[0.790273] (nexus_gazebo) StdoutLine: {'line': b'[ 85%] Built target obstacle_avoidance\n'}
+[0.790355] (nexus_gazebo) StdoutLine: {'line': b'[ 85%] Built target cam\n'}
+[0.800159] (-) TimerEvent: {}
+[0.900451] (-) TimerEvent: {}
+[1.000754] (-) TimerEvent: {}
+[1.101070] (-) TimerEvent: {}
+[1.201396] (-) TimerEvent: {}
+[1.301734] (-) TimerEvent: {}
+[1.402083] (-) TimerEvent: {}
+[1.502422] (-) TimerEvent: {}
+[1.602729] (-) TimerEvent: {}
+[1.703053] (-) TimerEvent: {}
+[1.803475] (-) TimerEvent: {}
+[1.903868] (-) TimerEvent: {}
+[2.004219] (-) TimerEvent: {}
+[2.104559] (-) TimerEvent: {}
+[2.204879] (-) TimerEvent: {}
+[2.305207] (-) TimerEvent: {}
+[2.405498] (-) TimerEvent: {}
+[2.505843] (-) TimerEvent: {}
+[2.606109] (-) TimerEvent: {}
+[2.706392] (-) TimerEvent: {}
+[2.806681] (-) TimerEvent: {}
+[2.906998] (-) TimerEvent: {}
+[2.969115] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:62:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcv\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[2.969393] (nexus_gazebo) StderrLine: {'line': b'   62 |     \x1b[01;31m\x1b[Kcv\x1b[m\x1b[K::Point2f pixelToWorld(int px, int py)\n'}
+[2.969470] (nexus_gazebo) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[3.007134] (-) TimerEvent: {}
+[3.010416] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:114:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcv\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[3.010731] (nexus_gazebo) StderrLine: {'line': b'  114 |     \x1b[01;31m\x1b[Kcv\x1b[m\x1b[K::Mat homography_;\n'}
+[3.010926] (nexus_gazebo) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[3.020317] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KPoseFusion::\x1b[01;32m\x1b[KPoseFusion\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.020527] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:21:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Khomography_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.020605] (nexus_gazebo) StderrLine: {'line': b'   21 |         \x1b[01;31m\x1b[Khomography_\x1b[m\x1b[K = cv::Mat::eye(3, 3, CV_64F);\n'}
+[3.020664] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.020716] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:21:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcv\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[3.020768] (nexus_gazebo) StderrLine: {'line': b'   21 |         homography_ = \x1b[01;31m\x1b[Kcv\x1b[m\x1b[K::Mat::eye(3, 3, CV_64F);\n'}
+[3.020866] (nexus_gazebo) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[3.025829] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:21:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KCV_64F\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.026030] (nexus_gazebo) StderrLine: {'line': b'   21 |         homography_ = cv::Mat::eye(3, 3, \x1b[01;31m\x1b[KCV_64F\x1b[m\x1b[K);\n'}
+[3.026134] (nexus_gazebo) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[3.035133] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid PoseFusion::\x1b[01;32m\x1b[KarucoCb\x1b[m\x1b[K(std_msgs::msg::Int32MultiArray_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.035475] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:52:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcv\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[3.035616] (nexus_gazebo) StderrLine: {'line': b'   52 |                 \x1b[01;31m\x1b[Kcv\x1b[m\x1b[K::Point2f world = pixelToWorld(cx, cy);\n'}
+[3.035754] (nexus_gazebo) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[3.040876] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:53:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kworld\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.041119] (nexus_gazebo) StderrLine: {'line': b'   53 |                 x_ = \x1b[01;31m\x1b[Kworld\x1b[m\x1b[K.x;\n'}
+[3.041256] (nexus_gazebo) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[3.107264] (-) TimerEvent: {}
+[3.207559] (-) TimerEvent: {}
+[3.307892] (-) TimerEvent: {}
+[3.408287] (-) TimerEvent: {}
+[3.508639] (-) TimerEvent: {}
+[3.609013] (-) TimerEvent: {}
+[3.709346] (-) TimerEvent: {}
+[3.809613] (-) TimerEvent: {}
+[3.909960] (-) TimerEvent: {}
+[4.010281] (-) TimerEvent: {}
+[4.110610] (-) TimerEvent: {}
+[4.210937] (-) TimerEvent: {}
+[4.311244] (-) TimerEvent: {}
+[4.411575] (-) TimerEvent: {}
+[4.511881] (-) TimerEvent: {}
+[4.612207] (-) TimerEvent: {}
+[4.712494] (-) TimerEvent: {}
+[4.812852] (-) TimerEvent: {}
+[4.913205] (-) TimerEvent: {}
+[5.013575] (-) TimerEvent: {}
+[5.113916] (-) TimerEvent: {}
+[5.214260] (-) TimerEvent: {}
+[5.314616] (-) TimerEvent: {}
+[5.415012] (-) TimerEvent: {}
+[5.515373] (-) TimerEvent: {}
+[5.615739] (-) TimerEvent: {}
+[5.635692] (nexus_gazebo) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/aruco_localization.dir/build.make:76: CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o] Error 1\n'}
+[5.636061] (nexus_gazebo) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:227: CMakeFiles/aruco_localization.dir/all] Error 2\n'}
+[5.636230] (nexus_gazebo) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[5.715879] (-) TimerEvent: {}
+[5.816211] (-) TimerEvent: {}
+[5.916538] (-) TimerEvent: {}
+[6.016914] (-) TimerEvent: {}
+[6.117325] (-) TimerEvent: {}
+[6.217759] (-) TimerEvent: {}
+[6.318175] (-) TimerEvent: {}
+[6.418503] (-) TimerEvent: {}
+[6.518894] (-) TimerEvent: {}
+[6.619245] (-) TimerEvent: {}
+[6.719615] (-) TimerEvent: {}
+[6.819933] (-) TimerEvent: {}
+[6.920262] (-) TimerEvent: {}
+[7.020590] (-) TimerEvent: {}
+[7.120888] (-) TimerEvent: {}
+[7.221199] (-) TimerEvent: {}
+[7.321522] (-) TimerEvent: {}
+[7.421864] (-) TimerEvent: {}
+[7.522183] (-) TimerEvent: {}
+[7.622517] (-) TimerEvent: {}
+[7.722864] (-) TimerEvent: {}
+[7.823264] (-) TimerEvent: {}
+[7.923561] (-) TimerEvent: {}
+[8.023870] (-) TimerEvent: {}
+[8.124196] (-) TimerEvent: {}
+[8.224573] (-) TimerEvent: {}
+[8.324879] (-) TimerEvent: {}
+[8.425217] (-) TimerEvent: {}
+[8.525555] (-) TimerEvent: {}
+[8.625976] (-) TimerEvent: {}
+[8.726326] (-) TimerEvent: {}
+[8.826609] (-) TimerEvent: {}
+[8.926924] (-) TimerEvent: {}
+[9.027211] (-) TimerEvent: {}
+[9.127504] (-) TimerEvent: {}
+[9.227768] (-) TimerEvent: {}
+[9.328081] (-) TimerEvent: {}
+[9.428344] (-) TimerEvent: {}
+[9.528674] (-) TimerEvent: {}
+[9.629032] (-) TimerEvent: {}
+[9.729352] (-) TimerEvent: {}
+[9.829778] (-) TimerEvent: {}
+[9.930125] (-) TimerEvent: {}
+[10.030516] (-) TimerEvent: {}
+[10.130872] (-) TimerEvent: {}
+[10.138557] (nexus_gazebo) StdoutLine: {'line': b'[ 92%] \x1b[32m\x1b[1mLinking CXX executable aruco\x1b[0m\n'}
+[10.230999] (-) TimerEvent: {}
+[10.331334] (-) TimerEvent: {}
+[10.431684] (-) TimerEvent: {}
+[10.532075] (-) TimerEvent: {}
+[10.632402] (-) TimerEvent: {}
+[10.732729] (-) TimerEvent: {}
+[10.833081] (-) TimerEvent: {}
+[10.933407] (-) TimerEvent: {}
+[10.981205] (nexus_gazebo) StdoutLine: {'line': b'[ 92%] Built target aruco\n'}
+[10.982984] (nexus_gazebo) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[10.986075] (nexus_gazebo) CommandEnded: {'returncode': 2}
+[10.997897] (nexus_gazebo) JobEnded: {'identifier': 'nexus_gazebo', 'rc': 2}
+[11.008333] (-) EventReactorShutdown: {}

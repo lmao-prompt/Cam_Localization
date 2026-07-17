@@ -1,0 +1,179 @@
+[0.000000] (-) TimerEvent: {}
+[0.000911] (nexus_gazebo) JobQueued: {'identifier': 'nexus_gazebo', 'dependencies': OrderedDict()}
+[0.001611] (nexus_gazebo) JobStarted: {'identifier': 'nexus_gazebo'}
+[0.024982] (nexus_gazebo) JobProgress: {'identifier': 'nexus_gazebo', 'progress': 'cmake'}
+[0.025798] (nexus_gazebo) JobProgress: {'identifier': 'nexus_gazebo', 'progress': 'build'}
+[0.026574] (nexus_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', '--', '-j16', '-l16'], 'cwd': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib:', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'OFFLINE_ENV': '/opt/offline', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'prhayogo', 'LC_TIME': 'id_ID.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/prhayogo/Documents/maen_ws/install/micro_ros_agent/lib:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs/lib:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs/lib:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs/lib:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/offline/lib:', 'HOME': '/home/prhayogo', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/prhayogo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'id_ID.UTF-8', 'SYSTEMD_EXEC_PID': '3213', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/prhayogo/miniconda3', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/prhayogo/Documents/maen_ws/install:/home/prhayogo/Documents/robot_ws/install:/home/prhayogo/Downloads/Nexus_Gazebo/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'prhayogo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'prhayogo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'WINDOWPATH': '2', 'PATH': '/home/prhayogo/.opencode/bin:/home/prhayogo/miniconda3/condabin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/prhayogo/.local/bin:/home/prhayogo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:@/tmp/.ICE-unix/3066,unix/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:/tmp/.ICE-unix/3066', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'id_ID.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/4061deb7_3cf0_42ab_86de_1decd4b690b3', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'id_ID.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.110', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_agent:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/ekf_localization:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/robot_pose:/home/prhayogo/Documents/robot_ws/install/robot_navigation:/home/prhayogo/Documents/robot_ws/install/robotRos_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs:/home/prhayogo/Documents/robot_ws/install/mehua_move:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/home/prhayogo/Documents/robot_ws/install/lbringup:/home/prhayogo/Documents/robot_ws/install/astar_pkg:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs:/home/prhayogo/Documents/robot_ws/install/AstarPlanner_pkg:/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/prhayogo/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'id_ID.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'id_ID.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', '_CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'id_ID.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs/lib/python3.12/site-packages:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/mehua_forest/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/mehuaStar/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'id_ID.UTF-8', 'LC_PAPER': 'id_ID.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/prhayogo/Documents/maen_ws/install/micro_ros_agent:/home/prhayogo/Documents/maen_ws/install/ekf_localization:/home/prhayogo/Documents/robot_ws/install/robot_pose:/home/prhayogo/Documents/robot_ws/install/robot_navigation:/home/prhayogo/Documents/robot_ws/install/robotRos_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs:/home/prhayogo/Documents/robot_ws/install/mehua_move:/home/prhayogo/Documents/robot_ws/install/lbringup:/home/prhayogo/Documents/robot_ws/install/astar_pkg:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs:/home/prhayogo/Documents/robot_ws/install/AstarPlanner_pkg:/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/opt/ros/jazzy'}), 'shell': False}
+[0.099607] (-) TimerEvent: {}
+[0.167910] (nexus_gazebo) StdoutLine: {'line': b'[ 14%] Built target movement\n'}
+[0.170645] (nexus_gazebo) StdoutLine: {'line': b'[ 28%] Built target waypoint\n'}
+[0.171785] (nexus_gazebo) StdoutLine: {'line': b'[ 50%] Built target cam_localization\n'}
+[0.172065] (nexus_gazebo) StdoutLine: {'line': b'[ 57%] Built target aruco\n'}
+[0.178213] (nexus_gazebo) StdoutLine: {'line': b'[ 71%] Built target obstacle_avoidance\n'}
+[0.183904] (nexus_gazebo) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding CXX object CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o\x1b[0m\n'}
+[0.184141] (nexus_gazebo) StdoutLine: {'line': b'[ 92%] Built target cam\n'}
+[0.199733] (-) TimerEvent: {}
+[0.300148] (-) TimerEvent: {}
+[0.400550] (-) TimerEvent: {}
+[0.501300] (-) TimerEvent: {}
+[0.601737] (-) TimerEvent: {}
+[0.702157] (-) TimerEvent: {}
+[0.802578] (-) TimerEvent: {}
+[0.902992] (-) TimerEvent: {}
+[1.003420] (-) TimerEvent: {}
+[1.103832] (-) TimerEvent: {}
+[1.204278] (-) TimerEvent: {}
+[1.304729] (-) TimerEvent: {}
+[1.405219] (-) TimerEvent: {}
+[1.505711] (-) TimerEvent: {}
+[1.606146] (-) TimerEvent: {}
+[1.706571] (-) TimerEvent: {}
+[1.806993] (-) TimerEvent: {}
+[1.907431] (-) TimerEvent: {}
+[2.007857] (-) TimerEvent: {}
+[2.108278] (-) TimerEvent: {}
+[2.208684] (-) TimerEvent: {}
+[2.309101] (-) TimerEvent: {}
+[2.409512] (-) TimerEvent: {}
+[2.510089] (-) TimerEvent: {}
+[2.610545] (-) TimerEvent: {}
+[2.710907] (-) TimerEvent: {}
+[2.811276] (-) TimerEvent: {}
+[2.911590] (-) TimerEvent: {}
+[3.011880] (-) TimerEvent: {}
+[3.112594] (-) TimerEvent: {}
+[3.212964] (-) TimerEvent: {}
+[3.313312] (-) TimerEvent: {}
+[3.413647] (-) TimerEvent: {}
+[3.514004] (-) TimerEvent: {}
+[3.614353] (-) TimerEvent: {}
+[3.714709] (-) TimerEvent: {}
+[3.815074] (-) TimerEvent: {}
+[3.915454] (-) TimerEvent: {}
+[4.015807] (-) TimerEvent: {}
+[4.116139] (-) TimerEvent: {}
+[4.216481] (-) TimerEvent: {}
+[4.316818] (-) TimerEvent: {}
+[4.417180] (-) TimerEvent: {}
+[4.517492] (-) TimerEvent: {}
+[4.617786] (-) TimerEvent: {}
+[4.718123] (-) TimerEvent: {}
+[4.818472] (-) TimerEvent: {}
+[4.918807] (-) TimerEvent: {}
+[5.019133] (-) TimerEvent: {}
+[5.119479] (-) TimerEvent: {}
+[5.219798] (-) TimerEvent: {}
+[5.320125] (-) TimerEvent: {}
+[5.420455] (-) TimerEvent: {}
+[5.520781] (-) TimerEvent: {}
+[5.621104] (-) TimerEvent: {}
+[5.721534] (-) TimerEvent: {}
+[5.821838] (-) TimerEvent: {}
+[5.922132] (-) TimerEvent: {}
+[6.022424] (-) TimerEvent: {}
+[6.122723] (-) TimerEvent: {}
+[6.223012] (-) TimerEvent: {}
+[6.323410] (-) TimerEvent: {}
+[6.423797] (-) TimerEvent: {}
+[6.524091] (-) TimerEvent: {}
+[6.624425] (-) TimerEvent: {}
+[6.724757] (-) TimerEvent: {}
+[6.825071] (-) TimerEvent: {}
+[6.925392] (-) TimerEvent: {}
+[7.025701] (-) TimerEvent: {}
+[7.125999] (-) TimerEvent: {}
+[7.226395] (-) TimerEvent: {}
+[7.326773] (-) TimerEvent: {}
+[7.427111] (-) TimerEvent: {}
+[7.527457] (-) TimerEvent: {}
+[7.627775] (-) TimerEvent: {}
+[7.728126] (-) TimerEvent: {}
+[7.828699] (-) TimerEvent: {}
+[7.928997] (-) TimerEvent: {}
+[8.029367] (-) TimerEvent: {}
+[8.129715] (-) TimerEvent: {}
+[8.230084] (-) TimerEvent: {}
+[8.330445] (-) TimerEvent: {}
+[8.430746] (-) TimerEvent: {}
+[8.531078] (-) TimerEvent: {}
+[8.631437] (-) TimerEvent: {}
+[8.731802] (-) TimerEvent: {}
+[8.832152] (-) TimerEvent: {}
+[8.932464] (-) TimerEvent: {}
+[9.032730] (-) TimerEvent: {}
+[9.133025] (-) TimerEvent: {}
+[9.233323] (-) TimerEvent: {}
+[9.333612] (-) TimerEvent: {}
+[9.433963] (-) TimerEvent: {}
+[9.534235] (-) TimerEvent: {}
+[9.634574] (-) TimerEvent: {}
+[9.734959] (-) TimerEvent: {}
+[9.835265] (-) TimerEvent: {}
+[9.935625] (-) TimerEvent: {}
+[10.035967] (-) TimerEvent: {}
+[10.136354] (-) TimerEvent: {}
+[10.236687] (-) TimerEvent: {}
+[10.336986] (-) TimerEvent: {}
+[10.437307] (-) TimerEvent: {}
+[10.537636] (-) TimerEvent: {}
+[10.637944] (-) TimerEvent: {}
+[10.738270] (-) TimerEvent: {}
+[10.838578] (-) TimerEvent: {}
+[10.938883] (-) TimerEvent: {}
+[11.039222] (-) TimerEvent: {}
+[11.139575] (-) TimerEvent: {}
+[11.239897] (-) TimerEvent: {}
+[11.340193] (-) TimerEvent: {}
+[11.440565] (-) TimerEvent: {}
+[11.540898] (-) TimerEvent: {}
+[11.641195] (-) TimerEvent: {}
+[11.741637] (-) TimerEvent: {}
+[11.842321] (-) TimerEvent: {}
+[11.942668] (-) TimerEvent: {}
+[12.042998] (-) TimerEvent: {}
+[12.143306] (-) TimerEvent: {}
+[12.243625] (-) TimerEvent: {}
+[12.343920] (-) TimerEvent: {}
+[12.444272] (-) TimerEvent: {}
+[12.544627] (-) TimerEvent: {}
+[12.645019] (-) TimerEvent: {}
+[12.745289] (-) TimerEvent: {}
+[12.796913] (nexus_gazebo) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable aruco_localization\x1b[0m\n'}
+[12.845427] (-) TimerEvent: {}
+[12.945754] (-) TimerEvent: {}
+[13.046044] (-) TimerEvent: {}
+[13.146408] (-) TimerEvent: {}
+[13.246735] (-) TimerEvent: {}
+[13.347001] (-) TimerEvent: {}
+[13.441611] (nexus_gazebo) StdoutLine: {'line': b'[100%] Built target aruco_localization\n'}
+[13.447106] (-) TimerEvent: {}
+[13.457583] (nexus_gazebo) CommandEnded: {'returncode': 0}
+[13.458502] (nexus_gazebo) JobProgress: {'identifier': 'nexus_gazebo', 'progress': 'install'}
+[13.469349] (nexus_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo'], 'cwd': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib:', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'OFFLINE_ENV': '/opt/offline', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'prhayogo', 'LC_TIME': 'id_ID.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/prhayogo/Documents/maen_ws/install/micro_ros_agent/lib:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs/lib:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs/lib:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs/lib:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/offline/lib:', 'HOME': '/home/prhayogo', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/prhayogo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'id_ID.UTF-8', 'SYSTEMD_EXEC_PID': '3213', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/prhayogo/miniconda3', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/prhayogo/Documents/maen_ws/install:/home/prhayogo/Documents/robot_ws/install:/home/prhayogo/Downloads/Nexus_Gazebo/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'prhayogo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'prhayogo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'WINDOWPATH': '2', 'PATH': '/home/prhayogo/.opencode/bin:/home/prhayogo/miniconda3/condabin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/prhayogo/.local/bin:/home/prhayogo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:@/tmp/.ICE-unix/3066,unix/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:/tmp/.ICE-unix/3066', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'id_ID.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/4061deb7_3cf0_42ab_86de_1decd4b690b3', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'id_ID.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.110', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_agent:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/ekf_localization:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/robot_pose:/home/prhayogo/Documents/robot_ws/install/robot_navigation:/home/prhayogo/Documents/robot_ws/install/robotRos_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs:/home/prhayogo/Documents/robot_ws/install/mehua_move:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/home/prhayogo/Documents/robot_ws/install/lbringup:/home/prhayogo/Documents/robot_ws/install/astar_pkg:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs:/home/prhayogo/Documents/robot_ws/install/AstarPlanner_pkg:/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/prhayogo/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'id_ID.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'id_ID.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', '_CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'id_ID.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs/lib/python3.12/site-packages:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/mehua_forest/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/mehuaStar/lib/python3.12/site-packages:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'id_ID.UTF-8', 'LC_PAPER': 'id_ID.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/prhayogo/Documents/maen_ws/install/micro_ros_agent:/home/prhayogo/Documents/maen_ws/install/ekf_localization:/home/prhayogo/Documents/robot_ws/install/robot_pose:/home/prhayogo/Documents/robot_ws/install/robot_navigation:/home/prhayogo/Documents/robot_ws/install/robotRos_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_pkg_msgs:/home/prhayogo/Documents/robot_ws/install/mehua_move:/home/prhayogo/Documents/robot_ws/install/lbringup:/home/prhayogo/Documents/robot_ws/install/astar_pkg:/home/prhayogo/Documents/robot_ws/install/gui_kfs_msgs:/home/prhayogo/Documents/robot_ws/install/AstarPlanner_pkg:/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/opt/ros/jazzy'}), 'shell': False}
+[13.480357] (nexus_gazebo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[13.480593] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/cam\n'}
+[13.480999] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/cam_localization\n'}
+[13.481375] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/obstacle_avoidance\n'}
+[13.481736] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/waypoint\n'}
+[13.482096] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/movement\n'}
+[13.482501] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/aruco\n'}
+[13.482864] (nexus_gazebo) StdoutLine: {'line': b'-- Installing: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/aruco_localization\n'}
+[13.497165] (nexus_gazebo) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/aruco_localization" to ""\n'}
+[13.497513] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/package_run_dependencies/nexus_gazebo\n'}
+[13.497652] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/parent_prefix_path/nexus_gazebo\n'}
+[13.497742] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/ament_prefix_path.sh\n'}
+[13.497815] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/ament_prefix_path.dsv\n'}
+[13.497895] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/path.sh\n'}
+[13.497949] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/environment/path.dsv\n'}
+[13.498017] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.bash\n'}
+[13.498082] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.sh\n'}
+[13.498134] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.zsh\n'}
+[13.498200] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/local_setup.dsv\n'}
+[13.498262] (nexus_gazebo) StdoutLine: {'line': b'-- Installing: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/package.dsv\n'}
+[13.498314] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/packages/nexus_gazebo\n'}
+[13.498366] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/cmake/nexus_gazeboConfig.cmake\n'}
+[13.498416] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/cmake/nexus_gazeboConfig-version.cmake\n'}
+[13.498477] (nexus_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/nexus_gazebo/package.xml\n'}
+[13.499666] (nexus_gazebo) CommandEnded: {'returncode': 0}
+[13.514239] (nexus_gazebo) JobEnded: {'identifier': 'nexus_gazebo', 'rc': 0}
+[13.514848] (-) EventReactorShutdown: {}

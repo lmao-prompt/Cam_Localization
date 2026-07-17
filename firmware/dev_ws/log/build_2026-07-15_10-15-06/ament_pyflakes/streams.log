@@ -1,0 +1,37 @@
+[0.816s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/ament/ament_lint/ament_pyflakes': AMENT_PREFIX_PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pycodestyle DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pycodestyle/bin:${PATH} PYTHONPATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pycodestyle/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ament_pyflakes build --build-base /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/build install --record /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/install.log --single-version-externally-managed install_data
+[1.112s] running egg_info
+[1.112s] creating ../../../build/ament_pyflakes/ament_pyflakes.egg-info
+[1.138s] writing ../../../build/ament_pyflakes/ament_pyflakes.egg-info/PKG-INFO
+[1.138s] writing dependency_links to ../../../build/ament_pyflakes/ament_pyflakes.egg-info/dependency_links.txt
+[1.139s] writing entry points to ../../../build/ament_pyflakes/ament_pyflakes.egg-info/entry_points.txt
+[1.139s] writing requirements to ../../../build/ament_pyflakes/ament_pyflakes.egg-info/requires.txt
+[1.139s] writing top-level names to ../../../build/ament_pyflakes/ament_pyflakes.egg-info/top_level.txt
+[1.139s] writing manifest file '../../../build/ament_pyflakes/ament_pyflakes.egg-info/SOURCES.txt'
+[1.185s] reading manifest file '../../../build/ament_pyflakes/ament_pyflakes.egg-info/SOURCES.txt'
+[1.185s] writing manifest file '../../../build/ament_pyflakes/ament_pyflakes.egg-info/SOURCES.txt'
+[1.186s] running build
+[1.186s] running build_py
+[1.186s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/build
+[1.186s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/build/lib
+[1.186s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/build/lib/ament_pyflakes
+[1.186s] copying ament_pyflakes/__init__.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/build/lib/ament_pyflakes
+[1.187s] copying ament_pyflakes/main.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/build/lib/ament_pyflakes
+[1.187s] running install
+[1.194s] running install_lib
+[1.217s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/lib/python3.12/site-packages/ament_pyflakes
+[1.218s] copying /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/build/lib/ament_pyflakes/__init__.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/lib/python3.12/site-packages/ament_pyflakes
+[1.218s] copying /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/build/lib/ament_pyflakes/main.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/lib/python3.12/site-packages/ament_pyflakes
+[1.218s] byte-compiling /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/lib/python3.12/site-packages/ament_pyflakes/__init__.py to __init__.cpython-312.pyc
+[1.219s] byte-compiling /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/lib/python3.12/site-packages/ament_pyflakes/main.py to main.cpython-312.pyc
+[1.221s] running install_data
+[1.221s] copying package.xml -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/share/ament_pyflakes
+[1.222s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/share/ament_index
+[1.222s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/share/ament_index/resource_index
+[1.222s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/share/ament_index/resource_index/packages
+[1.222s] copying resource/ament_pyflakes -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/share/ament_index/resource_index/packages
+[1.222s] running install_egg_info
+[1.244s] Copying ../../../build/ament_pyflakes/ament_pyflakes.egg-info to /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/lib/python3.12/site-packages/ament_pyflakes-0.17.5-py3.12.egg-info
+[1.245s] running install_scripts
+[1.357s] Installing ament_pyflakes script to /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/bin
+[1.358s] writing list of installed files to '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/install.log'
+[1.631s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/ament/ament_lint/ament_pyflakes' returned '0': AMENT_PREFIX_PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pycodestyle DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pycodestyle/bin:${PATH} PYTHONPATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pyflakes/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pycodestyle/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ament_pyflakes build --build-base /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/build install --record /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_pyflakes/install.log --single-version-externally-managed install_data

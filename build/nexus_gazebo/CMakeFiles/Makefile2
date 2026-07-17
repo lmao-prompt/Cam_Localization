@@ -66,6 +66,7 @@ CMAKE_BINARY_DIR = /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo
 all: CMakeFiles/waypoint.dir/all
 all: CMakeFiles/movement.dir/all
 all: CMakeFiles/cam_localization.dir/all
+all: CMakeFiles/aruco_localization.dir/all
 all: CMakeFiles/cam.dir/all
 all: CMakeFiles/aruco.dir/all
 all: CMakeFiles/obstacle_avoidance.dir/all
@@ -81,6 +82,7 @@ clean: CMakeFiles/nexus_gazebo_uninstall.dir/clean
 clean: CMakeFiles/waypoint.dir/clean
 clean: CMakeFiles/movement.dir/clean
 clean: CMakeFiles/cam_localization.dir/clean
+clean: CMakeFiles/aruco_localization.dir/clean
 clean: CMakeFiles/cam.dir/clean
 clean: CMakeFiles/aruco.dir/clean
 clean: CMakeFiles/obstacle_avoidance.dir/clean
@@ -145,7 +147,7 @@ CMakeFiles/nexus_gazebo_uninstall.dir/clean:
 CMakeFiles/waypoint.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint.dir/build.make CMakeFiles/waypoint.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint.dir/build.make CMakeFiles/waypoint.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles --progress-num=11,12 "Built target waypoint"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles --progress-num=13,14 "Built target waypoint"
 .PHONY : CMakeFiles/waypoint.dir/all
 
 # Build rule for subdir invocation for target.
@@ -171,7 +173,7 @@ CMakeFiles/waypoint.dir/clean:
 CMakeFiles/movement.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/movement.dir/build.make CMakeFiles/movement.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/movement.dir/build.make CMakeFiles/movement.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles --progress-num=7,8 "Built target movement"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles --progress-num=9,10 "Built target movement"
 .PHONY : CMakeFiles/movement.dir/all
 
 # Build rule for subdir invocation for target.
@@ -197,7 +199,7 @@ CMakeFiles/movement.dir/clean:
 CMakeFiles/cam_localization.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_localization.dir/build.make CMakeFiles/cam_localization.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_localization.dir/build.make CMakeFiles/cam_localization.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles --progress-num=5,6 "Built target cam_localization"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles --progress-num=7,8 "Built target cam_localization"
 .PHONY : CMakeFiles/cam_localization.dir/all
 
 # Build rule for subdir invocation for target.
@@ -217,13 +219,39 @@ CMakeFiles/cam_localization.dir/clean:
 .PHONY : CMakeFiles/cam_localization.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/aruco_localization.dir
+
+# All Build rule for target.
+CMakeFiles/aruco_localization.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco_localization.dir/build.make CMakeFiles/aruco_localization.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco_localization.dir/build.make CMakeFiles/aruco_localization.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles --progress-num=3,4 "Built target aruco_localization"
+.PHONY : CMakeFiles/aruco_localization.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/aruco_localization.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/aruco_localization.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles 0
+.PHONY : CMakeFiles/aruco_localization.dir/rule
+
+# Convenience name for target.
+aruco_localization: CMakeFiles/aruco_localization.dir/rule
+.PHONY : aruco_localization
+
+# clean rule for target.
+CMakeFiles/aruco_localization.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco_localization.dir/build.make CMakeFiles/aruco_localization.dir/clean
+.PHONY : CMakeFiles/aruco_localization.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/cam.dir
 
 # All Build rule for target.
 CMakeFiles/cam.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam.dir/build.make CMakeFiles/cam.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam.dir/build.make CMakeFiles/cam.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles --progress-num=3,4 "Built target cam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles --progress-num=5,6 "Built target cam"
 .PHONY : CMakeFiles/cam.dir/all
 
 # Build rule for subdir invocation for target.
@@ -275,7 +303,7 @@ CMakeFiles/aruco.dir/clean:
 CMakeFiles/obstacle_avoidance.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/obstacle_avoidance.dir/build.make CMakeFiles/obstacle_avoidance.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/obstacle_avoidance.dir/build.make CMakeFiles/obstacle_avoidance.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles --progress-num=9,10 "Built target obstacle_avoidance"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo/CMakeFiles --progress-num=11,12 "Built target obstacle_avoidance"
 .PHONY : CMakeFiles/obstacle_avoidance.dir/all
 
 # Build rule for subdir invocation for target.

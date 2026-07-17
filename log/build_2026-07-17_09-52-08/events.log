@@ -1,0 +1,181 @@
+[0.000000] (-) TimerEvent: {}
+[0.001023] (nexus_gazebo) JobQueued: {'identifier': 'nexus_gazebo', 'dependencies': OrderedDict()}
+[0.001147] (nexus_gazebo) JobStarted: {'identifier': 'nexus_gazebo'}
+[0.009803] (nexus_gazebo) JobProgress: {'identifier': 'nexus_gazebo', 'progress': 'cmake'}
+[0.010780] (nexus_gazebo) JobProgress: {'identifier': 'nexus_gazebo', 'progress': 'build'}
+[0.010815] (nexus_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', '--', '-j16', '-l16'], 'cwd': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib:', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'OFFLINE_ENV': '/opt/offline', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'prhayogo', 'LC_TIME': 'id_ID.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib:/opt/offline/lib:', 'HOME': '/home/prhayogo', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/prhayogo/Downloads/Nexus_Gazebo/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'id_ID.UTF-8', 'SYSTEMD_EXEC_PID': '3213', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/prhayogo/miniconda3', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'prhayogo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'prhayogo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'WINDOWPATH': '2', 'PATH': '/home/prhayogo/.opencode/bin:/home/prhayogo/miniconda3/condabin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/prhayogo/.local/bin:/home/prhayogo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:@/tmp/.ICE-unix/3066,unix/prhayogo-ASUS-TUF-Gaming-A15-FA506NFR-FA506NFR:/tmp/.ICE-unix/3066', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'id_ID.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/04eef8c7_0705_46cd_89dc_383ef056fed3', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'id_ID.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.110', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/prhayogo/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'id_ID.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'id_ID.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', '_CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'id_ID.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/prhayogo/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'id_ID.UTF-8', 'LC_PAPER': 'id_ID.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.084613] (nexus_gazebo) StdoutLine: {'line': b'[ 71%] Built target cam\n'}
+[0.085016] (nexus_gazebo) StdoutLine: {'line': b'[ 71%] Built target cam_localization\n'}
+[0.085159] (nexus_gazebo) StdoutLine: {'line': b'[ 71%] Built target movement\n'}
+[0.085276] (nexus_gazebo) StdoutLine: {'line': b'[ 71%] Built target obstacle_avoidance\n'}
+[0.085375] (nexus_gazebo) StdoutLine: {'line': b'[ 71%] Built target waypoint\n'}
+[0.085482] (nexus_gazebo) StdoutLine: {'line': b'[ 85%] Built target aruco\n'}
+[0.093837] (nexus_gazebo) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding CXX object CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o\x1b[0m\n'}
+[0.099683] (-) TimerEvent: {}
+[0.199983] (-) TimerEvent: {}
+[0.300473] (-) TimerEvent: {}
+[0.400871] (-) TimerEvent: {}
+[0.501276] (-) TimerEvent: {}
+[0.547479] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:392:2:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kunterminated argument list invoking macro "RCLCPP_INFO"\n'}
+[0.547801] (nexus_gazebo) StderrLine: {'line': b'  392 | }\n'}
+[0.547928] (nexus_gazebo) StderrLine: {'line': b'      |  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[0.601395] (-) TimerEvent: {}
+[0.701719] (-) TimerEvent: {}
+[0.802051] (-) TimerEvent: {}
+[0.902397] (-) TimerEvent: {}
+[1.002749] (-) TimerEvent: {}
+[1.103053] (-) TimerEvent: {}
+[1.203468] (-) TimerEvent: {}
+[1.303792] (-) TimerEvent: {}
+[1.404126] (-) TimerEvent: {}
+[1.504440] (-) TimerEvent: {}
+[1.604762] (-) TimerEvent: {}
+[1.705357] (-) TimerEvent: {}
+[1.806133] (-) TimerEvent: {}
+[1.906490] (-) TimerEvent: {}
+[2.006832] (-) TimerEvent: {}
+[2.107095] (-) TimerEvent: {}
+[2.207361] (-) TimerEvent: {}
+[2.307688] (-) TimerEvent: {}
+[2.408016] (-) TimerEvent: {}
+[2.508379] (-) TimerEvent: {}
+[2.608708] (-) TimerEvent: {}
+[2.709047] (-) TimerEvent: {}
+[2.809418] (-) TimerEvent: {}
+[2.909760] (-) TimerEvent: {}
+[3.010127] (-) TimerEvent: {}
+[3.045462] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:157:20:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 at end of input\n'}
+[3.045628] (nexus_gazebo) StderrLine: {'line': b'  157 |         RCLCPP_INFO\x1b[01;31m\x1b[K(\x1b[m\x1b[Kget_logger(),\n'}
+[3.045690] (nexus_gazebo) StderrLine: {'line': b'      |                    \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.045742] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:75:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.045791] (nexus_gazebo) StderrLine: {'line': b'   75 | \x1b[01;36m\x1b[K{\x1b[m\x1b[K\n'}
+[3.046082] (nexus_gazebo) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.046155] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KPoseFusion::\x1b[01;32m\x1b[KPoseFusion\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.046210] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:78:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Kx_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.046257] (nexus_gazebo) StderrLine: {'line': b'   78 |                     \x1b[01;31m\x1b[Kx_\x1b[m\x1b[K(0.0), y_(0.0), yaw_(0.0), has_pos_(false),\n'}
+[3.046303] (nexus_gazebo) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[3.046346] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:78:30:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Ky_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.046391] (nexus_gazebo) StderrLine: {'line': b'   78 |                     x_(0.0), \x1b[01;31m\x1b[Ky_\x1b[m\x1b[K(0.0), yaw_(0.0), has_pos_(false),\n'}
+[3.046438] (nexus_gazebo) StderrLine: {'line': b'      |                              \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[3.046484] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:78:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Kyaw_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.046554] (nexus_gazebo) StderrLine: {'line': b'   78 |                     x_(0.0), y_(0.0), \x1b[01;31m\x1b[Kyaw_\x1b[m\x1b[K(0.0), has_pos_(false),\n'}
+[3.046656] (nexus_gazebo) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[3.046746] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:78:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Khas_pos_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.046804] (nexus_gazebo) StderrLine: {'line': b'   78 |                     x_(0.0), y_(0.0), yaw_(0.0), \x1b[01;31m\x1b[Khas_pos_\x1b[m\x1b[K(false),\n'}
+[3.046859] (nexus_gazebo) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[3.046912] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:79:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Kstate_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.046979] (nexus_gazebo) StderrLine: {'line': b'   79 |                     \x1b[01;31m\x1b[Kstate_\x1b[m\x1b[K(ChaseState::SEARCHING),\n'}
+[3.047039] (nexus_gazebo) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[3.047112] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:80:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Kyellow_detected_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.047222] (nexus_gazebo) StderrLine: {'line': b'   80 |                     \x1b[01;31m\x1b[Kyellow_detected_\x1b[m\x1b[K(false), yellow_cx_(0), yellow_area_(0),\n'}
+[3.047299] (nexus_gazebo) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.047370] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:80:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Kyellow_cx_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.047447] (nexus_gazebo) StderrLine: {'line': b'   80 |                     yellow_detected_(false), \x1b[01;31m\x1b[Kyellow_cx_\x1b[m\x1b[K(0), yellow_area_(0),\n'}
+[3.047534] (nexus_gazebo) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.047609] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:80:61:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Kyellow_area_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.047685] (nexus_gazebo) StderrLine: {'line': b'   80 |                     yellow_detected_(false), yellow_cx_(0), \x1b[01;31m\x1b[Kyellow_area_\x1b[m\x1b[K(0),\n'}
+[3.047765] (nexus_gazebo) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.047835] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:81:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Kpid_angular_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.047924] (nexus_gazebo) StderrLine: {'line': b'   81 |                     \x1b[01;31m\x1b[Kpid_angular_\x1b[m\x1b[K(0, 0, 0, 0, 0),\n'}
+[3.047997] (nexus_gazebo) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.048085] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:82:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Kpid_linear_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.048174] (nexus_gazebo) StderrLine: {'line': b'   82 |                     \x1b[01;31m\x1b[Kpid_linear_\x1b[m\x1b[K(0, 0, 0, 0, 0)\n'}
+[3.048246] (nexus_gazebo) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.058411] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:107:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Krobot_marker_id_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.058670] (nexus_gazebo) StderrLine: {'line': b'  107 |         \x1b[01;31m\x1b[Krobot_marker_id_\x1b[m\x1b[K = get_parameter("robot_marker_id").as_int();\n'}
+[3.058758] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.068157] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:108:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Karuco_yaw_offset_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.068384] (nexus_gazebo) StderrLine: {'line': b'  108 |         \x1b[01;31m\x1b[Karuco_yaw_offset_\x1b[m\x1b[K = get_parameter("aruco_yaw_offset_deg").as_double() * M_PI / 180.0;\n'}
+[3.068536] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.077228] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:109:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Karuco_yaw_invert_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.077362] (nexus_gazebo) StderrLine: {'line': b'  109 |         \x1b[01;31m\x1b[Karuco_yaw_invert_\x1b[m\x1b[K = get_parameter("aruco_yaw_invert").as_bool();\n'}
+[3.077428] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.084167] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:111:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kimage_width_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.084372] (nexus_gazebo) StderrLine: {'line': b'  111 |         \x1b[01;31m\x1b[Kimage_width_\x1b[m\x1b[K = get_parameter("image_width").as_int();\n'}
+[3.084500] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.090831] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:112:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktarget_area_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.091043] (nexus_gazebo) StderrLine: {'line': b'  112 |         \x1b[01;31m\x1b[Ktarget_area_\x1b[m\x1b[K = get_parameter("target_area").as_int();\n'}
+[3.091207] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.098615] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:113:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Karea_tolerance_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.098831] (nexus_gazebo) StderrLine: {'line': b'  113 |         \x1b[01;31m\x1b[Karea_tolerance_\x1b[m\x1b[K = get_parameter("area_tolerance").as_int();\n'}
+[3.098983] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.107794] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:114:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kalign_threshold_px_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.108029] (nexus_gazebo) StderrLine: {'line': b'  114 |         \x1b[01;31m\x1b[Kalign_threshold_px_\x1b[m\x1b[K = get_parameter("align_threshold_px").as_int();\n'}
+[3.108189] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.110230] (-) TimerEvent: {}
+[3.118823] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:115:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdetection_timeout_ms_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.119092] (nexus_gazebo) StderrLine: {'line': b'  115 |         \x1b[01;31m\x1b[Kdetection_timeout_ms_\x1b[m\x1b[K = get_parameter("detection_timeout_ms").as_int();\n'}
+[3.119265] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.127464] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:128:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpid_angular_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.127626] (nexus_gazebo) StderrLine: {'line': b'  128 |         \x1b[01;31m\x1b[Kpid_angular_\x1b[m\x1b[K = PIDController(a_kp, a_ki, a_kd, -a_max, a_max);\n'}
+[3.127693] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.134757] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:129:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpid_linear_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.134969] (nexus_gazebo) StderrLine: {'line': b'  129 |         \x1b[01;31m\x1b[Kpid_linear_\x1b[m\x1b[K = PIDController(l_kp, l_ki, l_kd, 0.0, l_max); // gak mundur\n'}
+[3.135113] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.141996] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:133:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Khomography_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Khomography_path\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.142255] (nexus_gazebo) StderrLine: {'line': b'  133 |         \x1b[01;31m\x1b[Khomography_\x1b[m\x1b[K = loadHomography(homography_path);\n'}
+[3.142379] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.142491] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[32m\x1b[Khomography_path\x1b[m\x1b[K\n'}
+[3.149258] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:133:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KloadHomography\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.149474] (nexus_gazebo) StderrLine: {'line': b'  133 |         homography_ = \x1b[01;31m\x1b[KloadHomography\x1b[m\x1b[K(homography_path);\n'}
+[3.149601] (nexus_gazebo) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.155017] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:136:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksub_pos_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.155235] (nexus_gazebo) StderrLine: {'line': b'  136 |         \x1b[01;31m\x1b[Ksub_pos_\x1b[m\x1b[K = create_subscription<std_msgs::msg::Int32MultiArray>(\n'}
+[3.155388] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[3.155502] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:138:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KarucoCb\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.155612] (nexus_gazebo) StderrLine: {'line': b'  138 |             std::bind(&PoseFusion::\x1b[01;31m\x1b[KarucoCb\x1b[m\x1b[K, this, std::placeholders::_1));\n'}
+[3.155685] (nexus_gazebo) StderrLine: {'line': b'      |                                    \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[3.160304] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:140:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_pose_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.160545] (nexus_gazebo) StderrLine: {'line': b'  140 |         \x1b[01;31m\x1b[Kpub_pose_\x1b[m\x1b[K = create_publisher<geometry_msgs::msg::PoseStamped>(\n'}
+[3.160671] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.169298] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:144:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksub_yellow_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.169689] (nexus_gazebo) StderrLine: {'line': b'  144 |         \x1b[01;31m\x1b[Ksub_yellow_\x1b[m\x1b[K = create_subscription<geometry_msgs::msg::Point>(\n'}
+[3.169838] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.169969] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:146:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KyellowCb\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.170145] (nexus_gazebo) StderrLine: {'line': b'  146 |             std::bind(&PoseFusion::\x1b[01;31m\x1b[KyellowCb\x1b[m\x1b[K, this, std::placeholders::_1));\n'}
+[3.170204] (nexus_gazebo) StderrLine: {'line': b'      |                                    \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[3.175467] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:148:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_cmd_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.175586] (nexus_gazebo) StderrLine: {'line': b'  148 |         \x1b[01;31m\x1b[Kpub_cmd_\x1b[m\x1b[K = create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);\n'}
+[3.175642] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[3.186486] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:150:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Klast_yellow_time_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.186672] (nexus_gazebo) StderrLine: {'line': b'  150 |         \x1b[01;31m\x1b[Klast_yellow_time_\x1b[m\x1b[K = now();\n'}
+[3.186742] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.195141] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:153:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcontrol_timer_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.195411] (nexus_gazebo) StderrLine: {'line': b'  153 |         \x1b[01;31m\x1b[Kcontrol_timer_\x1b[m\x1b[K = create_wall_timer(\n'}
+[3.195549] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.195684] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:155:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KcontrolLoop\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[KPoseFusion\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.195798] (nexus_gazebo) StderrLine: {'line': b'  155 |             std::bind(&PoseFusion::\x1b[01;31m\x1b[KcontrolLoop\x1b[m\x1b[K, this));\n'}
+[3.195900] (nexus_gazebo) StderrLine: {'line': b'      |                                    \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.202033] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:157:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KRCLCPP_INFO\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.202356] (nexus_gazebo) StderrLine: {'line': b'  157 |         \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(get_logger(),\n'}
+[3.202509] (nexus_gazebo) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.202627] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:157:20:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 at end of input\n'}
+[3.202732] (nexus_gazebo) StderrLine: {'line': b'  157 |         RCLCPP_INFO\x1b[01;31m\x1b[K(\x1b[m\x1b[Kget_logger(),\n'}
+[3.202848] (nexus_gazebo) StderrLine: {'line': b'      |                    \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.202966] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:83:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.203092] (nexus_gazebo) StderrLine: {'line': b'   83 |     \x1b[01;36m\x1b[K{\x1b[m\x1b[K\n'}
+[3.203324] (nexus_gazebo) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.203432] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:\x1b[m\x1b[K At global scope:\n'}
+[3.203538] (nexus_gazebo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:157:20:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id at end of input\n'}
+[3.203652] (nexus_gazebo) StderrLine: {'line': b'  157 |         RCLCPP_INFO\x1b[01;31m\x1b[K(\x1b[m\x1b[Kget_logger(),\n'}
+[3.203750] (nexus_gazebo) StderrLine: {'line': b'      |                    \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.210341] (-) TimerEvent: {}
+[3.310888] (-) TimerEvent: {}
+[3.411323] (-) TimerEvent: {}
+[3.511627] (-) TimerEvent: {}
+[3.612004] (-) TimerEvent: {}
+[3.712383] (-) TimerEvent: {}
+[3.812733] (-) TimerEvent: {}
+[3.913059] (-) TimerEvent: {}
+[4.013437] (-) TimerEvent: {}
+[4.113776] (-) TimerEvent: {}
+[4.214138] (-) TimerEvent: {}
+[4.314482] (-) TimerEvent: {}
+[4.414865] (-) TimerEvent: {}
+[4.510626] (nexus_gazebo) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/aruco_localization.dir/build.make:76: CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o] Error 1\n'}
+[4.510966] (nexus_gazebo) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:227: CMakeFiles/aruco_localization.dir/all] Error 2\n'}
+[4.511303] (nexus_gazebo) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[4.514298] (nexus_gazebo) CommandEnded: {'returncode': 2}
+[4.514983] (-) TimerEvent: {}
+[4.524506] (nexus_gazebo) JobEnded: {'identifier': 'nexus_gazebo', 'rc': 2}
+[4.535511] (-) EventReactorShutdown: {}

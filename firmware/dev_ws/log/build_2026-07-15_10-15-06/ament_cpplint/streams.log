@@ -1,0 +1,40 @@
+[2.629s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/ament/ament_lint/ament_cpplint': AMENT_PREFIX_PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_copyright:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_copyright/bin:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/bin:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8/bin:${PATH} PYTHONPATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_copyright/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ament_cpplint build --build-base /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/build install --record /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/install.log --single-version-externally-managed install_data
+[3.055s] running egg_info
+[3.056s] creating ../../../build/ament_cpplint/ament_cpplint.egg-info
+[3.080s] writing ../../../build/ament_cpplint/ament_cpplint.egg-info/PKG-INFO
+[3.081s] writing dependency_links to ../../../build/ament_cpplint/ament_cpplint.egg-info/dependency_links.txt
+[3.081s] writing entry points to ../../../build/ament_cpplint/ament_cpplint.egg-info/entry_points.txt
+[3.081s] writing requirements to ../../../build/ament_cpplint/ament_cpplint.egg-info/requires.txt
+[3.081s] writing top-level names to ../../../build/ament_cpplint/ament_cpplint.egg-info/top_level.txt
+[3.081s] writing manifest file '../../../build/ament_cpplint/ament_cpplint.egg-info/SOURCES.txt'
+[3.131s] reading manifest file '../../../build/ament_cpplint/ament_cpplint.egg-info/SOURCES.txt'
+[3.132s] writing manifest file '../../../build/ament_cpplint/ament_cpplint.egg-info/SOURCES.txt'
+[3.132s] running build
+[3.132s] running build_py
+[3.133s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/build
+[3.133s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/build/lib
+[3.133s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/build/lib/ament_cpplint
+[3.133s] copying ament_cpplint/__init__.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/build/lib/ament_cpplint
+[3.133s] copying ament_cpplint/cpplint.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/build/lib/ament_cpplint
+[3.134s] copying ament_cpplint/main.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/build/lib/ament_cpplint
+[3.134s] running install
+[3.144s] running install_lib
+[3.169s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/lib/python3.12/site-packages/ament_cpplint
+[3.169s] copying /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/build/lib/ament_cpplint/__init__.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/lib/python3.12/site-packages/ament_cpplint
+[3.170s] copying /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/build/lib/ament_cpplint/cpplint.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/lib/python3.12/site-packages/ament_cpplint
+[3.170s] copying /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/build/lib/ament_cpplint/main.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/lib/python3.12/site-packages/ament_cpplint
+[3.171s] byte-compiling /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/lib/python3.12/site-packages/ament_cpplint/__init__.py to __init__.cpython-312.pyc
+[3.171s] byte-compiling /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/lib/python3.12/site-packages/ament_cpplint/cpplint.py to cpplint.cpython-312.pyc
+[3.224s] byte-compiling /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/lib/python3.12/site-packages/ament_cpplint/main.py to main.cpython-312.pyc
+[3.228s] running install_data
+[3.229s] copying package.xml -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/share/ament_cpplint
+[3.229s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/share/ament_index
+[3.229s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/share/ament_index/resource_index
+[3.229s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/share/ament_index/resource_index/packages
+[3.229s] copying resource/ament_cpplint -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/share/ament_index/resource_index/packages
+[3.229s] running install_egg_info
+[3.258s] Copying ../../../build/ament_cpplint/ament_cpplint.egg-info to /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/lib/python3.12/site-packages/ament_cpplint-0.17.5-py3.12.egg-info
+[3.260s] running install_scripts
+[3.438s] Installing ament_cpplint script to /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/bin
+[3.438s] writing list of installed files to '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/install.log'
+[3.537s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/ament/ament_lint/ament_cpplint' returned '0': AMENT_PREFIX_PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_copyright:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_copyright/bin:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/bin:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8/bin:${PATH} PYTHONPATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_cpplint/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_copyright/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_pep257/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_flake8/lib/python3.12/site-packages:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ament_cpplint build --build-base /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/build install --record /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cpplint/install.log --single-version-externally-managed install_data

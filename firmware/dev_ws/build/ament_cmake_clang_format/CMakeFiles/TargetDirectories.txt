@@ -1,0 +1,8 @@
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_clang_format/CMakeFiles/uninstall.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_clang_format/CMakeFiles/ament_cmake_clang_format_uninstall.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_clang_format/CMakeFiles/test.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_clang_format/CMakeFiles/edit_cache.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_clang_format/CMakeFiles/rebuild_cache.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_clang_format/CMakeFiles/list_install_components.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_clang_format/CMakeFiles/install.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_clang_format/CMakeFiles/install/local.dir

@@ -673,6 +673,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/UnixPaths.cmake"
+  "/usr/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake"
+  "/usr/share/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake"
+  "/usr/share/cmake/nlohmann_json/nlohmann_jsonTargets.cmake"
   )
 
 # The corresponding makefile is:
@@ -714,6 +717,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/waypoint.dir/DependInfo.cmake"
   "CMakeFiles/movement.dir/DependInfo.cmake"
   "CMakeFiles/cam_localization.dir/DependInfo.cmake"
+  "CMakeFiles/aruco_localization.dir/DependInfo.cmake"
   "CMakeFiles/cam.dir/DependInfo.cmake"
   "CMakeFiles/aruco.dir/DependInfo.cmake"
   "CMakeFiles/obstacle_avoidance.dir/DependInfo.cmake"

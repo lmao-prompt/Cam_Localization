@@ -1,0 +1,36 @@
+[1.807s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/ament/ament_lint/ament_lint': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ament_lint build --build-base /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/build install --record /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/install.log --single-version-externally-managed install_data
+[2.076s] running egg_info
+[2.077s] creating ../../../build/ament_lint/ament_lint.egg-info
+[2.093s] writing ../../../build/ament_lint/ament_lint.egg-info/PKG-INFO
+[2.094s] writing dependency_links to ../../../build/ament_lint/ament_lint.egg-info/dependency_links.txt
+[2.094s] writing entry points to ../../../build/ament_lint/ament_lint.egg-info/entry_points.txt
+[2.094s] writing requirements to ../../../build/ament_lint/ament_lint.egg-info/requires.txt
+[2.094s] writing top-level names to ../../../build/ament_lint/ament_lint.egg-info/top_level.txt
+[2.094s] writing manifest file '../../../build/ament_lint/ament_lint.egg-info/SOURCES.txt'
+[2.128s] reading manifest file '../../../build/ament_lint/ament_lint.egg-info/SOURCES.txt'
+[2.129s] writing manifest file '../../../build/ament_lint/ament_lint.egg-info/SOURCES.txt'
+[2.129s] running build
+[2.129s] running build_py
+[2.129s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/build
+[2.129s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/build/lib
+[2.129s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/build/lib/ament_lint
+[2.129s] copying ament_lint/pytest_marker.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/build/lib/ament_lint
+[2.130s] copying ament_lint/__init__.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/build/lib/ament_lint
+[2.130s] running install
+[2.136s] running install_lib
+[2.153s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages/ament_lint
+[2.153s] copying /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/build/lib/ament_lint/pytest_marker.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages/ament_lint
+[2.153s] copying /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/build/lib/ament_lint/__init__.py -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages/ament_lint
+[2.154s] byte-compiling /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages/ament_lint/pytest_marker.py to pytest_marker.cpython-312.pyc
+[2.154s] byte-compiling /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages/ament_lint/__init__.py to __init__.cpython-312.pyc
+[2.154s] running install_data
+[2.154s] copying package.xml -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/share/ament_lint
+[2.154s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/share/ament_index
+[2.154s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/share/ament_index/resource_index
+[2.155s] creating /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/share/ament_index/resource_index/packages
+[2.155s] copying resource/ament_lint -> /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/share/ament_index/resource_index/packages
+[2.155s] running install_egg_info
+[2.172s] Copying ../../../build/ament_lint/ament_lint.egg-info to /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages/ament_lint-0.17.5-py3.12.egg-info
+[2.173s] running install_scripts
+[2.303s] writing list of installed files to '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/install.log'
+[2.349s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/ament/ament_lint/ament_lint' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/install/ament_lint/lib/python3.12/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ament_lint build --build-base /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/build install --record /home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_lint/install.log --single-version-externally-managed install_data

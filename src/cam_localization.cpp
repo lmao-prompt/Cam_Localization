@@ -76,8 +76,8 @@ private:
 
         pub_pose_->publish(pose);
 
-        RCLCPP_INFO(get_logger(), "Pose -> x: %.2f  y: %.2f  yaw: %.2f deg",
-            x_, y_, yaw_ * 180.0 / M_PI);
+        // RCLCPP_INFO(get_logger(), "Pose -> x: %.2f  y: %.2f  yaw: %.2f deg",
+        //     x_, y_, yaw_ * 180.0 / M_PI);
     }
 
     rclcpp::Subscription<geometry_msgs::msg::Point>::SharedPtr sub_pos_;

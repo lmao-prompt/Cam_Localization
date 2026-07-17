@@ -1,0 +1,53 @@
+[0.014s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[0.046s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.252s] -- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.278s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.285s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.295s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.307s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.357s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.359s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.422s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.485s] -- Found sensor_msgs: 5.3.8 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.541s] -- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)
+[0.544s] -- Found tf2: 0.36.21 (/opt/ros/jazzy/share/tf2/cmake)
+[0.647s] -- Configuring done (0.6s)
+[0.698s] -- Generating done (0.0s)
+[0.709s] -- Build files have been written to: /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo
+[0.761s] [  7%] [32mBuilding CXX object CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o[0m
+[0.790s] [ 50%] Built target movement
+[0.790s] [ 50%] Built target cam_localization
+[0.790s] [ 50%] Built target waypoint
+[0.790s] [ 85%] [32mBuilding CXX object CMakeFiles/aruco.dir/src/aruco.cpp.o[0m
+[0.790s] [ 85%] Built target obstacle_avoidance
+[0.790s] [ 85%] Built target cam
+[2.969s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:62:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kcv[m[K’ does not name a type
+[2.969s]    62 |     [01;31m[Kcv[m[K::Point2f pixelToWorld(int px, int py)
+[2.969s]       |     [01;31m[K^~[m[K
+[3.010s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:114:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kcv[m[K’ does not name a type
+[3.011s]   114 |     [01;31m[Kcv[m[K::Mat homography_;
+[3.011s]       |     [01;31m[K^~[m[K
+[3.020s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:[m[K In constructor ‘[01m[KPoseFusion::[01;32m[KPoseFusion[m[K()[m[K’:
+[3.020s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:21:9:[m[K [01;31m[Kerror: [m[K‘[01m[Khomography_[m[K’ was not declared in this scope
+[3.020s]    21 |         [01;31m[Khomography_[m[K = cv::Mat::eye(3, 3, CV_64F);
+[3.020s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[3.020s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:21:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kcv[m[K’ has not been declared
+[3.021s]    21 |         homography_ = [01;31m[Kcv[m[K::Mat::eye(3, 3, CV_64F);
+[3.021s]       |                       [01;31m[K^~[m[K
+[3.026s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:21:42:[m[K [01;31m[Kerror: [m[K‘[01m[KCV_64F[m[K’ was not declared in this scope
+[3.026s]    21 |         homography_ = cv::Mat::eye(3, 3, [01;31m[KCV_64F[m[K);
+[3.026s]       |                                          [01;31m[K^~~~~~[m[K
+[3.035s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:[m[K In member function ‘[01m[Kvoid PoseFusion::[01;32m[KarucoCb[m[K(std_msgs::msg::Int32MultiArray_<std::allocator<void> >::SharedPtr)[m[K’:
+[3.035s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:52:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kcv[m[K’ has not been declared
+[3.035s]    52 |                 [01;31m[Kcv[m[K::Point2f world = pixelToWorld(cx, cy);
+[3.036s]       |                 [01;31m[K^~[m[K
+[3.041s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:53:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kworld[m[K’ was not declared in this scope
+[3.041s]    53 |                 x_ = [01;31m[Kworld[m[K.x;
+[3.041s]       |                      [01;31m[K^~~~~[m[K
+[5.636s] gmake[2]: *** [CMakeFiles/aruco_localization.dir/build.make:76: CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o] Error 1
+[5.636s] gmake[1]: *** [CMakeFiles/Makefile2:227: CMakeFiles/aruco_localization.dir/all] Error 2
+[5.636s] gmake[1]: *** Waiting for unfinished jobs....
+[10.138s] [ 92%] [32m[1mLinking CXX executable aruco[0m
+[10.981s] [ 92%] Built target aruco
+[10.983s] gmake: *** [Makefile:146: all] Error 2
+[10.986s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16

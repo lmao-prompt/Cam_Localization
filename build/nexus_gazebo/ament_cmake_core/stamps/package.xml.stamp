@@ -11,6 +11,8 @@
   <depend>sensor_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>tf2</depend>
+  <depend>nlohmann_json_vendor</depend>
+  <depend>nlohmann_json</depend>
 
   <export><build_type>ament_cmake</build_type></export>
 </package>

@@ -1,0 +1,8 @@
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_pycodestyle/CMakeFiles/uninstall.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_pycodestyle/CMakeFiles/ament_cmake_pycodestyle_uninstall.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_pycodestyle/CMakeFiles/test.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_pycodestyle/CMakeFiles/edit_cache.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_pycodestyle/CMakeFiles/rebuild_cache.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_pycodestyle/CMakeFiles/list_install_components.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_pycodestyle/CMakeFiles/install.dir
+/home/prhayogo/Downloads/Nexus_Gazebo/firmware/dev_ws/build/ament_cmake_pycodestyle/CMakeFiles/install/local.dir

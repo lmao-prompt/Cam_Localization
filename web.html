@@ -61,6 +61,10 @@
   #status.connected{color:var(--accent);}
   #status.disconnected{color:var(--danger);}
   .dot{display:inline-block; width:6px; height:6px; border-radius:50%; margin-right:6px; background:currentColor;}
+  #wsPreview{
+    font-family:var(--mono); font-size:10px; color:var(--text-dim);
+    margin:-4px 0 8px 0; word-break:break-all;
+  }
   #canvasWrap{flex:1; position:relative; background:var(--bg);}
   canvas{display:block; cursor:crosshair;}
   #hud{
@@ -76,6 +80,7 @@
   }
   #modeTag.obstacle{color:var(--warn); border-color:#5c4322;}
   #modeTag.goal{color:var(--accent); border-color:var(--accent-dim);}
+  #modeTag.manual{color:#58a6ff; border-color:#1f4a75;}
   .waypoint-list{font-family:var(--mono); font-size:11px; max-height:140px; overflow-y:auto;}
   .waypoint-item{
     display:flex; justify-content:space-between; padding:4px 6px; border-radius:3px;
@@ -84,6 +89,57 @@
   .waypoint-item.done{color:var(--accent); text-decoration:line-through;}
   .waypoint-item.current{color:var(--warn); outline:1px solid var(--warn);}
   small{color:var(--text-dim); font-size:10px; display:block; margin-top:-4px; margin-bottom:8px;}
+
+  /* ==== CAMERA PANEL ==== */
+  #cameraPanel{
+    position:absolute; bottom:14px; right:14px;
+    width:260px; background:rgba(13,17,23,0.9);
+    border:1px solid var(--panel-border); border-radius:8px;
+    overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.4);
+  }
+  #cameraHeader{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:6px 10px; font-family:var(--mono); font-size:10px;
+    color:var(--text-dim); border-bottom:1px solid var(--panel-border);
+    text-transform:uppercase; letter-spacing:0.06em;
+  }
+  #cameraHeader .cam-dot{width:6px;height:6px;border-radius:50%;background:var(--danger);display:inline-block;margin-right:6px;}
+  #cameraHeader .cam-dot.live{background:var(--accent);}
+  #cameraCanvas{ display:block; width:100%; height:auto; background:#000; }
+  #cameraPanel.collapsed #cameraCanvas{ display:none; }
+  #camToggle{ cursor:pointer; user-select:none; }
+
+  /* ==== MANUAL / KEYBOARD TELEOP PANEL ==== */
+  #manualPanel{
+    position:absolute; bottom:14px; left:14px;
+    background:rgba(13,17,23,0.9);
+    border:1px solid var(--panel-border); border-radius:8px;
+    padding:12px 14px; width:230px;
+    box-shadow:0 4px 16px rgba(0,0,0,0.4);
+  }
+  #manualHeader{
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:var(--mono); font-size:10px; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--text-dim); margin-bottom:10px;
+  }
+  .key-grid{
+    display:grid; grid-template-columns:repeat(3,32px); grid-template-rows:repeat(2,32px);
+    gap:4px; justify-content:center; margin-bottom:8px;
+  }
+  .keycap{
+    display:flex; align-items:center; justify-content:center;
+    background:#0a0e14; border:1px solid var(--panel-border); border-radius:5px;
+    font-family:var(--mono); font-size:11px; color:var(--text-dim);
+    user-select:none; transition:background .06s, color .06s, border-color .06s;
+  }
+  .keycap.on{ background:#1f4a75; border-color:#58a6ff; color:#dcecff; }
+  .rot-row{ display:flex; gap:6px; justify-content:center; margin-bottom:8px; }
+  .rot-row .keycap{ width:60px; }
+  #manualStatus{
+    font-family:var(--mono); font-size:10px; color:var(--text-dim); text-align:center;
+    padding-top:6px; border-top:1px solid var(--panel-border);
+  }
+  #manualStatus.live{ color:#58a6ff; }
 </style>
 </head>
 <body>
@@ -96,9 +152,11 @@
 
   <div class="section">
     <div class="section-title">Koneksi ROS (rosbridge)</div>
-    <input type="text" id="wsUrl" value="ws://localhost:9090">
-    <!-- <input type="text" id="wsUrl" value="ws://100.98.131.125:9090"> -->
-    <!-- <input type="text" id="wsUrl" value="ws://100.88.252.52:9090"> -->
+    <label>IP address</label>
+    <input type="text" id="wsIp" value="localhost">
+    <label>Port</label>
+    <input type="number" id="wsPort" value="9090" step="1" min="1" max="65535">
+    <div id="wsPreview">ws://localhost:9090</div>
     <button id="btnConnect" class="primary">Connect</button>
     <div id="status" class="disconnected"><span class="dot"></span>disconnected</div>
   </div>
@@ -106,11 +164,15 @@
   <div class="section">
     <div class="section-title">Topic</div>
     <label>Pose topic (subscribe)</label>
-    <input type="text" id="poseTopic" value="/pose">
+    <input type="text" id="poseTopic" value="/robot_pose">
     <label>Goal topic (publish)</label>
     <input type="text" id="goalTopic" value="/goal_pose">
     <label>Goal reached topic (subscribe)</label>
     <input type="text" id="reachedTopic" value="/goal_reached">
+    <label>Camera topic (subscribe)</label>
+    <input type="text" id="cameraTopic" value="/camera/image_raw/compressed">
+    <label>Cmd_vel topic (publish, manual control)</label>
+    <input type="text" id="cmdVelTopic" value="/cmd_vel">
   </div>
 
   <div class="section">
@@ -130,7 +192,17 @@
     <div class="section-title">Mode</div>
     <button id="btnModeObstacle">🟧 Draw Obstacle</button>
     <button id="btnModeGoal">🎯 Set Goal / Plan Path</button>
+    <button id="btnModeManual">🎮 Kontrol Manual (Keyboard)</button>
     <button id="btnClearObstacles" class="danger">Clear Obstacles</button>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Kontrol Manual</div>
+    <label>Kecepatan linear (m/s)</label>
+    <input type="number" id="linSpeed" value="0.3" step="0.05" min="0">
+    <label>Kecepatan rotasi (rad/s)</label>
+    <input type="number" id="angSpeed" value="1.0" step="0.1" min="0">
+    <small>W/↑ = maju, S/↓ = mundur, A/← = putar kiri, D/→ = putar kanan (diff-drive, bukan strafe). Aktifkan mode manual dulu, lalu klik area canvas biar keyboard fokus ke sana.</small>
   </div>
 
   <div class="section">
@@ -142,13 +214,35 @@
   </div>
 </div>
 
-<div id="canvasWrap">
+<div id="canvasWrap" tabindex="0">
   <canvas id="canvas"></canvas>
   <div id="hud">
     robot: <b id="hudRobot">x=0.00 y=0.00 yaw=0.0°</b><br>
     cursor: <b id="hudCursor">-</b>
   </div>
   <div id="modeTag">mode: idle</div>
+
+  <div id="cameraPanel">
+    <div id="cameraHeader">
+      <span><span class="cam-dot" id="camDot"></span><span id="camLabel">camera: no signal</span></span>
+      <span id="camToggle">▾</span>
+    </div>
+    <canvas id="cameraCanvas" width="256" height="192"></canvas>
+  </div>
+
+  <div id="manualPanel">
+    <div id="manualHeader">
+      <span>Manual Teleop</span>
+      <span id="manualModeLabel">off</span>
+    </div>
+    <div class="key-grid">
+      <div class="keycap" id="keyW" style="grid-column:2; grid-row:1;">W</div>
+      <div class="keycap" id="keyA" style="grid-column:1; grid-row:2;">A</div>
+      <div class="keycap" id="keyS" style="grid-column:2; grid-row:2;">S</div>
+      <div class="keycap" id="keyD" style="grid-column:3; grid-row:2;">D</div>
+    </div>
+    <div id="manualStatus">klik canvas &amp; aktifkan mode manual</div>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
@@ -158,6 +252,8 @@
 // ============================================================
 let ros = null;
 let poseListener = null, goalPublisher = null, reachedListener = null;
+let cameraListener = null;
+let cmdVelPublisher = null;
 
 let world = { w: 3, h: 3, res: 0.05, robotRadius: 0.15 };
 let grid = null; // occupancy grid: 0=free 1=obstacle(inflated)
@@ -165,7 +261,7 @@ let obstaclesRaw = []; // list of {x,y,w,h} in world meters, unbaked
 let gridW = 0, gridH = 0;
 
 let robot = { x: 0, y: 0, yaw: 0, hasPose: false };
-let mode = 'idle'; // idle | obstacle | goal
+let mode = 'idle'; // idle | obstacle | goal | manual
 let drawing = false;
 let dragStart = null;
 let dragCurrent = null;
@@ -177,6 +273,23 @@ let currentWaypointIdx = -1;
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+
+// ============================================================
+// WS URL BUILDER (IP + PORT diketik terpisah oleh user)
+// ============================================================
+function buildWsUrl(){
+  const ipRaw = document.getElementById('wsIp').value.trim() || 'localhost';
+  const portRaw = document.getElementById('wsPort').value.trim() || '9090';
+  // biar aman kalau user gak sengaja ketik "ws://" atau ":port" di kolom IP
+  const ip = ipRaw.replace(/^wss?:\/\//i, '').replace(/:\d+$/, '');
+  const port = portRaw.replace(/\D/g, '') || '9090';
+  return `ws://${ip}:${port}`;
+}
+function updateWsPreview(){
+  document.getElementById('wsPreview').textContent = buildWsUrl();
+}
+document.getElementById('wsIp').addEventListener('input', updateWsPreview);
+document.getElementById('wsPort').addEventListener('input', updateWsPreview);
 
 // ============================================================
 // CANVAS SIZING & COORD TRANSFORM
@@ -201,9 +314,6 @@ function computeTransform(){
   const availW = canvas.width - margin*2;
   const availH = canvas.height - margin*2;
   pxPerMeter = Math.min(availW / world.w, availH / world.h);
-  // center the world rect in canvas, with world (0,0) at world-center-ish:
-  // we'll treat world x in [-w/2, w/2], y in [-h/2, h/2] as the visible area,
-  // matching a robot that starts near (0,0,0).
   originPx.x = canvas.width / 2;
   originPx.y = canvas.height / 2;
 }
@@ -223,7 +333,6 @@ function pxToWorld(px, py){
 
 // ============================================================
 // GRID / OCCUPANCY
-// grid covers world x in [-w/2,w/2], y in [-h/2,h/2]
 // ============================================================
 function rebuildGrid(){
   gridW = Math.ceil(world.w / world.res);
@@ -231,11 +340,7 @@ function rebuildGrid(){
   grid = new Uint8Array(gridW * gridH);
   const inflateCells = Math.ceil(world.robotRadius / world.res);
 
-  // rasterize each obstacle rect, then inflate
   const rawGrid = new Uint8Array(gridW * gridH);
-  for(const ob of obstaclesRaw){
-    const x0 = ob.x - world.w/2, y0 = ob.y - world.h/2; // not used, obstacles stored already in centered coords
-  }
   for(const ob of obstaclesRaw){
     const gx0 = worldXToGridX(Math.min(ob.x, ob.x+ob.w));
     const gx1 = worldXToGridX(Math.max(ob.x, ob.x+ob.w));
@@ -247,7 +352,6 @@ function rebuildGrid(){
       }
     }
   }
-  // inflate
   for(let gy=0; gy<gridH; gy++){
     for(let gx=0; gx<gridW; gx++){
       if(rawGrid[gy*gridW+gx]===1){
@@ -263,7 +367,7 @@ function rebuildGrid(){
   }
 }
 function worldXToGridX(x){ return Math.floor((x + world.w/2) / world.res); }
-function worldYToGridY(y){ return Math.floor((world.h/2 - y) / world.res); } // y flipped so grid row 0 = top (+y)
+function worldYToGridY(y){ return Math.floor((world.h/2 - y) / world.res); }
 function gridToWorldX(gx){ return (gx + 0.5) * world.res - world.w/2; }
 function gridToWorldY(gy){ return world.h/2 - (gy + 0.5) * world.res; }
 
@@ -275,7 +379,7 @@ function planPath(startWorld, goalWorld){
   const gx = worldXToGridX(goalWorld.x), gy = worldYToGridY(goalWorld.y);
 
   if(!inBounds(sx,sy) || !inBounds(gx,gy)) return null;
-  if(grid[gy*gridW+gx]===1) return null; // goal inside obstacle
+  if(grid[gy*gridW+gx]===1) return null;
 
   const idx = (x,y)=> y*gridW+x;
   const open = new Map();
@@ -297,7 +401,6 @@ function planPath(startWorld, goalWorld){
     iterations++;
     if(iterations>maxIter) return null;
 
-    // find lowest fScore in open (simple linear scan; grid kecil jadi ok)
     let curIdx=-1, curF=Infinity;
     for(const k of open.keys()){
       if(fScore[k]<curF){curF=fScore[k]; curIdx=k;}
@@ -315,7 +418,6 @@ function planPath(startWorld, goalWorld){
       const nIdx = idx(nx,ny);
       if(closed[nIdx]) continue;
       if(grid[nIdx]===1) continue;
-      // prevent cutting corners diagonally through walls
       if(dx!==0 && dy!==0){
         if(grid[idx(cx+dx,cy)]===1 || grid[idx(cx,cy+dy)]===1) continue;
       }
@@ -328,7 +430,7 @@ function planPath(startWorld, goalWorld){
       }
     }
   }
-  return null; // no path found
+  return null;
 }
 function inBounds(x,y){ return x>=0 && x<gridW && y>=0 && y<gridH; }
 function heuristic(x1,y1,x2,y2){ return Math.hypot(x2-x1,y2-y1); }
@@ -343,7 +445,6 @@ function reconstructPath(cameFrom, idx){
   path.reverse();
   return simplifyPath(path);
 }
-// hapus titik yang collinear biar waypoint gak kebanyakan
 function simplifyPath(path){
   if(path.length<=2) return path;
   const out=[path[0]];
@@ -364,7 +465,6 @@ function simplifyPath(path){
 function render(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
 
-  // grid lines (every 0.5m)
   ctx.strokeStyle = getCss('--grid-line');
   ctx.lineWidth = 1;
   const step = 0.5;
@@ -377,20 +477,17 @@ function render(){
     ctx.beginPath(); ctx.moveTo(p1.px,p1.py); ctx.lineTo(p2.px,p2.py); ctx.stroke();
   }
 
-  // world boundary
   const tl = worldToPx(-world.w/2, world.h/2);
   const br = worldToPx(world.w/2, -world.h/2);
   ctx.strokeStyle = '#3a4452';
   ctx.lineWidth = 2;
   ctx.strokeRect(tl.px, tl.py, br.px-tl.px, br.py-tl.py);
 
-  // origin marker
   const o = worldToPx(0,0);
   ctx.strokeStyle = '#4a5568'; ctx.lineWidth=1;
   ctx.beginPath(); ctx.moveTo(o.px-8,o.py); ctx.lineTo(o.px+8,o.py); ctx.stroke();
   ctx.beginPath(); ctx.moveTo(o.px,o.py-8); ctx.lineTo(o.px,o.py+8); ctx.stroke();
 
-  // obstacles
   ctx.fillStyle = 'rgba(240,136,62,0.35)';
   ctx.strokeStyle = '#f0883e';
   ctx.lineWidth = 1.5;
@@ -403,7 +500,6 @@ function render(){
     ctx.strokeRect(rx,ry,rw,rh);
   }
 
-  // drag preview
   if(drawing && dragStart && dragCurrent && mode==='obstacle'){
     const p1 = dragStart, p2 = dragCurrent;
     const rx=Math.min(p1.px,p2.px), ry=Math.min(p1.py,p2.py);
@@ -415,7 +511,6 @@ function render(){
     ctx.setLineDash([]);
   }
 
-  // planned path
   if(plannedPath.length>1){
     ctx.strokeStyle = '#3fb950';
     ctx.lineWidth = 2.5;
@@ -432,7 +527,6 @@ function render(){
     });
   }
 
-  // robot
   if(robot.hasPose){
     const p = worldToPx(robot.x, robot.y);
     ctx.save();
@@ -446,7 +540,6 @@ function render(){
     ctx.closePath(); ctx.fill(); ctx.stroke();
     ctx.restore();
 
-    // radius circle (footprint)
     ctx.strokeStyle='rgba(88,166,255,0.35)';
     ctx.beginPath();
     ctx.arc(p.px,p.py, world.robotRadius*pxPerMeter, 0, Math.PI*2);
@@ -522,13 +615,23 @@ function tryPlan(goalWorld){
 // ============================================================
 document.getElementById('btnModeObstacle').onclick = ()=> setMode('obstacle');
 document.getElementById('btnModeGoal').onclick = ()=> setMode('goal');
+document.getElementById('btnModeManual').onclick = ()=>{
+  setMode(mode==='manual' ? 'idle' : 'manual');
+  if(mode==='manual') canvas.parentElement.focus();
+};
 function setMode(m){
   mode = m;
   document.getElementById('btnModeObstacle').classList.toggle('active', m==='obstacle');
   document.getElementById('btnModeGoal').classList.toggle('active', m==='goal');
+  document.getElementById('btnModeManual').classList.toggle('active', m==='manual');
   const tag = document.getElementById('modeTag');
   tag.className = m;
-  tag.textContent = 'mode: ' + (m==='obstacle' ? 'draw obstacle (drag)' : m==='goal' ? 'klik utk set goal' : 'idle');
+  tag.textContent = 'mode: ' + (m==='obstacle' ? 'draw obstacle (drag)' : m==='goal' ? 'klik utk set goal' : m==='manual' ? 'kontrol manual (keyboard)' : 'idle');
+  document.getElementById('manualModeLabel').textContent = m==='manual' ? 'on' : 'off';
+  if(m!=='manual'){
+    resetKeys();
+    publishCmdVel(0,0);
+  }
 }
 
 document.getElementById('btnClearObstacles').onclick = ()=>{
@@ -548,7 +651,7 @@ document.getElementById('btnApplyWorld').onclick = ()=>{
   world.h = parseFloat(document.getElementById('worldH').value) || 3;
   world.res = parseFloat(document.getElementById('resolution').value) || 0.05;
   world.robotRadius = parseFloat(document.getElementById('robotRadius').value) || 0.15;
-  obstaclesRaw = []; // ukuran berubah, reset obstacle biar gak ngaco posisinya
+  obstaclesRaw = [];
   rebuildGrid();
   computeTransform();
   render();
@@ -569,7 +672,7 @@ function updateWaypointUI(){
 // ROS CONNECTION
 // ============================================================
 document.getElementById('btnConnect').onclick = ()=>{
-  const url = document.getElementById('wsUrl').value;
+  const url = buildWsUrl();
   connectRos(url);
 };
 
@@ -587,6 +690,7 @@ function connectRos(url){
   });
   ros.on('close', ()=>{
     setStatus(false);
+    setCameraStatus(false);
   });
 }
 
@@ -600,6 +704,8 @@ function subscribeTopics(){
   const poseTopicName = document.getElementById('poseTopic').value;
   const reachedTopicName = document.getElementById('reachedTopic').value;
   const goalTopicName = document.getElementById('goalTopic').value;
+  const cameraTopicName = document.getElementById('cameraTopic').value;
+  const cmdVelTopicName = document.getElementById('cmdVelTopic').value;
 
   if(poseListener) poseListener.unsubscribe();
   poseListener = new ROSLIB.Topic({
@@ -626,6 +732,12 @@ function subscribeTopics(){
   goalPublisher = new ROSLIB.Topic({
     ros, name: goalTopicName, messageType: 'geometry_msgs/PoseStamped'
   });
+
+  cmdVelPublisher = new ROSLIB.Topic({
+    ros, name: cmdVelTopicName, messageType: 'geometry_msgs/Twist'
+  });
+
+  subscribeCamera(cameraTopicName);
 }
 
 function yawFromQuat(q){
@@ -638,6 +750,60 @@ function yawToQuat(yaw){
 }
 
 // ============================================================
+// CAMERA FEED (sensor_msgs/Image, raw rgb8/bgr8/mono8)
+// rosbridge base64-encode-in uint8[] "data" field secara otomatis,
+// jadi kita cukup decode base64 -> bytes -> gambar ke canvas manual
+// (bukan pakai <img>, karena ini bukan JPEG, tapi raw pixel array).
+// ============================================================
+const cameraCanvas = document.getElementById('cameraCanvas');
+const camCtx = cameraCanvas.getContext('2d');
+let camFrameCount = 0;
+let camLastFpsCheck = Date.now();
+
+function subscribeCamera(topicName){
+  if(cameraListener) cameraListener.unsubscribe();
+  if(!topicName){ setCameraStatus(false); return; }
+
+  cameraListener = new ROSLIB.Topic({
+    ros, name: topicName, messageType: 'sensor_msgs/CompressedImage'
+  });
+  cameraListener.subscribe((msg)=>{
+    drawCameraFrame(msg);
+  });
+}
+
+function drawCameraFrame(msg){
+  const img = new Image();
+  img.onload = () => {
+    if(cameraCanvas.width !== img.width || cameraCanvas.height !== img.height){
+      cameraCanvas.width = img.width;
+      cameraCanvas.height = img.height;
+    }
+    camCtx.drawImage(img, 0, 0);
+    setCameraStatus(true);
+    camFrameCount++;
+    const now = Date.now();
+    if(now - camLastFpsCheck > 1000){
+      document.getElementById('camLabel').textContent = `camera: ${camFrameCount} fps`;
+      camFrameCount = 0;
+      camLastFpsCheck = now;
+    }
+  };
+  img.src = 'data:image/jpeg;base64,' + msg.data;
+}
+
+function setCameraStatus(live){
+  document.getElementById('camDot').classList.toggle('live', live);
+  if(!live) document.getElementById('camLabel').textContent = 'camera: no signal';
+}
+
+document.getElementById('camToggle').onclick = ()=>{
+  const panel = document.getElementById('cameraPanel');
+  panel.classList.toggle('collapsed');
+  document.getElementById('camToggle').textContent = panel.classList.contains('collapsed') ? '▸' : '▾';
+};
+
+// ============================================================
 // SEND PATH SEQUENTIALLY (nunggu /goal_reached tiap waypoint)
 // ============================================================
 document.getElementById('btnSendPath').onclick = ()=>{
@@ -646,7 +812,7 @@ document.getElementById('btnSendPath').onclick = ()=>{
   sendingPath = true;
   currentWaypointIdx = -1;
   waypointStates = plannedPath.map(()=> 'pending');
-  onWaypointReached(); // trigger pengiriman waypoint pertama
+  onWaypointReached();
 };
 
 function onWaypointReached(){
@@ -663,7 +829,6 @@ function onWaypointReached(){
   }
   waypointStates[currentWaypointIdx]='current';
   const wp = plannedPath[currentWaypointIdx];
-  // yaw target: arahin ke waypoint berikutnya (kalau ada), kalau titik terakhir, pakai yaw sebelumnya
   let yawTarget = robot.yaw;
   if(currentWaypointIdx < plannedPath.length-1){
     const next = plannedPath[currentWaypointIdx+1];
@@ -685,11 +850,99 @@ function onWaypointReached(){
 }
 
 // ============================================================
+// KEYBOARD TELEOP (diff-drive: cuma linear.x + angular.z, no strafe)
+// W/↑ = maju (linear.x +)      S/↓ = mundur (linear.x -)
+// A/← = putar kiri (angular.z +, CCW)   D/→ = putar kanan (angular.z -, CW)
+// W+A / W+D bisa ditekan bareng buat belok sambil jalan (arc turn).
+// ============================================================
+const keyState = { w:false, s:false, a:false, d:false };
+const keyElIds = { w:'keyW', s:'keyS', a:'keyA', d:'keyD' };
+let cmdVelLoopHandle = null;
+
+function keyFromEvent(e){
+  const code = e.code;
+  if(code==='KeyW' || code==='ArrowUp') return 'w';
+  if(code==='KeyS' || code==='ArrowDown') return 's';
+  if(code==='KeyA' || code==='ArrowLeft') return 'a';
+  if(code==='KeyD' || code==='ArrowRight') return 'd';
+  return null;
+}
+
+window.addEventListener('keydown', (e)=>{
+  if(mode!=='manual') return;
+  const k = keyFromEvent(e);
+  if(!k) return;
+  e.preventDefault();
+  if(!keyState[k]){
+    keyState[k]=true;
+    document.getElementById(keyElIds[k]).classList.add('on');
+  }
+});
+window.addEventListener('keyup', (e)=>{
+  const k = keyFromEvent(e);
+  if(!k) return;
+  keyState[k]=false;
+  document.getElementById(keyElIds[k]).classList.remove('on');
+});
+window.addEventListener('blur', resetKeys);
+
+function resetKeys(){
+  for(const k in keyState){
+    keyState[k]=false;
+    document.getElementById(keyElIds[k]).classList.remove('on');
+  }
+}
+
+function computeCmdVel(){
+  const linSpeed = parseFloat(document.getElementById('linSpeed').value) || 0;
+  const angSpeed = parseFloat(document.getElementById('angSpeed').value) || 0;
+  let vx=0, wz=0;
+  if(keyState.w) vx += linSpeed;
+  if(keyState.s) vx -= linSpeed;
+  if(keyState.a) wz += angSpeed;
+  if(keyState.d) wz -= angSpeed;
+  return {vx,wz};
+}
+
+function publishCmdVel(vx,wz){
+  const statusEl = document.getElementById('manualStatus');
+  if(!cmdVelPublisher){
+    statusEl.classList.remove('live');
+    statusEl.textContent = 'belum connect ke rosbridge';
+    return;
+  }
+  const msg = new ROSLIB.Message({
+    linear:  {x: vx, y: 0, z: 0},
+    angular: {x: 0,  y: 0, z: wz}
+  });
+  cmdVelPublisher.publish(msg);
+  if(vx===0 && wz===0){
+    statusEl.classList.remove('live');
+    statusEl.textContent = 'idle — tekan W/A/S/D';
+  } else {
+    statusEl.classList.add('live');
+    statusEl.textContent = `vx=${vx.toFixed(2)} wz=${wz.toFixed(2)}`;
+  }
+}
+
+// loop publish @20Hz selama mode manual aktif, biar terus-menerus
+// ngirim command (best practice buat teleop, bukan cuma sekali per keypress)
+function cmdVelLoop(){
+  if(mode==='manual'){
+    const {vx,wz} = computeCmdVel();
+    publishCmdVel(vx,wz);
+  }
+  cmdVelLoopHandle = setTimeout(cmdVelLoop, 50);
+}
+cmdVelLoop();
+
+// ============================================================
 // INIT
 // ============================================================
 setMode('idle');
 resizeCanvas();
 rebuildGrid();
+updateWsPreview();
 </script>
 </body>
 </html>

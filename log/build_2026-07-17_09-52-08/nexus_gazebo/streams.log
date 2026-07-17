@@ -1,0 +1,129 @@
+[0.012s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[0.084s] [ 71%] Built target cam
+[0.084s] [ 71%] Built target cam_localization
+[0.084s] [ 71%] Built target movement
+[0.084s] [ 71%] Built target obstacle_avoidance
+[0.084s] [ 71%] Built target waypoint
+[0.084s] [ 85%] Built target aruco
+[0.093s] [ 92%] [32mBuilding CXX object CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o[0m
+[0.547s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:392:2:[m[K [01;31m[Kerror: [m[Kunterminated argument list invoking macro "RCLCPP_INFO"
+[0.547s]   392 | }
+[0.547s]       |  [01;31m[K^[m[K
+[3.044s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:157:20:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[3.044s]   157 |         RCLCPP_INFO[01;31m[K([m[Kget_logger(),
+[3.045s]       |                    [01;31m[K^[m[K
+[3.045s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:75:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[3.045s]    75 | [01;36m[K{[m[K
+[3.045s]       | [01;36m[K^[m[K
+[3.045s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:[m[K In constructor ‘[01m[KPoseFusion::[01;32m[KPoseFusion[m[K()[m[K’:
+[3.045s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:78:21:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KPoseFusion[m[K’ does not have any field named ‘[01m[Kx_[m[K’
+[3.045s]    78 |                     [01;31m[Kx_[m[K(0.0), y_(0.0), yaw_(0.0), has_pos_(false),
+[3.045s]       |                     [01;31m[K^~[m[K
+[3.045s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:78:30:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KPoseFusion[m[K’ does not have any field named ‘[01m[Ky_[m[K’
+[3.045s]    78 |                     x_(0.0), [01;31m[Ky_[m[K(0.0), yaw_(0.0), has_pos_(false),
+[3.045s]       |                              [01;31m[K^~[m[K
+[3.045s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:78:39:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KPoseFusion[m[K’ does not have any field named ‘[01m[Kyaw_[m[K’
+[3.045s]    78 |                     x_(0.0), y_(0.0), [01;31m[Kyaw_[m[K(0.0), has_pos_(false),
+[3.046s]       |                                       [01;31m[K^~~~[m[K
+[3.046s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:78:50:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KPoseFusion[m[K’ does not have any field named ‘[01m[Khas_pos_[m[K’
+[3.046s]    78 |                     x_(0.0), y_(0.0), yaw_(0.0), [01;31m[Khas_pos_[m[K(false),
+[3.046s]       |                                                  [01;31m[K^~~~~~~~[m[K
+[3.046s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:79:21:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KPoseFusion[m[K’ does not have any field named ‘[01m[Kstate_[m[K’
+[3.046s]    79 |                     [01;31m[Kstate_[m[K(ChaseState::SEARCHING),
+[3.046s]       |                     [01;31m[K^~~~~~[m[K
+[3.046s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:80:21:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KPoseFusion[m[K’ does not have any field named ‘[01m[Kyellow_detected_[m[K’
+[3.046s]    80 |                     [01;31m[Kyellow_detected_[m[K(false), yellow_cx_(0), yellow_area_(0),
+[3.046s]       |                     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[3.046s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:80:46:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KPoseFusion[m[K’ does not have any field named ‘[01m[Kyellow_cx_[m[K’
+[3.046s]    80 |                     yellow_detected_(false), [01;31m[Kyellow_cx_[m[K(0), yellow_area_(0),
+[3.046s]       |                                              [01;31m[K^~~~~~~~~~[m[K
+[3.046s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:80:61:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KPoseFusion[m[K’ does not have any field named ‘[01m[Kyellow_area_[m[K’
+[3.047s]    80 |                     yellow_detected_(false), yellow_cx_(0), [01;31m[Kyellow_area_[m[K(0),
+[3.047s]       |                                                             [01;31m[K^~~~~~~~~~~~[m[K
+[3.047s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:81:21:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KPoseFusion[m[K’ does not have any field named ‘[01m[Kpid_angular_[m[K’
+[3.047s]    81 |                     [01;31m[Kpid_angular_[m[K(0, 0, 0, 0, 0),
+[3.047s]       |                     [01;31m[K^~~~~~~~~~~~[m[K
+[3.047s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:82:21:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KPoseFusion[m[K’ does not have any field named ‘[01m[Kpid_linear_[m[K’
+[3.047s]    82 |                     [01;31m[Kpid_linear_[m[K(0, 0, 0, 0, 0)
+[3.047s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[3.057s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:107:9:[m[K [01;31m[Kerror: [m[K‘[01m[Krobot_marker_id_[m[K’ was not declared in this scope
+[3.058s]   107 |         [01;31m[Krobot_marker_id_[m[K = get_parameter("robot_marker_id").as_int();
+[3.058s]       |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[3.067s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:108:9:[m[K [01;31m[Kerror: [m[K‘[01m[Karuco_yaw_offset_[m[K’ was not declared in this scope
+[3.067s]   108 |         [01;31m[Karuco_yaw_offset_[m[K = get_parameter("aruco_yaw_offset_deg").as_double() * M_PI / 180.0;
+[3.067s]       |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[3.076s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:109:9:[m[K [01;31m[Kerror: [m[K‘[01m[Karuco_yaw_invert_[m[K’ was not declared in this scope
+[3.076s]   109 |         [01;31m[Karuco_yaw_invert_[m[K = get_parameter("aruco_yaw_invert").as_bool();
+[3.076s]       |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[3.083s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:111:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kimage_width_[m[K’ was not declared in this scope
+[3.083s]   111 |         [01;31m[Kimage_width_[m[K = get_parameter("image_width").as_int();
+[3.083s]       |         [01;31m[K^~~~~~~~~~~~[m[K
+[3.090s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:112:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_area_[m[K’ was not declared in this scope
+[3.090s]   112 |         [01;31m[Ktarget_area_[m[K = get_parameter("target_area").as_int();
+[3.090s]       |         [01;31m[K^~~~~~~~~~~~[m[K
+[3.098s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:113:9:[m[K [01;31m[Kerror: [m[K‘[01m[Karea_tolerance_[m[K’ was not declared in this scope
+[3.098s]   113 |         [01;31m[Karea_tolerance_[m[K = get_parameter("area_tolerance").as_int();
+[3.098s]       |         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[3.107s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:114:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kalign_threshold_px_[m[K’ was not declared in this scope
+[3.107s]   114 |         [01;31m[Kalign_threshold_px_[m[K = get_parameter("align_threshold_px").as_int();
+[3.107s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.118s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:115:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdetection_timeout_ms_[m[K’ was not declared in this scope
+[3.118s]   115 |         [01;31m[Kdetection_timeout_ms_[m[K = get_parameter("detection_timeout_ms").as_int();
+[3.118s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[3.126s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:128:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpid_angular_[m[K’ was not declared in this scope
+[3.126s]   128 |         [01;31m[Kpid_angular_[m[K = PIDController(a_kp, a_ki, a_kd, -a_max, a_max);
+[3.127s]       |         [01;31m[K^~~~~~~~~~~~[m[K
+[3.134s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:129:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpid_linear_[m[K’ was not declared in this scope
+[3.134s]   129 |         [01;31m[Kpid_linear_[m[K = PIDController(l_kp, l_ki, l_kd, 0.0, l_max); // gak mundur
+[3.134s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[3.141s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:133:9:[m[K [01;31m[Kerror: [m[K‘[01m[Khomography_[m[K’ was not declared in this scope; did you mean ‘[01m[Khomography_path[m[K’?
+[3.141s]   133 |         [01;31m[Khomography_[m[K = loadHomography(homography_path);
+[3.141s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[3.141s]       |         [32m[Khomography_path[m[K
+[3.148s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:133:23:[m[K [01;31m[Kerror: [m[K‘[01m[KloadHomography[m[K’ was not declared in this scope
+[3.148s]   133 |         homography_ = [01;31m[KloadHomography[m[K(homography_path);
+[3.148s]       |                       [01;31m[K^~~~~~~~~~~~~~[m[K
+[3.154s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:136:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksub_pos_[m[K’ was not declared in this scope
+[3.154s]   136 |         [01;31m[Ksub_pos_[m[K = create_subscription<std_msgs::msg::Int32MultiArray>(
+[3.154s]       |         [01;31m[K^~~~~~~~[m[K
+[3.154s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:138:36:[m[K [01;31m[Kerror: [m[K‘[01m[KarucoCb[m[K’ is not a member of ‘[01m[KPoseFusion[m[K’
+[3.154s]   138 |             std::bind(&PoseFusion::[01;31m[KarucoCb[m[K, this, std::placeholders::_1));
+[3.155s]       |                                    [01;31m[K^~~~~~~[m[K
+[3.159s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:140:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_pose_[m[K’ was not declared in this scope
+[3.159s]   140 |         [01;31m[Kpub_pose_[m[K = create_publisher<geometry_msgs::msg::PoseStamped>(
+[3.160s]       |         [01;31m[K^~~~~~~~~[m[K
+[3.168s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:144:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksub_yellow_[m[K’ was not declared in this scope
+[3.169s]   144 |         [01;31m[Ksub_yellow_[m[K = create_subscription<geometry_msgs::msg::Point>(
+[3.169s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[3.169s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:146:36:[m[K [01;31m[Kerror: [m[K‘[01m[KyellowCb[m[K’ is not a member of ‘[01m[KPoseFusion[m[K’
+[3.169s]   146 |             std::bind(&PoseFusion::[01;31m[KyellowCb[m[K, this, std::placeholders::_1));
+[3.169s]       |                                    [01;31m[K^~~~~~~~[m[K
+[3.174s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:148:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_cmd_[m[K’ was not declared in this scope
+[3.174s]   148 |         [01;31m[Kpub_cmd_[m[K = create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
+[3.174s]       |         [01;31m[K^~~~~~~~[m[K
+[3.185s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:150:9:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_yellow_time_[m[K’ was not declared in this scope
+[3.186s]   150 |         [01;31m[Klast_yellow_time_[m[K = now();
+[3.186s]       |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[3.194s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:153:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontrol_timer_[m[K’ was not declared in this scope
+[3.194s]   153 |         [01;31m[Kcontrol_timer_[m[K = create_wall_timer(
+[3.194s]       |         [01;31m[K^~~~~~~~~~~~~~[m[K
+[3.195s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:155:36:[m[K [01;31m[Kerror: [m[K‘[01m[KcontrolLoop[m[K’ is not a member of ‘[01m[KPoseFusion[m[K’
+[3.195s]   155 |             std::bind(&PoseFusion::[01;31m[KcontrolLoop[m[K, this));
+[3.195s]       |                                    [01;31m[K^~~~~~~~~~~[m[K
+[3.201s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:157:9:[m[K [01;31m[Kerror: [m[K‘[01m[KRCLCPP_INFO[m[K’ was not declared in this scope
+[3.201s]   157 |         [01;31m[KRCLCPP_INFO[m[K(get_logger(),
+[3.201s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[3.202s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:157:20:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[3.202s]   157 |         RCLCPP_INFO[01;31m[K([m[Kget_logger(),
+[3.202s]       |                    [01;31m[K^[m[K
+[3.202s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:83:5:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[3.202s]    83 |     [01;36m[K{[m[K
+[3.202s]       |     [01;36m[K^[m[K
+[3.202s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:[m[K At global scope:
+[3.202s] [01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:157:20:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+[3.203s]   157 |         RCLCPP_INFO[01;31m[K([m[Kget_logger(),
+[3.203s]       |                    [01;31m[K^[m[K
+[4.510s] gmake[2]: *** [CMakeFiles/aruco_localization.dir/build.make:76: CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o] Error 1
+[4.510s] gmake[1]: *** [CMakeFiles/Makefile2:227: CMakeFiles/aruco_localization.dir/all] Error 2
+[4.510s] gmake: *** [Makefile:146: all] Error 2
+[4.513s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16

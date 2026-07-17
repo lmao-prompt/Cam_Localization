@@ -1,0 +1,14 @@
+[ 57%] Built target aruco
+[ 57%] Built target cam
+[ 57%] Built target movement
+[ 57%] Built target cam_localization
+[ 64%] [32mBuilding CXX object CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o[0m
+[ 78%] Built target waypoint
+[ 92%] Built target obstacle_avoidance
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:[m[K In constructor ‘[01m[KPoseFusion::[01;32m[KPoseFusion[m[K()[m[K’:
+[01m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/aruco_localization.cpp:31:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksub_imu_[m[K’ was not declared in this scope
+   31 |         [01;31m[Ksub_imu_[m[K = create_subscription<sensor_msgs::msg::Imu>(
+      |         [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/aruco_localization.dir/build.make:76: CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:227: CMakeFiles/aruco_localization.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,1 +1,1 @@
-rclcpp;sensor_msgs;geometry_msgs;tf2
+rclcpp;sensor_msgs;geometry_msgs;tf2;nlohmann_json_vendor;nlohmann_json

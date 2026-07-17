@@ -36,9 +36,6 @@ private:
           std::vector<int> ids;
           std::vector<std::vector<cv::Point2f>> corners, rejected;
         cv::aruco::detectMarkers(frame, dictionary_, corners, ids, params_, rejected);
-        
-        // cv::imwrite("/tmp/debug_frame.png", frame);
-        // RCLCPP_INFO(get_logger(), "detected=%zu rejected=%zu", ids.size(), rejected.size());
 
         if (!ids.empty()) {
             int idx = 0;
@@ -63,8 +60,8 @@ private:
             pos.z = 0.0;
             pub_pos_->publish(pos);
 
-            RCLCPP_INFO(get_logger(), "Marker id=%d pixel(%.0f,%.0f) -> world(%.2f, %.2f) yaw=%.2f",
-                        ids[idx], cx, cy, x_m, y_m, yaw);
+            // RCLCPP_INFO(get_logger(), "Marker id=%d pixel(%.0f,%.0f) -> world(%.2f, %.2f) yaw=%.2f",
+            //             ids[idx], cx, cy, x_m, y_m, yaw);
 
             cv::aruco::drawDetectedMarkers(frame, corners, ids);
             cv::circle(frame, cv::Point(static_cast<int>(cx), static_cast<int>(cy)), 5, cv::Scalar(0, 0, 255), -1);
