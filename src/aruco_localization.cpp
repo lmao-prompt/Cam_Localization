@@ -95,7 +95,7 @@ public:
         declare_parameter("detection_timeout_ms", 500);
         declare_parameter("control_rate_hz", 20.0);
 
-        declare_parameter("angular_kp", 0.003);
+        declare_parameter("angular_kp", 0.01);
         declare_parameter("angular_ki", 0.0002);
         declare_parameter("angular_kd", 0.0008);
         declare_parameter("angular_max", 0.6);
