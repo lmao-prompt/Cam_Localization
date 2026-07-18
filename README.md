@@ -6,23 +6,21 @@
 ## How to
 
 ```bash
-# 1. Make folder
-mkdir -p ~/diff_ws/src
-cd ~/diff_ws/src
-
-# 2. copy this
+# 1. copy this
 git clone https://github.com/lmao-prompt/Cam_Localization.git
 
-# 3. build
-cd ~/diff_ws
+# 2. build
+cd Cam_Localization
 colcon build --symlink-install
 source install/setup.bash
 
+#3 calibrate
+make sure to calibrate hsv object and map, then adjust aruco or apriltag 
+
 # 4. run
-./start.sh
-ros2 run ros_gz_bridge parameter_bridge \
-  /imu@sensor_msgs/msg/Imu@gz.msgs.IMU
-ros2 run nexus_gazebo cam
-ros2 run nexus_gazebo cam_localization
-ros2 run nexus_gazebo movement
-ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+1. start micro ros first(still have issue on this file but u can use separate folder to use that)
+2. start testaruco.py
+3. start aruco_localization
+```
+
+#Everything should be work i guess
