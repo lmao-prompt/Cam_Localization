@@ -21,6 +21,10 @@ make sure to calibrate hsv object and map, then adjust aruco or apriltag
 1. start micro ros first(still have issue on this file but u can use separate folder to use that)
 2. start testaruco.py
 3. start aruco_localization
+
+# 5. digital twin
+1. Start spawn_obs.py
+2. Start spawn_robot.py
 ```
 
 #Everything should be work i guess
