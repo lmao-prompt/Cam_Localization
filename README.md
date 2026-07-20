@@ -18,7 +18,7 @@ source install/setup.bash
 make sure to calibrate hsv object and map, then adjust aruco or apriltag 
 
 # 4. run
-1. start micro ros first(still have issue on this file but u can use separate folder to use that)
+1. start micro ros first
 2. start testaruco.py
 3. start aruco_localization
 
@@ -27,4 +27,4 @@ make sure to calibrate hsv object and map, then adjust aruco or apriltag
 2. Start spawn_robot.py
 ```
 
-#Everything should be work i guess
+# make sure to source micro ros folder to use micro ros node
