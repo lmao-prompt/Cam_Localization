@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Robot Path Planner</title>
+<title>Robot Teleop Controller</title>
 <style>
   :root{
     --bg: #0d1117;
@@ -51,9 +51,6 @@
   button:hover{background:#232e3d;}
   button.primary{background:var(--accent-dim); border-color:var(--accent); color:#eafff0;}
   button.primary:hover{background:#256b3a;}
-  button.danger{border-color:#5c2b2b; color:#ffb4ae;}
-  button.danger:hover{background:#3a1f1f;}
-  button.active{outline:2px solid var(--accent);}
   #status{
     font-family:var(--mono); font-size:11px; padding:8px 10px; border-radius:5px;
     background:#0a0e14; border:1px solid var(--panel-border);
@@ -73,21 +70,6 @@
     border:1px solid var(--panel-border); pointer-events:none; line-height:1.6;
   }
   #hud b{color:var(--text);}
-  #modeTag{
-    position:absolute; top:14px; right:14px; font-family:var(--mono); font-size:11px;
-    padding:6px 12px; border-radius:20px; border:1px solid var(--panel-border);
-    background:rgba(13,17,23,0.75); color:var(--text-dim);
-  }
-  #modeTag.obstacle{color:var(--warn); border-color:#5c4322;}
-  #modeTag.goal{color:var(--accent); border-color:var(--accent-dim);}
-  #modeTag.manual{color:#58a6ff; border-color:#1f4a75;}
-  .waypoint-list{font-family:var(--mono); font-size:11px; max-height:140px; overflow-y:auto;}
-  .waypoint-item{
-    display:flex; justify-content:space-between; padding:4px 6px; border-radius:3px;
-    background:#0a0e14; margin-bottom:3px; color:var(--text-dim);
-  }
-  .waypoint-item.done{color:var(--accent); text-decoration:line-through;}
-  .waypoint-item.current{color:var(--warn); outline:1px solid var(--warn);}
   small{color:var(--text-dim); font-size:10px; display:block; margin-top:-4px; margin-bottom:8px;}
 
   /* ==== CAMERA PANEL ==== */
@@ -133,8 +115,6 @@
     user-select:none; transition:background .06s, color .06s, border-color .06s;
   }
   .keycap.on{ background:#1f4a75; border-color:#58a6ff; color:#dcecff; }
-  .rot-row{ display:flex; gap:6px; justify-content:center; margin-bottom:8px; }
-  .rot-row .keycap{ width:60px; }
   #manualStatus{
     font-family:var(--mono); font-size:10px; color:var(--text-dim); text-align:center;
     padding-top:6px; border-top:1px solid var(--panel-border);
@@ -146,8 +126,8 @@
 
 <div id="sidebar">
   <div>
-    <h1>ROBOT PATH PLANNER</h1>
-    <div class="sub">draw obstacle · klik goal · A* avoid</div>
+    <h1>ROBOT TELEOP CONTROLLER</h1>
+    <div class="sub">kontrol manual via keyboard + kamera live</div>
   </div>
 
   <div class="section">
@@ -165,14 +145,16 @@
     <div class="section-title">Topic</div>
     <label>Pose topic (subscribe)</label>
     <input type="text" id="poseTopic" value="/robot_pose">
-    <label>Goal topic (publish)</label>
-    <input type="text" id="goalTopic" value="/goal_pose">
-    <label>Goal reached topic (subscribe)</label>
-    <input type="text" id="reachedTopic" value="/goal_reached">
     <label>Camera topic (subscribe)</label>
     <input type="text" id="cameraTopic" value="/camera/image_raw/compressed">
     <label>Cmd_vel topic (publish, manual control)</label>
     <input type="text" id="cmdVelTopic" value="/cmd_vel">
+    <label>Orange Ball Topic</label>
+    <input type="text" id="orangeTopic" value="/orange_position">
+    <label>Yellow Goal Topic</label>
+    <input type="text" id="yellowTopic" value="/yellow_position">
+    <label>Aruco Topic</label>
+    <input type="text" id="arucoTopic" value="/aruco_markers">
   </div>
 
   <div class="section">
@@ -181,19 +163,7 @@
       <div><label>Width (X)</label><input type="number" id="worldW" value="3" step="0.1"></div>
       <div><label>Height (Y)</label><input type="number" id="worldH" value="3" step="0.1"></div>
     </div>
-    <label>Grid resolution (m/cell)</label>
-    <input type="number" id="resolution" value="0.05" step="0.01">
-    <label>Robot radius, buat inflate obstacle (m)</label>
-    <input type="number" id="robotRadius" value="0.15" step="0.01">
     <button id="btnApplyWorld">Terapkan ukuran arena</button>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Mode</div>
-    <button id="btnModeObstacle">🟧 Draw Obstacle</button>
-    <button id="btnModeGoal">🎯 Set Goal / Plan Path</button>
-    <button id="btnModeManual">🎮 Kontrol Manual (Keyboard)</button>
-    <button id="btnClearObstacles" class="danger">Clear Obstacles</button>
   </div>
 
   <div class="section">
@@ -202,15 +172,7 @@
     <input type="number" id="linSpeed" value="0.3" step="0.05" min="0">
     <label>Kecepatan rotasi (rad/s)</label>
     <input type="number" id="angSpeed" value="1.0" step="0.1" min="0">
-    <small>W/↑ = maju, S/↓ = mundur, A/← = putar kiri, D/→ = putar kanan (diff-drive, bukan strafe). Aktifkan mode manual dulu, lalu klik area canvas biar keyboard fokus ke sana.</small>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Path</div>
-    <button id="btnSendPath" class="primary">Send Path ke Robot</button>
-    <button id="btnClearPath" class="danger">Clear Path</button>
-    <small id="pathInfo">belum ada path</small>
-    <div class="waypoint-list" id="waypointList"></div>
+    <small>W/↑ = maju, S/↓ = mundur, A/← = putar kiri, D/→ = putar kanan (diff-drive, bukan strafe). Klik area canvas biar keyboard fokus ke sana.</small>
   </div>
 </div>
 
@@ -220,7 +182,6 @@
     robot: <b id="hudRobot">x=0.00 y=0.00 yaw=0.0°</b><br>
     cursor: <b id="hudCursor">-</b>
   </div>
-  <div id="modeTag">mode: idle</div>
 
   <div id="cameraPanel">
     <div id="cameraHeader">
@@ -233,7 +194,7 @@
   <div id="manualPanel">
     <div id="manualHeader">
       <span>Manual Teleop</span>
-      <span id="manualModeLabel">off</span>
+      <span id="manualModeLabel">on</span>
     </div>
     <div class="key-grid">
       <div class="keycap" id="keyW" style="grid-column:2; grid-row:1;">W</div>
@@ -241,7 +202,7 @@
       <div class="keycap" id="keyS" style="grid-column:2; grid-row:2;">S</div>
       <div class="keycap" id="keyD" style="grid-column:3; grid-row:2;">D</div>
     </div>
-    <div id="manualStatus">klik canvas &amp; aktifkan mode manual</div>
+    <div id="manualStatus">klik canvas &amp; tekan W/A/S/D</div>
   </div>
 </div>
 
@@ -251,36 +212,26 @@
 // STATE
 // ============================================================
 let ros = null;
-let poseListener = null, goalPublisher = null, reachedListener = null;
+let poseListener = null;
 let cameraListener = null;
 let cmdVelPublisher = null;
 
-let world = { w: 3, h: 3, res: 0.05, robotRadius: 0.15 };
-let grid = null; // occupancy grid: 0=free 1=obstacle(inflated)
-let obstaclesRaw = []; // list of {x,y,w,h} in world meters, unbaked
-let gridW = 0, gridH = 0;
-
+let world = { w: 3, h: 3 };
 let robot = { x: 0, y: 0, yaw: 0, hasPose: false };
-let mode = 'idle'; // idle | obstacle | goal | manual
-let drawing = false;
-let dragStart = null;
-let dragCurrent = null;
 
-let plannedPath = []; // array of {x,y} world coords (waypoints, simplified)
-let waypointStates = []; // 'pending' | 'current' | 'done'
-let sendingPath = false;
-let currentWaypointIdx = -1;
+let orangeBall = { x:0, y:0, visible:false };
+let yellowGoal = { x:0, y:0, visible:false };
+let arucoRobots = [];
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 // ============================================================
-// WS URL BUILDER (IP + PORT diketik terpisah oleh user)
+// WS URL BUILDER
 // ============================================================
 function buildWsUrl(){
   const ipRaw = document.getElementById('wsIp').value.trim() || 'localhost';
   const portRaw = document.getElementById('wsPort').value.trim() || '9090';
-  // biar aman kalau user gak sengaja ketik "ws://" atau ":port" di kolom IP
   const ip = ipRaw.replace(/^wss?:\/\//i, '').replace(/:\d+$/, '');
   const port = portRaw.replace(/\D/g, '') || '9090';
   return `ws://${ip}:${port}`;
@@ -293,12 +244,9 @@ document.getElementById('wsPort').addEventListener('input', updateWsPreview);
 
 // ============================================================
 // CANVAS SIZING & COORD TRANSFORM
-// world coords: x right, y up (ROS convention), origin can be anywhere;
-// we map world (0,0)..(w,h) so that world (0,0) sits near bottom-left-ish,
-// but actually let's center world origin in the middle of canvas for intuition.
 // ============================================================
 let pxPerMeter = 100;
-let originPx = { x: 0, y: 0 }; // pixel location of world (0,0)
+let originPx = { x: 0, y: 0 };
 
 function resizeCanvas(){
   const wrap = document.getElementById('canvasWrap');
@@ -321,7 +269,7 @@ function computeTransform(){
 function worldToPx(x, y){
   return {
     px: originPx.x + x * pxPerMeter,
-    py: originPx.y - y * pxPerMeter // flip y (screen y grows down)
+    py: originPx.y - y * pxPerMeter
   };
 }
 function pxToWorld(px, py){
@@ -332,139 +280,12 @@ function pxToWorld(px, py){
 }
 
 // ============================================================
-// GRID / OCCUPANCY
-// ============================================================
-function rebuildGrid(){
-  gridW = Math.ceil(world.w / world.res);
-  gridH = Math.ceil(world.h / world.res);
-  grid = new Uint8Array(gridW * gridH);
-  const inflateCells = Math.ceil(world.robotRadius / world.res);
-
-  const rawGrid = new Uint8Array(gridW * gridH);
-  for(const ob of obstaclesRaw){
-    const gx0 = worldXToGridX(Math.min(ob.x, ob.x+ob.w));
-    const gx1 = worldXToGridX(Math.max(ob.x, ob.x+ob.w));
-    const gy0 = worldYToGridY(Math.max(ob.y, ob.y+ob.h));
-    const gy1 = worldYToGridY(Math.min(ob.y, ob.y+ob.h));
-    for(let gy=Math.max(0,gy0); gy<=Math.min(gridH-1,gy1); gy++){
-      for(let gx=Math.max(0,gx0); gx<=Math.min(gridW-1,gx1); gx++){
-        rawGrid[gy*gridW+gx] = 1;
-      }
-    }
-  }
-  for(let gy=0; gy<gridH; gy++){
-    for(let gx=0; gx<gridW; gx++){
-      if(rawGrid[gy*gridW+gx]===1){
-        for(let dy=-inflateCells; dy<=inflateCells; dy++){
-          for(let dx=-inflateCells; dx<=inflateCells; dx++){
-            if(dx*dx+dy*dy > inflateCells*inflateCells) continue;
-            const nx=gx+dx, ny=gy+dy;
-            if(nx>=0 && nx<gridW && ny>=0 && ny<gridH) grid[ny*gridW+nx]=1;
-          }
-        }
-      }
-    }
-  }
-}
-function worldXToGridX(x){ return Math.floor((x + world.w/2) / world.res); }
-function worldYToGridY(y){ return Math.floor((world.h/2 - y) / world.res); }
-function gridToWorldX(gx){ return (gx + 0.5) * world.res - world.w/2; }
-function gridToWorldY(gy){ return world.h/2 - (gy + 0.5) * world.res; }
-
-// ============================================================
-// A* PATHFINDING (8-connected)
-// ============================================================
-function planPath(startWorld, goalWorld){
-  const sx = worldXToGridX(startWorld.x), sy = worldYToGridY(startWorld.y);
-  const gx = worldXToGridX(goalWorld.x), gy = worldYToGridY(goalWorld.y);
-
-  if(!inBounds(sx,sy) || !inBounds(gx,gy)) return null;
-  if(grid[gy*gridW+gx]===1) return null;
-
-  const idx = (x,y)=> y*gridW+x;
-  const open = new Map();
-  const gScore = new Float32Array(gridW*gridH).fill(Infinity);
-  const fScore = new Float32Array(gridW*gridH).fill(Infinity);
-  const cameFrom = new Int32Array(gridW*gridH).fill(-1);
-  const closed = new Uint8Array(gridW*gridH);
-
-  gScore[idx(sx,sy)] = 0;
-  fScore[idx(sx,sy)] = heuristic(sx,sy,gx,gy);
-  open.set(idx(sx,sy), true);
-
-  const neighbors8 = [[1,0,1],[-1,0,1],[0,1,1],[0,-1,1],[1,1,Math.SQRT2],[1,-1,Math.SQRT2],[-1,1,Math.SQRT2],[-1,-1,Math.SQRT2]];
-
-  let iterations = 0;
-  const maxIter = gridW*gridH*4;
-
-  while(open.size>0){
-    iterations++;
-    if(iterations>maxIter) return null;
-
-    let curIdx=-1, curF=Infinity;
-    for(const k of open.keys()){
-      if(fScore[k]<curF){curF=fScore[k]; curIdx=k;}
-    }
-    const cx = curIdx % gridW, cy = Math.floor(curIdx/gridW);
-    if(cx===gx && cy===gy){
-      return reconstructPath(cameFrom, curIdx);
-    }
-    open.delete(curIdx);
-    closed[curIdx]=1;
-
-    for(const [dx,dy,cost] of neighbors8){
-      const nx=cx+dx, ny=cy+dy;
-      if(!inBounds(nx,ny)) continue;
-      const nIdx = idx(nx,ny);
-      if(closed[nIdx]) continue;
-      if(grid[nIdx]===1) continue;
-      if(dx!==0 && dy!==0){
-        if(grid[idx(cx+dx,cy)]===1 || grid[idx(cx,cy+dy)]===1) continue;
-      }
-      const tentativeG = gScore[curIdx] + cost;
-      if(tentativeG < gScore[nIdx]){
-        cameFrom[nIdx]=curIdx;
-        gScore[nIdx]=tentativeG;
-        fScore[nIdx]=tentativeG + heuristic(nx,ny,gx,gy);
-        open.set(nIdx,true);
-      }
-    }
-  }
-  return null;
-}
-function inBounds(x,y){ return x>=0 && x<gridW && y>=0 && y<gridH; }
-function heuristic(x1,y1,x2,y2){ return Math.hypot(x2-x1,y2-y1); }
-function reconstructPath(cameFrom, idx){
-  const path=[];
-  let cur=idx;
-  while(cur!==-1){
-    const gx = cur % gridW, gy = Math.floor(cur/gridW);
-    path.push({x:gridToWorldX(gx), y:gridToWorldY(gy)});
-    cur = cameFrom[cur];
-  }
-  path.reverse();
-  return simplifyPath(path);
-}
-function simplifyPath(path){
-  if(path.length<=2) return path;
-  const out=[path[0]];
-  for(let i=1;i<path.length-1;i++){
-    const a=out[out.length-1], b=path[i], c=path[i+1];
-    const cross = (b.x-a.x)*(c.y-a.y) - (b.y-a.y)*(c.x-a.x);
-    if(Math.abs(cross) > 1e-4){
-      out.push(b);
-    }
-  }
-  out.push(path[path.length-1]);
-  return out;
-}
-
-// ============================================================
 // RENDER
 // ============================================================
 function render(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
 
+  // Grid lines
   ctx.strokeStyle = getCss('--grid-line');
   ctx.lineWidth = 1;
   const step = 0.5;
@@ -477,56 +298,20 @@ function render(){
     ctx.beginPath(); ctx.moveTo(p1.px,p1.py); ctx.lineTo(p2.px,p2.py); ctx.stroke();
   }
 
+  // Arena border
   const tl = worldToPx(-world.w/2, world.h/2);
   const br = worldToPx(world.w/2, -world.h/2);
   ctx.strokeStyle = '#3a4452';
   ctx.lineWidth = 2;
   ctx.strokeRect(tl.px, tl.py, br.px-tl.px, br.py-tl.py);
 
+  // Origin cross
   const o = worldToPx(0,0);
   ctx.strokeStyle = '#4a5568'; ctx.lineWidth=1;
   ctx.beginPath(); ctx.moveTo(o.px-8,o.py); ctx.lineTo(o.px+8,o.py); ctx.stroke();
   ctx.beginPath(); ctx.moveTo(o.px,o.py-8); ctx.lineTo(o.px,o.py+8); ctx.stroke();
 
-  ctx.fillStyle = 'rgba(240,136,62,0.35)';
-  ctx.strokeStyle = '#f0883e';
-  ctx.lineWidth = 1.5;
-  for(const ob of obstaclesRaw){
-    const p1 = worldToPx(ob.x, ob.y);
-    const p2 = worldToPx(ob.x+ob.w, ob.y+ob.h);
-    const rx = Math.min(p1.px,p2.px), ry = Math.min(p1.py,p2.py);
-    const rw = Math.abs(p2.px-p1.px), rh = Math.abs(p2.py-p1.py);
-    ctx.fillRect(rx,ry,rw,rh);
-    ctx.strokeRect(rx,ry,rw,rh);
-  }
-
-  if(drawing && dragStart && dragCurrent && mode==='obstacle'){
-    const p1 = dragStart, p2 = dragCurrent;
-    const rx=Math.min(p1.px,p2.px), ry=Math.min(p1.py,p2.py);
-    const rw=Math.abs(p2.px-p1.px), rh=Math.abs(p2.py-p1.py);
-    ctx.fillStyle='rgba(240,136,62,0.18)';
-    ctx.strokeStyle='#f0883e';
-    ctx.setLineDash([4,3]);
-    ctx.fillRect(rx,ry,rw,rh); ctx.strokeRect(rx,ry,rw,rh);
-    ctx.setLineDash([]);
-  }
-
-  if(plannedPath.length>1){
-    ctx.strokeStyle = '#3fb950';
-    ctx.lineWidth = 2.5;
-    ctx.beginPath();
-    plannedPath.forEach((wp,i)=>{
-      const p = worldToPx(wp.x,wp.y);
-      if(i===0) ctx.moveTo(p.px,p.py); else ctx.lineTo(p.px,p.py);
-    });
-    ctx.stroke();
-    plannedPath.forEach((wp,i)=>{
-      const p = worldToPx(wp.x,wp.y);
-      ctx.fillStyle = waypointStates[i]==='done' ? '#3fb950' : (waypointStates[i]==='current' ? '#f0883e' : '#7d8590');
-      ctx.beginPath(); ctx.arc(p.px,p.py,4,0,Math.PI*2); ctx.fill();
-    });
-  }
-
+  // Robot pose
   if(robot.hasPose){
     const p = worldToPx(robot.x, robot.y);
     ctx.save();
@@ -542,10 +327,29 @@ function render(){
 
     ctx.strokeStyle='rgba(88,166,255,0.35)';
     ctx.beginPath();
-    ctx.arc(p.px,p.py, world.robotRadius*pxPerMeter, 0, Math.PI*2);
+    ctx.arc(p.px,p.py, 15, 0, Math.PI*2);
     ctx.stroke();
   }
 
+  // Orange ball
+  if(orangeBall.visible){
+    const p = worldToPx(orangeBall.x, orangeBall.y);
+    ctx.fillStyle="orange";
+    ctx.beginPath();
+    ctx.arc(p.px, p.py, 8, 0, Math.PI*2);
+    ctx.fill();
+  }
+
+  // Yellow goal
+  if(yellowGoal.visible){
+    const p = worldToPx(yellowGoal.x, yellowGoal.y);
+    ctx.fillStyle="yellow";
+    ctx.beginPath();
+    ctx.arc(p.px, p.py, 10, 0, Math.PI*2);
+    ctx.fill();
+  }
+
+  // HUD
   document.getElementById('hudRobot').textContent =
     `x=${robot.x.toFixed(2)} y=${robot.y.toFixed(2)} yaw=${(robot.yaw*180/Math.PI).toFixed(1)}°`;
 }
@@ -554,119 +358,14 @@ function getCss(varName){
 }
 
 // ============================================================
-// MOUSE INTERACTION
+// MOUSE INTERACTION (cursor tracking only)
 // ============================================================
-canvas.addEventListener('mousedown', (e)=>{
-  const rect = canvas.getBoundingClientRect();
-  const px = e.clientX-rect.left, py = e.clientY-rect.top;
-  if(mode==='obstacle'){
-    drawing = true;
-    dragStart = {px,py};
-    dragCurrent = {px,py};
-  } else if(mode==='goal'){
-    const w = pxToWorld(px,py);
-    tryPlan(w);
-  }
-});
 canvas.addEventListener('mousemove', (e)=>{
   const rect = canvas.getBoundingClientRect();
   const px = e.clientX-rect.left, py = e.clientY-rect.top;
   const w = pxToWorld(px,py);
   document.getElementById('hudCursor').textContent = `x=${w.x.toFixed(2)} y=${w.y.toFixed(2)}`;
-  if(drawing){
-    dragCurrent = {px,py};
-    render();
-  }
 });
-canvas.addEventListener('mouseup', (e)=>{
-  if(drawing && mode==='obstacle'){
-    const w1 = pxToWorld(dragStart.px, dragStart.py);
-    const w2 = pxToWorld(dragCurrent.px, dragCurrent.py);
-    const rectW = w2.x-w1.x, rectH = w2.y-w1.y;
-    if(Math.abs(rectW)>0.02 && Math.abs(rectH)>0.02){
-      obstaclesRaw.push({x:w1.x, y:w1.y, w:rectW, h:rectH});
-      rebuildGrid();
-    }
-  }
-  drawing=false; dragStart=null; dragCurrent=null;
-  render();
-});
-
-function tryPlan(goalWorld){
-  if(!robot.hasPose){
-    alert('Belum ada data pose robot. Connect dulu ke rosbridge & pastikan /pose publish.');
-    return;
-  }
-  const path = planPath({x:robot.x,y:robot.y}, goalWorld);
-  if(!path){
-    alert('Path tidak ditemukan (goal di dalam obstacle atau terkurung).');
-    return;
-  }
-  plannedPath = path;
-  waypointStates = path.map(()=> 'pending');
-  currentWaypointIdx = -1;
-  updateWaypointUI();
-  document.getElementById('pathInfo').textContent = `${path.length} waypoint direncanakan`;
-  render();
-}
-
-// ============================================================
-// UI: MODE BUTTONS
-// ============================================================
-document.getElementById('btnModeObstacle').onclick = ()=> setMode('obstacle');
-document.getElementById('btnModeGoal').onclick = ()=> setMode('goal');
-document.getElementById('btnModeManual').onclick = ()=>{
-  setMode(mode==='manual' ? 'idle' : 'manual');
-  if(mode==='manual') canvas.parentElement.focus();
-};
-function setMode(m){
-  mode = m;
-  document.getElementById('btnModeObstacle').classList.toggle('active', m==='obstacle');
-  document.getElementById('btnModeGoal').classList.toggle('active', m==='goal');
-  document.getElementById('btnModeManual').classList.toggle('active', m==='manual');
-  const tag = document.getElementById('modeTag');
-  tag.className = m;
-  tag.textContent = 'mode: ' + (m==='obstacle' ? 'draw obstacle (drag)' : m==='goal' ? 'klik utk set goal' : m==='manual' ? 'kontrol manual (keyboard)' : 'idle');
-  document.getElementById('manualModeLabel').textContent = m==='manual' ? 'on' : 'off';
-  if(m!=='manual'){
-    resetKeys();
-    publishCmdVel(0,0);
-  }
-}
-
-document.getElementById('btnClearObstacles').onclick = ()=>{
-  obstaclesRaw = [];
-  rebuildGrid();
-  render();
-};
-document.getElementById('btnClearPath').onclick = ()=>{
-  plannedPath = []; waypointStates=[]; currentWaypointIdx=-1;
-  document.getElementById('pathInfo').textContent = 'belum ada path';
-  updateWaypointUI();
-  render();
-};
-
-document.getElementById('btnApplyWorld').onclick = ()=>{
-  world.w = parseFloat(document.getElementById('worldW').value) || 3;
-  world.h = parseFloat(document.getElementById('worldH').value) || 3;
-  world.res = parseFloat(document.getElementById('resolution').value) || 0.05;
-  world.robotRadius = parseFloat(document.getElementById('robotRadius').value) || 0.15;
-  obstaclesRaw = [];
-  rebuildGrid();
-  computeTransform();
-  render();
-};
-
-function updateWaypointUI(){
-  const list = document.getElementById('waypointList');
-  list.innerHTML='';
-  plannedPath.forEach((wp,i)=>{
-    const div = document.createElement('div');
-    div.className = 'waypoint-item ' + waypointStates[i];
-    div.textContent = `#${i} (${wp.x.toFixed(2)}, ${wp.y.toFixed(2)})`;
-    list.appendChild(div);
-  });
-}
 
 // ============================================================
 // ROS CONNECTION
@@ -702,10 +401,11 @@ function setStatus(connected){
 
 function subscribeTopics(){
   const poseTopicName = document.getElementById('poseTopic').value;
-  const reachedTopicName = document.getElementById('reachedTopic').value;
-  const goalTopicName = document.getElementById('goalTopic').value;
   const cameraTopicName = document.getElementById('cameraTopic').value;
   const cmdVelTopicName = document.getElementById('cmdVelTopic').value;
+  const orangeTopic = document.getElementById("orangeTopic").value;
+  const yellowTopic = document.getElementById("yellowTopic").value;
+  const arucoTopic = document.getElementById("arucoTopic").value;
 
   if(poseListener) poseListener.unsubscribe();
   poseListener = new ROSLIB.Topic({
@@ -719,22 +419,28 @@ function subscribeTopics(){
     render();
   });
 
-  if(reachedListener) reachedListener.unsubscribe();
-  reachedListener = new ROSLIB.Topic({
-    ros, name: reachedTopicName, messageType: 'std_msgs/Bool'
-  });
-  reachedListener.subscribe((msg)=>{
-    if(msg.data && sendingPath){
-      onWaypointReached();
-    }
-  });
-
-  goalPublisher = new ROSLIB.Topic({
-    ros, name: goalTopicName, messageType: 'geometry_msgs/PoseStamped'
-  });
-
   cmdVelPublisher = new ROSLIB.Topic({
     ros, name: cmdVelTopicName, messageType: 'geometry_msgs/Twist'
+  });
+
+  const orangeListener = new ROSLIB.Topic({
+    ros: ros, name: orangeTopic, messageType: 'geometry_msgs/Point'
+  });
+  orangeListener.subscribe(function(msg){
+    orangeBall.x = msg.x;
+    orangeBall.y = msg.y;
+    orangeBall.visible = true;
+    render();
+  });
+
+  const yellowListener = new ROSLIB.Topic({
+    ros: ros, name: yellowTopic, messageType: 'geometry_msgs/Point'
+  });
+  yellowListener.subscribe(function(msg){
+    yellowGoal.x = msg.x;
+    yellowGoal.y = msg.y;
+    yellowGoal.visible = true;
+    render();
   });
 
   subscribeCamera(cameraTopicName);
@@ -745,15 +451,9 @@ function yawFromQuat(q){
   const cosy_cosp = 1-2*(q.y*q.y + q.z*q.z);
   return Math.atan2(siny_cosp, cosy_cosp);
 }
-function yawToQuat(yaw){
-  return { x:0, y:0, z:Math.sin(yaw/2), w:Math.cos(yaw/2) };
-}
 
 // ============================================================
-// CAMERA FEED (sensor_msgs/Image, raw rgb8/bgr8/mono8)
-// rosbridge base64-encode-in uint8[] "data" field secara otomatis,
-// jadi kita cukup decode base64 -> bytes -> gambar ke canvas manual
-// (bukan pakai <img>, karena ini bukan JPEG, tapi raw pixel array).
+// CAMERA FEED
 // ============================================================
 const cameraCanvas = document.getElementById('cameraCanvas');
 const camCtx = cameraCanvas.getContext('2d');
@@ -804,60 +504,10 @@ document.getElementById('camToggle').onclick = ()=>{
 };
 
 // ============================================================
-// SEND PATH SEQUENTIALLY (nunggu /goal_reached tiap waypoint)
-// ============================================================
-document.getElementById('btnSendPath').onclick = ()=>{
-  if(!goalPublisher){ alert('Belum connect ke rosbridge.'); return; }
-  if(plannedPath.length===0){ alert('Belum ada path. Set goal dulu di mode "Set Goal".'); return; }
-  sendingPath = true;
-  currentWaypointIdx = -1;
-  waypointStates = plannedPath.map(()=> 'pending');
-  onWaypointReached();
-};
-
-function onWaypointReached(){
-  if(currentWaypointIdx>=0 && currentWaypointIdx<waypointStates.length){
-    waypointStates[currentWaypointIdx]='done';
-  }
-  currentWaypointIdx++;
-  if(currentWaypointIdx >= plannedPath.length){
-    sendingPath = false;
-    document.getElementById('pathInfo').textContent = 'Path selesai ✔';
-    updateWaypointUI();
-    render();
-    return;
-  }
-  waypointStates[currentWaypointIdx]='current';
-  const wp = plannedPath[currentWaypointIdx];
-  let yawTarget = robot.yaw;
-  if(currentWaypointIdx < plannedPath.length-1){
-    const next = plannedPath[currentWaypointIdx+1];
-    yawTarget = Math.atan2(next.y-wp.y, next.x-wp.x);
-  }
-  const q = yawToQuat(yawTarget);
-  const msg = new ROSLIB.Message({
-    header: { frame_id: 'map' },
-    pose: {
-      position: {x: wp.x, y: wp.y, z: 0},
-      orientation: q
-    }
-  });
-  goalPublisher.publish(msg);
-  document.getElementById('pathInfo').textContent =
-    `Mengirim waypoint ${currentWaypointIdx+1}/${plannedPath.length}...`;
-  updateWaypointUI();
-  render();
-}
-
-// ============================================================
-// KEYBOARD TELEOP (diff-drive: cuma linear.x + angular.z, no strafe)
-// W/↑ = maju (linear.x +)      S/↓ = mundur (linear.x -)
-// A/← = putar kiri (angular.z +, CCW)   D/→ = putar kanan (angular.z -, CW)
-// W+A / W+D bisa ditekan bareng buat belok sambil jalan (arc turn).
+// KEYBOARD TELEOP (diff-drive)
 // ============================================================
 const keyState = { w:false, s:false, a:false, d:false };
 const keyElIds = { w:'keyW', s:'keyS', a:'keyA', d:'keyD' };
-let cmdVelLoopHandle = null;
 
 function keyFromEvent(e){
   const code = e.code;
@@ -869,7 +519,6 @@ function keyFromEvent(e){
 }
 
 window.addEventListener('keydown', (e)=>{
-  if(mode!=='manual') return;
   const k = keyFromEvent(e);
   if(!k) return;
   e.preventDefault();
@@ -925,23 +574,28 @@ function publishCmdVel(vx,wz){
   }
 }
 
-// loop publish @20Hz selama mode manual aktif, biar terus-menerus
-// ngirim command (best practice buat teleop, bukan cuma sekali per keypress)
+// Loop publish @20Hz
 function cmdVelLoop(){
-  if(mode==='manual'){
-    const {vx,wz} = computeCmdVel();
-    publishCmdVel(vx,wz);
-  }
-  cmdVelLoopHandle = setTimeout(cmdVelLoop, 50);
+  const {vx,wz} = computeCmdVel();
+  publishCmdVel(vx,wz);
+  setTimeout(cmdVelLoop, 50);
 }
 cmdVelLoop();
 
 // ============================================================
+// WORLD SIZE
+// ============================================================
+document.getElementById('btnApplyWorld').onclick = ()=>{
+  world.w = parseFloat(document.getElementById('worldW').value) || 3;
+  world.h = parseFloat(document.getElementById('worldH').value) || 3;
+  computeTransform();
+  render();
+};
+
+// ============================================================
 // INIT
 // ============================================================
-setMode('idle');
 resizeCanvas();
-rebuildGrid();
 updateWsPreview();
 </script>
 </body>
