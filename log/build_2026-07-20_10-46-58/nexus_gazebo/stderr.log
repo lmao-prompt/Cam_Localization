@@ -1,0 +1,18 @@
+[01m[Kcc1plus:[m[K [01;31m[Kfatal error: [m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/cam.cpp: No such file or directory
+[01m[Kcc1plus:[m[K [01;31m[Kfatal error: [m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/obstacle_avoidance.cpp: No such file or directory
+[01m[Kcc1plus:[m[K [01;31m[Kfatal error: [m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/movement.cpp: No such file or directory
+[01m[Kcc1plus:[m[K [01;31m[Kfatal error: [m[K/home/prhayogo/Downloads/Nexus_Gazebo/src/waypoint.cpp: No such file or directory
+compilation terminated.
+compilation terminated.
+compilation terminated.
+compilation terminated.
+gmake[2]: *** [CMakeFiles/movement.dir/build.make:76: CMakeFiles/movement.dir/src/movement.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/waypoint.dir/build.make:76: CMakeFiles/waypoint.dir/src/waypoint.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/obstacle_avoidance.dir/build.make:76: CMakeFiles/obstacle_avoidance.dir/src/obstacle_avoidance.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/cam.dir/build.make:76: CMakeFiles/cam.dir/src/cam.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:253: CMakeFiles/cam.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:149: CMakeFiles/waypoint.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:175: CMakeFiles/movement.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:305: CMakeFiles/obstacle_avoidance.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

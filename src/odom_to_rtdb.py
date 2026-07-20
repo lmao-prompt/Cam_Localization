@@ -11,7 +11,7 @@ from nav_msgs.msg import Odometry
 import firebase_admin
 from firebase_admin import credentials, db
 
-SERVICE_ACCOUNT_PATH = "klod-a02d7-firebase-adminsdk-fbsvc-2af2f722df.json"
+SERVICE_ACCOUNT_PATH = "/home/prhayogo/Downloads/klod-a02d7-firebase-adminsdk-fbsvc-2af2f722df.json"
 DATABASE_URL = "https://klod-a02d7-default-rtdb.asia-southeast1.firebasedatabase.app/"
 ODOM_TOPIC = "/robot_pose"
 RTDB_PATH = "robot_status/position"   

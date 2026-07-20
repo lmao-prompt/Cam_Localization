@@ -1,0 +1,31 @@
+[0.013s] Invoking command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16
+[0.049s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.304s] -- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.342s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.352s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.366s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.381s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.447s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.450s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.526s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.605s] -- Found sensor_msgs: 5.3.8 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.672s] -- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)
+[0.676s] -- Found tf2: 0.36.21 (/opt/ros/jazzy/share/tf2/cmake)
+[0.772s] -- Configuring done (0.7s)
+[0.779s] [31mCMake Error at CMakeLists.txt:22 (add_executable):
+[0.779s]   Cannot find source file:
+[0.779s] 
+[0.779s]     src/cam.cpp
+[0.779s] 
+[0.779s]   Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+[0.779s]   .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+[0.779s]   .f95 .f03 .hip .ispc
+[0.779s] 
+[0.779s] [0m
+[0.782s] [31mCMake Error at CMakeLists.txt:22 (add_executable):
+[0.782s]   No SOURCES given to target: cam
+[0.782s] 
+[0.782s] [0m
+[0.782s] [0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+[0.791s] gmake: *** [Makefile:513: cmake_check_build_system] Error 1
+[0.792s] Invoked command in '/home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/prhayogo/Documents/maen_ws/install/micro_ros_setup:/home/prhayogo/Documents/maen_ws/install/micro_ros_msgs:/home/prhayogo/Documents/maen_ws/install/drive_base_msgs:/home/prhayogo/Documents/robot_ws/install/gui_kfs_pkg:/home/prhayogo/Documents/robot_ws/install/mehua_forest:/home/prhayogo/Documents/robot_ws/install/mehuaStar:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/prhayogo/Downloads/Nexus_Gazebo/build/nexus_gazebo -- -j16 -l16

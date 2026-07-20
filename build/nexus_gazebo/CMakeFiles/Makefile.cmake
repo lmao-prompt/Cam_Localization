@@ -714,11 +714,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/uninstall.dir/DependInfo.cmake"
   "CMakeFiles/nexus_gazebo_uninstall.dir/DependInfo.cmake"
-  "CMakeFiles/waypoint.dir/DependInfo.cmake"
-  "CMakeFiles/movement.dir/DependInfo.cmake"
   "CMakeFiles/cam_localization.dir/DependInfo.cmake"
   "CMakeFiles/aruco_localization.dir/DependInfo.cmake"
-  "CMakeFiles/cam.dir/DependInfo.cmake"
   "CMakeFiles/aruco.dir/DependInfo.cmake"
-  "CMakeFiles/obstacle_avoidance.dir/DependInfo.cmake"
   )

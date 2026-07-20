@@ -1,0 +1,7 @@
+[ 28%] [32mBuilding CXX object CMakeFiles/waypoint.dir/src/waypoint.cpp.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/movement.dir/src/movement.cpp.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/obstacle_avoidance.dir/src/obstacle_avoidance.cpp.o[0m
+[ 35%] Built target cam_localization
+[ 71%] Built target aruco
+[ 71%] [32mBuilding CXX object CMakeFiles/cam.dir/src/cam.cpp.o[0m
+[ 71%] Built target aruco_localization

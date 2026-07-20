@@ -198,32 +198,6 @@ nexus_gazebo_uninstall/fast:
 .PHONY : nexus_gazebo_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named waypoint
-
-# Build rule for target.
-waypoint: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 waypoint
-.PHONY : waypoint
-
-# fast build rule for target.
-waypoint/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint.dir/build.make CMakeFiles/waypoint.dir/build
-.PHONY : waypoint/fast
-
-#=============================================================================
-# Target rules for targets named movement
-
-# Build rule for target.
-movement: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 movement
-.PHONY : movement
-
-# fast build rule for target.
-movement/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/movement.dir/build.make CMakeFiles/movement.dir/build
-.PHONY : movement/fast
-
-#=============================================================================
 # Target rules for targets named cam_localization
 
 # Build rule for target.
@@ -250,19 +224,6 @@ aruco_localization/fast:
 .PHONY : aruco_localization/fast
 
 #=============================================================================
-# Target rules for targets named cam
-
-# Build rule for target.
-cam: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cam
-.PHONY : cam
-
-# fast build rule for target.
-cam/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam.dir/build.make CMakeFiles/cam.dir/build
-.PHONY : cam/fast
-
-#=============================================================================
 # Target rules for targets named aruco
 
 # Build rule for target.
@@ -274,19 +235,6 @@ aruco: cmake_check_build_system
 aruco/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco.dir/build.make CMakeFiles/aruco.dir/build
 .PHONY : aruco/fast
-
-#=============================================================================
-# Target rules for targets named obstacle_avoidance
-
-# Build rule for target.
-obstacle_avoidance: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_avoidance
-.PHONY : obstacle_avoidance
-
-# fast build rule for target.
-obstacle_avoidance/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/obstacle_avoidance.dir/build.make CMakeFiles/obstacle_avoidance.dir/build
-.PHONY : obstacle_avoidance/fast
 
 src/aruco.o: src/aruco.cpp.o
 .PHONY : src/aruco.o
@@ -336,30 +284,6 @@ src/aruco_localization.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco_localization.dir/build.make CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.s
 .PHONY : src/aruco_localization.cpp.s
 
-src/cam.o: src/cam.cpp.o
-.PHONY : src/cam.o
-
-# target to build an object file
-src/cam.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam.dir/build.make CMakeFiles/cam.dir/src/cam.cpp.o
-.PHONY : src/cam.cpp.o
-
-src/cam.i: src/cam.cpp.i
-.PHONY : src/cam.i
-
-# target to preprocess a source file
-src/cam.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam.dir/build.make CMakeFiles/cam.dir/src/cam.cpp.i
-.PHONY : src/cam.cpp.i
-
-src/cam.s: src/cam.cpp.s
-.PHONY : src/cam.s
-
-# target to generate assembly for a file
-src/cam.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam.dir/build.make CMakeFiles/cam.dir/src/cam.cpp.s
-.PHONY : src/cam.cpp.s
-
 src/cam_localization.o: src/cam_localization.cpp.o
 .PHONY : src/cam_localization.o
 
@@ -384,78 +308,6 @@ src/cam_localization.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_localization.dir/build.make CMakeFiles/cam_localization.dir/src/cam_localization.cpp.s
 .PHONY : src/cam_localization.cpp.s
 
-src/movement.o: src/movement.cpp.o
-.PHONY : src/movement.o
-
-# target to build an object file
-src/movement.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/movement.dir/build.make CMakeFiles/movement.dir/src/movement.cpp.o
-.PHONY : src/movement.cpp.o
-
-src/movement.i: src/movement.cpp.i
-.PHONY : src/movement.i
-
-# target to preprocess a source file
-src/movement.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/movement.dir/build.make CMakeFiles/movement.dir/src/movement.cpp.i
-.PHONY : src/movement.cpp.i
-
-src/movement.s: src/movement.cpp.s
-.PHONY : src/movement.s
-
-# target to generate assembly for a file
-src/movement.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/movement.dir/build.make CMakeFiles/movement.dir/src/movement.cpp.s
-.PHONY : src/movement.cpp.s
-
-src/obstacle_avoidance.o: src/obstacle_avoidance.cpp.o
-.PHONY : src/obstacle_avoidance.o
-
-# target to build an object file
-src/obstacle_avoidance.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/obstacle_avoidance.dir/build.make CMakeFiles/obstacle_avoidance.dir/src/obstacle_avoidance.cpp.o
-.PHONY : src/obstacle_avoidance.cpp.o
-
-src/obstacle_avoidance.i: src/obstacle_avoidance.cpp.i
-.PHONY : src/obstacle_avoidance.i
-
-# target to preprocess a source file
-src/obstacle_avoidance.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/obstacle_avoidance.dir/build.make CMakeFiles/obstacle_avoidance.dir/src/obstacle_avoidance.cpp.i
-.PHONY : src/obstacle_avoidance.cpp.i
-
-src/obstacle_avoidance.s: src/obstacle_avoidance.cpp.s
-.PHONY : src/obstacle_avoidance.s
-
-# target to generate assembly for a file
-src/obstacle_avoidance.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/obstacle_avoidance.dir/build.make CMakeFiles/obstacle_avoidance.dir/src/obstacle_avoidance.cpp.s
-.PHONY : src/obstacle_avoidance.cpp.s
-
-src/waypoint.o: src/waypoint.cpp.o
-.PHONY : src/waypoint.o
-
-# target to build an object file
-src/waypoint.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint.dir/build.make CMakeFiles/waypoint.dir/src/waypoint.cpp.o
-.PHONY : src/waypoint.cpp.o
-
-src/waypoint.i: src/waypoint.cpp.i
-.PHONY : src/waypoint.i
-
-# target to preprocess a source file
-src/waypoint.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint.dir/build.make CMakeFiles/waypoint.dir/src/waypoint.cpp.i
-.PHONY : src/waypoint.cpp.i
-
-src/waypoint.s: src/waypoint.cpp.s
-.PHONY : src/waypoint.s
-
-# target to generate assembly for a file
-src/waypoint.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint.dir/build.make CMakeFiles/waypoint.dir/src/waypoint.cpp.s
-.PHONY : src/waypoint.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -473,32 +325,16 @@ help:
 	@echo "... uninstall"
 	@echo "... aruco"
 	@echo "... aruco_localization"
-	@echo "... cam"
 	@echo "... cam_localization"
-	@echo "... movement"
-	@echo "... obstacle_avoidance"
-	@echo "... waypoint"
 	@echo "... src/aruco.o"
 	@echo "... src/aruco.i"
 	@echo "... src/aruco.s"
 	@echo "... src/aruco_localization.o"
 	@echo "... src/aruco_localization.i"
 	@echo "... src/aruco_localization.s"
-	@echo "... src/cam.o"
-	@echo "... src/cam.i"
-	@echo "... src/cam.s"
 	@echo "... src/cam_localization.o"
 	@echo "... src/cam_localization.i"
 	@echo "... src/cam_localization.s"
-	@echo "... src/movement.o"
-	@echo "... src/movement.i"
-	@echo "... src/movement.s"
-	@echo "... src/obstacle_avoidance.o"
-	@echo "... src/obstacle_avoidance.i"
-	@echo "... src/obstacle_avoidance.s"
-	@echo "... src/waypoint.o"
-	@echo "... src/waypoint.i"
-	@echo "... src/waypoint.s"
 .PHONY : help
 
 

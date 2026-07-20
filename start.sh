@@ -19,6 +19,8 @@ sleep 1
 #     /world/car_world/create@ros_gz_interfaces/srv/EntityFactory]gz.msgs.EntityFactory \
 #     /world/car_world/remove@ros_gz_interfaces/srv/Entity]gz.msgs.Entity &
 
+# ros2 run micro_ros_agent micro_ros_agent udp4 --port 8888
+
 echo "Starting nodes..."
 ros2 run nexus_gazebo aruco &
 ros2 run nexus_gazebo cam_localization &

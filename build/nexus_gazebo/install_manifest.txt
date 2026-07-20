@@ -1,8 +1,4 @@
-/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/cam
 /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/cam_localization
-/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/obstacle_avoidance
-/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/waypoint
-/home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/movement
 /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/aruco
 /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/lib/nexus_gazebo/aruco_localization
 /home/prhayogo/Downloads/Nexus_Gazebo/install/nexus_gazebo/share/ament_index/resource_index/package_run_dependencies/nexus_gazebo
