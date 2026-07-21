@@ -176,11 +176,12 @@ def pixel_to_cm(cx, cy):
         x_m -= FIELD_W / 2.0
         y_m -= FIELD_H / 2.0
         return float(x_m * 100.0), float(y_m * 100.0)
-    
+
     scale = 0.5
     x_cm = (cx - frame_w / 2) * scale
     y_cm = -(cy - frame_h / 2) * scale
     return float(x_cm), float(y_cm)
+
 
 print(f"Menggunakan kamera index {cam_index}")
 if auto_mode:
@@ -194,16 +195,76 @@ frame_w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 frame_h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 center_x = frame_w // 2
 
-# --- Chase / align constants ---
+# --- Navigation constants ---
 KP_LINEAR   = 0.0005
-MAX_LINEAR  = 0.2
-MAX_ANGULAR = 0.5
+MAX_LINEAR  = 0.3
+MAX_ANGULAR = 0.8
 STOP_AREA   = 8000
 
-# --- Align-to-yaw constants ---
+# --- Align-to-target constants ---
 YAW_DEADZONE_DEG = 7.0
 KP_ANGULAR_YAW   = 0.01
 FORWARD_SPEED    = 0.15
+
+# --- Potential Field constants (PIXEL SPACE) ---
+AVOID_DIST_PIXEL = 350      # Jarak pixel untuk mulai menghindar
+REPULSE_GAIN = 3.0          # Kekuatan tolak obstacle
+ATT_GAIN = 1.0              # Kekuatan tarik target
+MIN_OBSTACLE_AREA = 1500    # Minimum area obstacle
+
+# --- Path preview constants (buat garis biru muda) ---
+PATH_PREVIEW_STEPS = 40     # Berapa langkah simulasi ke depan
+PATH_PREVIEW_STEP_SIZE = 15 # Panjang tiap langkah (pixel)
+
+# --- Path tracking (jejak robot yang sudah dilalui) ---
+PATH_MAX_POINTS = 300
+robot_path = []
+
+
+def compute_target_path(start_pos, target_pos, obstacles,
+                         steps=PATH_PREVIEW_STEPS,
+                         step_size=PATH_PREVIEW_STEP_SIZE):
+    """
+    Simulasikan potential field dari posisi robot ke target buat menghasilkan
+    rute (list titik pixel) yang harus dilalui. Kalau nggak ada obstacle di
+    dekat rute, hasilnya otomatis garis lurus ke target ("langsung ke target").
+    Kalau ada obstacle, rute-nya melengkung menghindar.
+    """
+    px, py = float(start_pos[0]), float(start_pos[1])
+    tx, ty = float(target_pos[0]), float(target_pos[1])
+    path = [(px, py)]
+
+    for _ in range(steps):
+        dist_to_target = np.hypot(tx - px, ty - py)
+        if dist_to_target < step_size:
+            path.append((tx, ty))
+            break
+
+        att_x = (tx - px) / dist_to_target * ATT_GAIN
+        att_y = (ty - py) / dist_to_target * ATT_GAIN
+
+        rep_x, rep_y = 0.0, 0.0
+        for ox, oy, oarea in obstacles:
+            dx = px - ox
+            dy = py - oy
+            dist = np.hypot(dx, dy)
+            if 0 < dist < AVOID_DIST_PIXEL:
+                force = ((AVOID_DIST_PIXEL - dist) / AVOID_DIST_PIXEL) ** 2
+                rep_x += (dx / dist) * force * REPULSE_GAIN
+                rep_y += (dy / dist) * force * REPULSE_GAIN
+
+        comb_x = att_x + rep_x
+        comb_y = att_y + rep_y
+        comb_dist = np.hypot(comb_x, comb_y)
+        if comb_dist < 1e-6:
+            break
+
+        px += (comb_x / comb_dist) * step_size
+        py += (comb_y / comb_dist) * step_size
+        path.append((px, py))
+
+    return path
+
 
 current_dict_idx = 0
 detectors = {}
@@ -236,7 +297,7 @@ while True:
                                 [0, -1, 0]])
     gray_sharp = cv2.filter2D(gray, -1, sharpen_kernel)
 
-    # --- Deteksi warna orange ---
+    # --- Deteksi warna orange (OBSTACLE) ---
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     lower_orange = np.array([170, 100, 100])
     upper_orange = np.array([179, 255, 255])
@@ -244,28 +305,35 @@ while True:
     kernel = np.ones((7, 7), np.uint8)
     mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
     mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
+
     largest_orange = None
     largest_area = 0
+    obstacle_centers = []  # List of (cx, cy, area) in pixels
     orange_contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
     for cnt in orange_contours:
         area = cv2.contourArea(cnt)
-        if area < 1500:
+        if area < MIN_OBSTACLE_AREA:
             continue
         x, y, w, h = cv2.boundingRect(cnt)
-        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 165, 255), 2)
-        cv2.putText(frame, "Orange", (x, y - 5),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 165, 255), 2)
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
+        cv2.putText(frame, "Obstacle", (x, y - 5),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
         cx_orange = x + w // 2
         cy_orange = y + h // 2
-        print(f"Orange center: ({cx_orange},{cy_orange}) area:{int(area)}")
+        cv2.circle(frame, (cx_orange, cy_orange), 5, (0, 0, 255), -1)
+
         ox_cm, oy_cm = pixel_to_cm(cx_orange, cy_orange)
         if ox_cm is not None:
-            print(f"  → Orange: x={ox_cm:.1f}cm y={oy_cm:.1f}cm")
+            print(f"  → Obstacle: x={ox_cm:.1f}cm y={oy_cm:.1f}cm")
+
+        obstacle_centers.append((cx_orange, cy_orange, area))
+
         if area > largest_area:
             largest_area = area
             largest_orange = (cx_orange, cy_orange, int(area))
 
-    # --- Deteksi warna kuning ---
+    # --- Deteksi warna kuning (TARGET) ---
     lower_yellow = np.array([13, 122, 100])
     upper_yellow = np.array([43, 255, 255])
     mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
@@ -330,7 +398,7 @@ while True:
             angle_deg = np.degrees(angle_rad)
             angle_mdeg = int(angle_deg * 1000)
 
-            if marker_id == 3:
+            if marker_id == 81:
                 angle_312 = angle_deg
                 marker_312_pos = (cx, cy)
 
@@ -344,28 +412,24 @@ while True:
                         cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
             print(f"[{current_dict}] ID {marker_id} center: ({cx},{cy}) angle: {angle_deg:.1f}")
 
-            if marker_id == 312:
+            if marker_id == 81:
                 x_cm, y_cm = pixel_to_cm(cx, cy)
                 if x_cm is not None:
-                    # Publish robot pose
                     pose_msg = PoseStamped()
                     pose_msg.header.frame_id = 'map'
                     pose_msg.header.stamp = ros_node.get_clock().now().to_msg()
                     pose_msg.pose.position.x = float(x_cm) / 100.0
                     pose_msg.pose.position.y = float(y_cm) / 100.0
                     pose_msg.pose.position.z = 0.0
-                    
-                    # Yaw dari angle_deg
+
                     yaw_rad = float(np.radians(angle_deg))
                     pose_msg.pose.orientation.x = 0.0
                     pose_msg.pose.orientation.y = 0.0
                     pose_msg.pose.orientation.z = float(np.sin(yaw_rad / 2))
                     pose_msg.pose.orientation.w = float(np.cos(yaw_rad / 2))
-                    
+
                     robot_pose_pub.publish(pose_msg)
                     print(f"  → Robot pose: x={x_cm:.1f}cm y={y_cm:.1f}cm yaw={angle_deg:.1f}°")
-                else:
-                    print(f"  → Marker 312: (homography belum di-load)")
 
         if ROS_AVAILABLE:
             msg = Int32MultiArray()
@@ -396,70 +460,167 @@ while True:
                 else:
                     del marker_trackers[marker_id]
 
-    # --- Align-to-target logic ---
+    # ============================================================
+    # === POTENTIAL FIELD: PIXEL SPACE (NO MIRROR ISSUE) ===
+    # ============================================================
     twist = Twist()
+
     if ROS_AVAILABLE:
         if angle_312 is not None and marker_312_pos is not None and largest_yellow is not None:
             angle_312_f = float(angle_312)
-            mx, my = marker_312_pos
-            yc_x, yc_y, yc_area = largest_yellow
+            rx, ry = marker_312_pos  # Robot position in PIXEL
+            tx, ty = largest_yellow[0], largest_yellow[1]  # Target in PIXEL
 
-            bearing_to_yellow = float(np.degrees(np.arctan2(yc_y - my, yc_x - mx)))
+            # --- UPDATE PATH TRAIL (jejak yang udah dilewati) ---
+            robot_path.append((rx, ry))
+            if len(robot_path) > PATH_MAX_POINTS:
+                robot_path.pop(0)
 
-            raw_err = angle_312_f - bearing_to_yellow
+            # --- 0. RUTE KE TARGET (buat garis biru muda) ---
+            # Ini simulasi potential field dari posisi robot SEKARANG sampai
+            # target. Kalau nggak ada obstacle di jalur, hasilnya lurus
+            # ("langsung ke target"). Kalau ada obstacle, rute melengkung.
+            target_route = compute_target_path((rx, ry), (tx, ty), obstacle_centers)
+
+            # --- 1. ATTRACTIVE FORCE (ke target kuning, langsung/lurus) ---
+            att_x = tx - rx
+            att_y = ty - ry
+            att_dist = np.sqrt(att_x**2 + att_y**2)
+
+            if att_dist > 0:
+                att_x = (att_x / att_dist) * ATT_GAIN
+                att_y = (att_y / att_dist) * ATT_GAIN
+
+            # --- 2. REPULSIVE FORCE (dari obstacle orange) ---
+            rep_x = 0.0
+            rep_y = 0.0
+
+            for obs in obstacle_centers:
+                ox, oy, oarea = obs
+                dx = rx - ox  # Vector dari obstacle ke robot (menjauh)
+                dy = ry - oy
+                dist = np.sqrt(dx**2 + dy**2)
+
+                if dist < AVOID_DIST_PIXEL and dist > 0:
+                    # Force: semakin dekat semakin kuat
+                    force = (AVOID_DIST_PIXEL - dist) / AVOID_DIST_PIXEL
+                    force = force * force  # Quadratic for stronger near obstacle
+
+                    # Normalize and scale
+                    rep_x += (dx / dist) * force * REPULSE_GAIN
+                    rep_y += (dy / dist) * force * REPULSE_GAIN
+
+                    # Visualisasi: garis repulse (merah tipis)
+                    cv2.line(frame, (rx, ry), (ox, oy), (128, 128, 255), 1)
+                    # Circle radius avoid
+                    cv2.circle(frame, (ox, oy), AVOID_DIST_PIXEL, (0, 0, 128), 1)
+
+            # --- 3. COMBINED FORCE (dipakai buat kontrol motor step ini) ---
+            combined_x = att_x + rep_x
+            combined_y = att_y + rep_y
+            combined_angle = float(np.degrees(np.arctan2(combined_y, combined_x)))
+
+            # --- 4. CALCULATE ERROR (robot yaw vs desired heading) ---
+            raw_err = angle_312_f - combined_angle
             err_angle = ((raw_err + 180.0) % 360.0) - 180.0
+
+            # --- 5. CMD_VEL ---
+            # Speed: pelan saat dekat obstacle atau target
+            repulse_mag = np.sqrt(rep_x**2 + rep_y**2)
+            speed_factor = 1.0 / (1.0 + repulse_mag * 0.5)  # Reduce speed near obstacle
 
             if abs(err_angle) > YAW_DEADZONE_DEG:
                 ang_z = -err_angle * KP_ANGULAR_YAW * 4
                 ang_z = max(-MAX_ANGULAR, min(MAX_ANGULAR, ang_z))
                 twist.angular.z = float(ang_z)
-                twist.linear.x = 0.0
-                print(f"  → ALIGN→YELLOW: yaw={angle_312_f:.1f}°  bearing={bearing_to_yellow:.1f}°  "
-                      f"err={err_angle:.1f}°  ang.z={twist.angular.z:.3f}")
+                twist.linear.x = float(FORWARD_SPEED * speed_factor * 0.3)  # Pelan saat muter
             else:
                 twist.angular.z = 0.0
-                twist.linear.x = float(FORWARD_SPEED)
-                print(f"  → FACING YELLOW: yaw={angle_312_f:.1f}°  bearing={bearing_to_yellow:.1f}°  "
-                      f"lin={twist.linear.x:.2f}")
+                twist.linear.x = float(FORWARD_SPEED * speed_factor)
 
-    # --- Publish obstacle kuning (HANYA kalau ada kuning) ---
-    if ROS_AVAILABLE and yellow_contours:
+            # --- 6. VISUALISASI ---
+
+            # Path trail (merah gradasi) - jejak yang SUDAH dilewati
+            if len(robot_path) > 1:
+                for i in range(1, len(robot_path)):
+                    alpha = int(255 * i / len(robot_path))
+                    cv2.line(frame, robot_path[i-1], robot_path[i],
+                            (0, 0, min(255, alpha + 50)), 2)
+
+            # Attractive force (hijau) - arah lurus ke target
+            att_end_x = int(rx + 80 * np.cos(np.radians(float(np.degrees(np.arctan2(att_y, att_x))))))
+            att_end_y = int(ry + 80 * np.sin(np.radians(float(np.degrees(np.arctan2(att_y, att_x))))))
+            cv2.arrowedLine(frame, (rx, ry), (att_end_x, att_end_y), (0, 255, 0), 2)
+
+            # Repulsive force (merah)
+            if repulse_mag > 0.1:
+                rep_end_x = int(rx + 60 * (rep_x / repulse_mag))
+                rep_end_y = int(ry + 60 * (rep_y / repulse_mag))
+                cv2.arrowedLine(frame, (rx, ry), (rep_end_x, rep_end_y), (0, 0, 255), 2)
+
+            # Rute ke target (biru muda/cyan) - PATH YANG HARUS DILALUI,
+            # bukan cuma satu panah arah sesaat. Garis lurus kalau clear,
+            # melengkung kalau ada obstacle di jalur.
+            if len(target_route) > 1:
+                route_pts = np.array(target_route, dtype=np.int32).reshape(-1, 1, 2)
+                cv2.polylines(frame, [route_pts], isClosed=False,
+                              color=(255, 255, 0), thickness=3)
+                # Panah kecil di ujung rute biar keliatan arah akhirnya
+                px_end, py_end = target_route[-1]
+                px_prev, py_prev = target_route[max(0, len(target_route) - 2)]
+                cv2.arrowedLine(frame, (int(px_prev), int(py_prev)),
+                                 (int(px_end), int(py_end)), (255, 255, 0), 3,
+                                 tipLength=0.6)
+
+            # Target line (hijau solid, dari robot ke yellow - garis lurus referensi)
+            cv2.line(frame, (rx, ry), (tx, ty), (0, 255, 0), 1)
+
+            # Status text
+            mode = "AVOID" if repulse_mag > 0.5 else "TRACK (langsung)"
+            cv2.putText(frame, f"Mode: {mode}", (10, frame_h - 60),
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
+            cv2.putText(frame, f"Target: {float(np.degrees(np.arctan2(ty-ry, tx-rx))):.1f}°",
+                       (10, frame_h - 40),
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+            cv2.putText(frame, f"Combined: {combined_angle:.1f}° | Err: {err_angle:.1f}°",
+                       (10, frame_h - 20),
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 0), 2)
+
+            print(f"  → POTENTIAL FIELD: att=({att_x:.2f},{att_y:.2f}) "
+                  f"rep=({rep_x:.2f},{rep_y:.2f}) "
+                  f"comb={combined_angle:.1f}° err={err_angle:.1f}° "
+                  f"route_pts={len(target_route)} "
+                  f"lin={twist.linear.x:.3f} ang={twist.angular.z:.3f}")
+
+        else:
+            print(f"  → [IDLE] angle_312={angle_312 is not None}, "
+                  f"marker_pos={marker_312_pos is not None}, "
+                  f"yellow={largest_yellow is not None}")
+
+    # --- Publish obstacle (orange) ke ROS ---
+    if ROS_AVAILABLE and obstacle_centers:
         obs_msg = PoseArray()
         obs_msg.header.frame_id = 'map'
         obs_msg.header.stamp = ros_node.get_clock().now().to_msg()
-        
-        for cnt in yellow_contours:
-            area = cv2.contourArea(cnt)
-            if area < 1500:
-                continue
-                
-            x, y, w, h = cv2.boundingRect(cnt)
-            cx = x + w // 2
-            cy = y + h // 2
-            
-            x_cm, y_cm = pixel_to_cm(cx, cy)
+
+        for obs in obstacle_centers:
+            ox, oy, oarea = obs
+            x_cm, y_cm = pixel_to_cm(ox, oy)
             if x_cm is None:
                 continue
-            
-            # CAST KE float() PYTHON MURNI
             pose = Pose()
             pose.position.x = float(x_cm) / 100.0
             pose.position.y = float(y_cm) / 100.0
-            pose.position.z = float(0.0)
-            pose.orientation.x = float(w) / 100.0
-            pose.orientation.y = float(h) / 100.0
-            pose.orientation.z = float(0.0)
-            pose.orientation.w = float(1.0)
-            
+            pose.position.z = 0.0
+            pose.orientation.w = 1.0
             obs_msg.poses.append(pose)
-        
-        obstacle_pub.publish(obs_msg)
-        print(f"[Obstacle] Published {len(obs_msg.poses)} yellow obstacles")
 
-    # --- Publish cmd_vel (SELALU, tidak tergantung yellow) ---
+        obstacle_pub.publish(obs_msg)
+
+    # --- Publish cmd_vel (SELALU) ---
     if ROS_AVAILABLE:
         cmd_vel_pub.publish(twist)
-        # print(f"[CmdVel] linear.x={twist.linear.x:.3f}, angular.z={twist.angular.z:.3f}")
+        print(f"[CmdVel] linear.x={twist.linear.x:.3f}, angular.z={twist.angular.z:.3f}")
 
     if auto_mode:
         cv2.putText(frame, label, (10, 30),

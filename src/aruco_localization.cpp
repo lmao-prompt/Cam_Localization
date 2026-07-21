@@ -130,7 +130,7 @@ public:
         pid_angular_ = PIDController(a_kp, a_ki, a_kd, -a_max, a_max);
         pid_linear_ = PIDController(l_kp, l_ki, l_kd, 0.0, l_max); // gak mundur
 
-        declare_parameter("homography_path", std::string("/home/prhayogo/Downloads/Nexus_Gazebo/homography.json"));
+        declare_parameter("homography_path", std::string("/home/prhayogo/Downloads/Nexus_Gazebo/src/homography.json"));
         std::string homography_path = get_parameter("homography_path").as_string();
         homography_ = loadHomography(homography_path);
 
