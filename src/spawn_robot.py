@@ -41,7 +41,7 @@ class UpdateRobotPose(Node):
         # Callback cuma nyimpen data, gak nunggu apa-apa -> instan return
         x = float(msg.pose.position.x)
         y = float(msg.pose.position.y)
-        z = float(msg.pose.position.z) + 0.5  # offset z robot
+        z = float(msg.pose.position.z)  # offset z robot
         qx = float(msg.pose.orientation.x)
         qy = float(msg.pose.orientation.y)
         qz = float(msg.pose.orientation.z)
@@ -73,7 +73,7 @@ class UpdateRobotPose(Node):
             "gz", "service", "-s", f"/world/{self.world_name}/set_pose",
             "--reqtype", "gz.msgs.Pose",
             "--reptype", "gz.msgs.Boolean",
-            "--timeout", "300",
+            "--timeout", "30",
             "--req", req
         ]
         try:

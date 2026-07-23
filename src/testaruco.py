@@ -68,8 +68,10 @@ try:
     yellow_pub = ros_node.create_publisher(Point, '/yellow_position', 10)
     aruco_pub = ros_node.create_publisher(Int32MultiArray, '/aruco_markers', 10)
     obstacle_pub = ros_node.create_publisher(PoseArray, '/obstacle_yellow', 10)
+    target_yellow_pub = ros_node.create_publisher(PoseStamped, '/target_yellow', 10)
     robot_pose_pub = ros_node.create_publisher(PoseStamped, '/robot_pose', 10)
     cmd_vel_pub = ros_node.create_publisher(Twist, '/cmd_vel', 10)
+    
     ROS_AVAILABLE = True
     print("[ROS 2] Publisher aktif: /orange_position, /yellow_position, /aruco_markers, /cmd_vel, /obstacle_yellow")
 except Exception as e:
@@ -100,7 +102,7 @@ DICTS = {
     'DICT_APRILTAG_36h11': cv2.aruco.DICT_APRILTAG_36h11,
 }
 
-cam_index = 2
+cam_index = 1 #base on your video cam
 dict_name = None
 auto_mode = False
 homography_path = None
@@ -197,8 +199,8 @@ center_x = frame_w // 2
 
 # --- Navigation constants ---
 KP_LINEAR   = 0.0005
-MAX_LINEAR  = 0.3
-MAX_ANGULAR = 0.8
+MAX_LINEAR  = 0.05
+MAX_ANGULAR = 0.05
 STOP_AREA   = 8000
 
 # --- Align-to-target constants ---
@@ -207,8 +209,8 @@ KP_ANGULAR_YAW   = 0.01
 FORWARD_SPEED    = 0.15
 
 # --- Potential Field constants (PIXEL SPACE) ---
-AVOID_DIST_PIXEL = 350      # Jarak pixel untuk mulai menghindar
-REPULSE_GAIN = 3.0          # Kekuatan tolak obstacle
+AVOID_DIST_PIXEL = 150      # Jarak pixel untuk mulai menghindar
+REPULSE_GAIN = 5.0          # Kekuatan tolak obstacle
 ATT_GAIN = 1.0              # Kekuatan tarik target
 MIN_OBSTACLE_AREA = 1500    # Minimum area obstacle
 
@@ -220,6 +222,8 @@ PATH_PREVIEW_STEP_SIZE = 15 # Panjang tiap langkah (pixel)
 PATH_MAX_POINTS = 300
 robot_path = []
 
+nav_state = "ALIGN" 
+DRIVE_EXIT_DEG = 20.0 
 
 def compute_target_path(start_pos, target_pos, obstacles,
                          steps=PATH_PREVIEW_STEPS,
@@ -299,8 +303,8 @@ while True:
 
     # --- Deteksi warna orange (OBSTACLE) ---
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    lower_orange = np.array([170, 100, 100])
-    upper_orange = np.array([179, 255, 255])
+    lower_orange = np.array([170    , 100, 100])
+    upper_orange = np.array([180, 255, 255])
     mask = cv2.inRange(hsv, lower_orange, upper_orange)
     kernel = np.ones((7, 7), np.uint8)
     mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
@@ -367,10 +371,37 @@ while True:
         orange_pub.publish(msg)
 
     if ROS_AVAILABLE and largest_yellow:
+        # --- Publish ke topic lama (Point, untuk compatibility) ---
         msg = Point()
         msg.x = float(largest_yellow[0])
         msg.y = float(largest_yellow[1])
         yellow_pub.publish(msg)
+        
+        # ⬇️ TAMBAH INI: Publish PoseStamped ke Gazebo
+        cx_yellow = largest_yellow[0]
+        cy_yellow = largest_yellow[1]
+        
+        # Konversi pixel → meter
+        yx_cm, yy_cm = pixel_to_cm(cx_yellow, cy_yellow)
+        
+        if yx_cm is not None:
+            target_msg = PoseStamped()
+            target_msg.header.frame_id = 'map'
+            target_msg.header.stamp = ros_node.get_clock().now().to_msg()
+            
+            # Posisi dalam meter
+            target_msg.pose.position.x = float(yx_cm) / 100.0
+            target_msg.pose.position.y = float(yy_cm) / 100.0
+            target_msg.pose.position.z = 0.0  # Atau 0.1 kalau muka bola di atas tanah
+            
+            # Orientasi (identity quaternion, bola gak perlu rotasi)
+            target_msg.pose.orientation.x = 0.0
+            target_msg.pose.orientation.y = 0.0
+            target_msg.pose.orientation.z = 0.0
+            target_msg.pose.orientation.w = 1.0
+            
+            target_yellow_pub.publish(target_msg)
+            print(f"[TARGET YELLOW] Published: x={yx_cm/100:.3f}m, y={yy_cm/100:.3f}m")
 
     # --- Deteksi ArUco ---
     if auto_mode and switch_cooldown > 0:
@@ -398,7 +429,7 @@ while True:
             angle_deg = np.degrees(angle_rad)
             angle_mdeg = int(angle_deg * 1000)
 
-            if marker_id == 81:
+            if marker_id == 81: #based on your aruco id
                 angle_312 = angle_deg
                 marker_312_pos = (cx, cy)
 
@@ -429,7 +460,7 @@ while True:
                     pose_msg.pose.orientation.w = float(np.cos(yaw_rad / 2))
 
                     robot_pose_pub.publish(pose_msg)
-                    print(f"  → Robot pose: x={x_cm:.1f}cm y={y_cm:.1f}cm yaw={angle_deg:.1f}°")
+                    # print(f"  → Robot pose: x={x_cm:.1f}cm y={y_cm:.1f}cm yaw={angle_deg:.1f}°")
 
         if ROS_AVAILABLE:
             msg = Int32MultiArray()
@@ -529,14 +560,34 @@ while True:
             repulse_mag = np.sqrt(rep_x**2 + rep_y**2)
             speed_factor = 1.0 / (1.0 + repulse_mag * 0.5)  # Reduce speed near obstacle
 
-            if abs(err_angle) > YAW_DEADZONE_DEG:
+            if nav_state == "ALIGN":
                 ang_z = -err_angle * KP_ANGULAR_YAW * 4
                 ang_z = max(-MAX_ANGULAR, min(MAX_ANGULAR, ang_z))
                 twist.angular.z = float(ang_z)
-                twist.linear.x = float(FORWARD_SPEED * speed_factor * 0.3)  # Pelan saat muter
-            else:
-                twist.angular.z = 0.0
-                twist.linear.x = float(FORWARD_SPEED * speed_factor)
+                twist.linear.x = 0.0  # diem dulu, jangan maju sambil muter
+
+                if abs(err_angle) <= YAW_DEADZONE_DEG:
+                    nav_state = "DRIVE"
+
+            else:  # nav_state == "DRIVE"
+                if abs(err_angle) > DRIVE_EXIT_DEG:
+                    nav_state = "ALIGN"
+                    twist.angular.z = 0.0
+                    twist.linear.x = 0.0
+                else:
+                    ang_z = -err_angle * KP_ANGULAR_YAW
+                    ang_z = max(-MAX_ANGULAR, min(MAX_ANGULAR, ang_z))
+                    twist.angular.z = float(ang_z)
+                    twist.linear.x = float(FORWARD_SPEED * speed_factor)
+
+            # if abs(err_angle) > YAW_DEADZONE_DEG:
+            #     ang_z = -err_angle * KP_ANGULAR_YAW * 4
+            #     ang_z = max(-MAX_ANGULAR, min(MAX_ANGULAR, ang_z))
+            #     twist.angular.z = float(ang_z)
+            #     twist.linear.x = float(FORWARD_SPEED * speed_factor * 0.3)  # Pelan saat muter
+            # else:
+            #     twist.angular.z = 0.0
+            #     twist.linear.x = float(FORWARD_SPEED * speed_factor)
 
             # --- 6. VISUALISASI ---
 
@@ -586,16 +637,16 @@ while True:
                        (10, frame_h - 20),
                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 0), 2)
 
-            print(f"  → POTENTIAL FIELD: att=({att_x:.2f},{att_y:.2f}) "
-                  f"rep=({rep_x:.2f},{rep_y:.2f}) "
-                  f"comb={combined_angle:.1f}° err={err_angle:.1f}° "
-                  f"route_pts={len(target_route)} "
-                  f"lin={twist.linear.x:.3f} ang={twist.angular.z:.3f}")
+            # print(f"  → POTENTIAL FIELD: att=({att_x:.2f},{att_y:.2f}) "
+            #       f"rep=({rep_x:.2f},{rep_y:.2f}) "
+            #       f"comb={combined_angle:.1f}° err={err_angle:.1f}° "
+            #       f"route_pts={len(target_route)} "
+            #       f"lin={twist.linear.x:.3f} ang={twist.angular.z:.3f}")
 
-        else:
-            print(f"  → [IDLE] angle_312={angle_312 is not None}, "
-                  f"marker_pos={marker_312_pos is not None}, "
-                  f"yellow={largest_yellow is not None}")
+        # else:
+            # print(f"  → [IDLE] angle_312={angle_312 is not None}, "
+            #       f"marker_pos={marker_312_pos is not None}, "
+            #       f"yellow={largest_yellow is not None}")
 
     # --- Publish obstacle (orange) ke ROS ---
     if ROS_AVAILABLE and obstacle_centers:
@@ -620,7 +671,7 @@ while True:
     # --- Publish cmd_vel (SELALU) ---
     if ROS_AVAILABLE:
         cmd_vel_pub.publish(twist)
-        print(f"[CmdVel] linear.x={twist.linear.x:.3f}, angular.z={twist.angular.z:.3f}")
+        # print(f"[CmdVel] linear.x={twist.linear.x:.3f}, angular.z={twist.angular.z:.3f}")
 
     if auto_mode:
         cv2.putText(frame, label, (10, 30),
