@@ -211,19 +211,6 @@ cam_localization/fast:
 .PHONY : cam_localization/fast
 
 #=============================================================================
-# Target rules for targets named aruco_localization
-
-# Build rule for target.
-aruco_localization: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 aruco_localization
-.PHONY : aruco_localization
-
-# fast build rule for target.
-aruco_localization/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco_localization.dir/build.make CMakeFiles/aruco_localization.dir/build
-.PHONY : aruco_localization/fast
-
-#=============================================================================
 # Target rules for targets named aruco
 
 # Build rule for target.
@@ -259,30 +246,6 @@ src/aruco.s: src/aruco.cpp.s
 src/aruco.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco.dir/build.make CMakeFiles/aruco.dir/src/aruco.cpp.s
 .PHONY : src/aruco.cpp.s
-
-src/aruco_localization.o: src/aruco_localization.cpp.o
-.PHONY : src/aruco_localization.o
-
-# target to build an object file
-src/aruco_localization.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco_localization.dir/build.make CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.o
-.PHONY : src/aruco_localization.cpp.o
-
-src/aruco_localization.i: src/aruco_localization.cpp.i
-.PHONY : src/aruco_localization.i
-
-# target to preprocess a source file
-src/aruco_localization.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco_localization.dir/build.make CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.i
-.PHONY : src/aruco_localization.cpp.i
-
-src/aruco_localization.s: src/aruco_localization.cpp.s
-.PHONY : src/aruco_localization.s
-
-# target to generate assembly for a file
-src/aruco_localization.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aruco_localization.dir/build.make CMakeFiles/aruco_localization.dir/src/aruco_localization.cpp.s
-.PHONY : src/aruco_localization.cpp.s
 
 src/cam_localization.o: src/cam_localization.cpp.o
 .PHONY : src/cam_localization.o
@@ -324,14 +287,10 @@ help:
 	@echo "... nexus_gazebo_uninstall"
 	@echo "... uninstall"
 	@echo "... aruco"
-	@echo "... aruco_localization"
 	@echo "... cam_localization"
 	@echo "... src/aruco.o"
 	@echo "... src/aruco.i"
 	@echo "... src/aruco.s"
-	@echo "... src/aruco_localization.o"
-	@echo "... src/aruco_localization.i"
-	@echo "... src/aruco_localization.s"
 	@echo "... src/cam_localization.o"
 	@echo "... src/cam_localization.i"
 	@echo "... src/cam_localization.s"
