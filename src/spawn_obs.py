@@ -18,7 +18,7 @@ class UpdateYellowObstacle(Node):
         
         # ⬇️ GANTI: PoseArray → PoseStamped
         self.sub = self.create_subscription(
-            PoseStamped, '/target_yellow', self.on_obstacles, 10)
+            PoseStamped, '/target_yellow_pose', self.on_obstacles, 10)
         
         self.world_name = 'car_world'
 

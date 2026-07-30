@@ -73,7 +73,7 @@ class UpdateRobotPose(Node):
             "gz", "service", "-s", f"/world/{self.world_name}/set_pose",
             "--reqtype", "gz.msgs.Pose",
             "--reptype", "gz.msgs.Boolean",
-            "--timeout", "30",
+            "--timeout", "1000",
             "--req", req
         ]
         try:
